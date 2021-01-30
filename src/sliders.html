@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sliders</title>
+  <link rel="stylesheet" href="../release/hsframework.min.css">
+  <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+  <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+  <script src="demo.js"></script>
+</head>
+
+<body class="bg-body">
+  <div id="kendomenu"></div>
+  <div class="h4 p-3 mb-3 text-center alert-info">Sliders and Refiners</div>
+  <div id="slider-toolbar" class="mb-3"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="m-3">
+          <div class="h5">OOTB Kendo Numeric Range Slider</div>
+          <div id="slidera">
+            <input />
+            <input />
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="m-3">
+          <div class="h5">OOTB Kendo Numeric Slider</div>
+          <div id="slidera2" class="hs-slider-success">
+            <input />
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-3">
+          <div class="h5">Large Slider in hs-slider-row and hs-slider-secondary</div>
+          <div class="hs-slider-row hs-slider-secondary hs-slider-row-lg">
+            <div class="pr-2 font-weight-bold">
+              <label>Rate</label>
+            </div>
+            <div class="hs-slider-lowerlimit">$200</div>
+            <div id="sliderb" class="mx-3 hs-slider-lg">
+              <input />
+              <input />
+            </div>
+            <div class="hs-slider-upperlimit">$1,400</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="p-3">
+          <div class="h5">eXtra Large Slider in hs-slider-row with value text and hs-slider-danger theme color</div>
+          <div class="hs-slider-row hs-slider-row-xl hs-slider-danger">
+            <div class="pr-2 font-weight-bold">
+              <label>Select Rate</label>
+            </div>
+            <div class="hs-slider-lowerlimit">$200</div>
+            <div id="sliderc" class="mx-3 hs-slider-xl">
+              <input />
+              <input />
+            </div>
+            <div class="hs-slider-upperlimit">$1,400</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

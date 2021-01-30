@@ -1,0 +1,7 @@
+// duplicate a rule to a direct decendant if the parent has .k-listview class 
+@mixin kendolistview($prop,$value) {
+    #{$prop}:#{$value} !important;
+    &.k-listview > .k-listview-content {
+        #{$prop}:#{$value} !important;
+    }
+}

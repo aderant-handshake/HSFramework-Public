@@ -1,0 +1,18 @@
+// Cosmetic fixes for Kendo/Bootstrap combinations 
+// remove border for a k-widget using list-group 
+.k-widget.list-group {
+    border: none;
+}
+
+// if a list-group-item is a direct descendent of a k-card or k-card-body, 
+// remove the extra borders that appear 
+
+.k-card, .k-card-body {
+    > .list-group > .k-listview-content > .list-group-item {
+        border-right:none !important;
+        border-left:none !important;
+        &:last-child {
+            border-bottom:none !important;    
+        }
+    }
+} 

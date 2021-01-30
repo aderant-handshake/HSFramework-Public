@@ -1,0 +1,47 @@
+/*
+* Demo Specific CSS not part of the connect 2.0 framework 
+*/
+.hs-userphoto--grid-inline {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-size: 32px 32px;
+    background-position: center center;
+    vertical-align: middle;
+    line-height: 32px;
+    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, .2);
+    margin-left: 5px;
+    transition: all .2s ease-in-out;
+}
+.hs-userphoto--grid-inline:hover {
+    transform: scale(2.0);
+    background-size:cover;
+    background-position: center top;
+    border-radius:0;
+    box-shadow:none;
+}
+
+.hs-username--grid-inline {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    padding-left: 3px;
+}
+
+
+div.tester {
+    display: flex;
+}
+div.tester>div {
+    height: 100px;
+    width: 100px;
+    margin: 10px 10px;
+    padding: 20px 10px;
+    transition: all .2s ease-in-out;
+}
+div.tester>div:hover {
+    transform: scale(2.0);
+    text-transform: uppercase;
+    border-radius:10px;
+}

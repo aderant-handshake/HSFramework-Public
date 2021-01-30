@@ -1,0 +1,36 @@
+/*! 
+=================================================================================
+    Handshake Framework 
+    Jan 27, 2021 Version 2.1.0
+    Note : This build does not include Bootstrap or a specific Kendo Theme. 
+    See Readme.md for deatils on the usage of this Framework 
+=================================================================================
+*/
+
+@import "functions";
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "utilities";
+
+
+@import "../node_modules/@progress/kendo-theme-bootstrap/scss/all";
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba($black, 0);
+}
+
+body {
+    margin: 0;
+    font-family: $font-family-base;
+    @include font-size($font-size-base);
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    text-align: left; 
+    background-color: $body-bg;
+}
+

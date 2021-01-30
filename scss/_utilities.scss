@@ -1,0 +1,34 @@
+@import "utilities/linearchannelvalues";
+
+// Import desired Bootstrap Modules unchanged 
+ @import "../node_modules/bootstrap/scss/utilities/spacing" ; // some kendo overlap
+ @import "../node_modules/bootstrap/scss/utilities/text";     // some kendo overlap 
+ @import "../node_modules/bootstrap/scss/utilities/display";  // some kendo overlap 
+
+@import "../node_modules/bootstrap/scss/utilities/borders";
+@import "../node_modules/bootstrap/scss/utilities/shadows";
+@import "../node_modules/bootstrap/scss/utilities/sizing";
+
+@import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/jumbotron";
+@import "../node_modules/bootstrap/scss/list-group"; 
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/print";
+@import "../node_modules/bootstrap/scss/media";
+@import "../node_modules/bootstrap/scss/breadcrumb";
+
+// Some Bootstrap modules that are forked for required modification 
+@import "utilities/flex";
+@import "utilities/background";
+
+// HS Framework modules 
+//@import "utilities/spacing";
+@import "utilities/cssgrid";
+@import "utilities/tabs";
+@import "utilities/panelbars";
+@import "utilities/listview";
+@import "utilities/usercard";
+@import "utilities/tester";
+

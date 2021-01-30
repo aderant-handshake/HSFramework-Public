@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Bootstrap Kenodo Theme</title>  
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+    <style>
+        .inline-color {
+            /* defaults for IE 11 */ 
+            color:white;
+            background-color:green; 
+            /* modern browsers support css vars */
+            background-color:var(--theme-success);
+            color:var(--theme-light);
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="p-3 text-center alert-info">Color Elements</div>
+    <div id="toolbar" class="mb-3"></div>
+
+    <div class="tester">
+        <div class="text-center bg-primary">Bootstrap<br />primary</div>
+        <div class="text-center bg-success">Bootstrap<br />success</div>
+        <div class="text-center bg-danger">Bootstrap<br />danger</div>
+        <div class="text-center bg-info">Bootstrap<br />info</div>
+        <div class="text-center bg-warning">Bootstrap<br />warning </div>
+        <div class="text-center bg-light text-dark">Bootstrap<br />light </div>
+        <div class="text-center bg-dark">Bootstrap<br />dark</div>
+        <div class="text-center bg-secondary">Bootstrap<br />secondary </div>
+    </div>
+
+    <div class="tester">
+        <div class="text-center k-bg-primary">kendo<br />primary</div>
+        <div class="text-center k-bg-success">kendo<br />success</div>
+        <div class="text-center k-bg-error">kendo<br />error</div>
+        <div class="text-center k-bg-info">kendo<br />info</div>
+        <div class="text-center k-bg-warning">kendo<br />warining</div>
+    </div>
+
+    <div>
+        <span class="m-3 k-icon k-i-gear k-icon-48 text-primary"></span>
+        <span class="m-3 k-icon k-i-notification k-icon-48 text-secondary"></span>
+        <span class="m-3 k-icon k-i-photo-camera k-icon-48 text-success"></span>
+        <span class="m-3 k-icon k-i-image k-icon-48 text-info"></span>
+    </div>
+
+    <div class="my-2 p-3 inline-color" >
+        This div is using a background color defined in the variable --theme-success.  It uses a feature in CSS that is not supported in any version of IE.  
+        This following code is used to define a fallback to IE 11 when required.
+    </div>
+<pre>
+.inline-color {
+    /* defaults for IE 11 */ 
+    color:white;
+    background-color:green; 
+    /* modern browsers support css vars */
+    background-color:var(--theme-success);
+    color:var(--theme-light);
+}
+</pre>
+
+</body>
+
+</html>

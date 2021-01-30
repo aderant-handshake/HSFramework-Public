@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc Template</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center alert-info">Some Description</div>
+    <div id="some-toolbar" class="mb-3"></div>
+    <div class="container">
+        <div id="scheduler"></div>
+    </div>
+
+    <script id="agenda-template" type="text/x-kendo-template">
+        <div class='event-template'>
+            <span>#: title #</span>
+        </div>
+    </script>
+    
+    <script>
+        $(function () {
+            $("#scheduler").kendoScheduler({
+                date: new Date("2013/6/13"),
+                startTime: new Date("2013/6/13 07:00 AM"),
+                height: 600,
+                toolbar: ["pdf"],
+                pdf: {
+                    fileName: "Kendo UI Scheduler Export.pdf",
+                    proxyURL: "https://demos.telerik.com/kendo-ui/service/export"
+                },
+                views: [
+                    "day",
+                    "week",
+                    "workWeek",
+                    {
+                        type: "month",
+                        eventsPerDay: 8,
+                        eventHeight: 55,
+                        eventSpacing: 5,
+                        adaptiveSlotHeight: true,
+                        selected: true
+                    },
+                    {
+                        type: "agenda",
+                        eventTemplate: $("#agenda-template").html()
+                    }
+                ],
+                allDayTemplate: $("#allday-event-template").html(),
+                eventTemplate: $("#allday-event-template").html(),
+                timezone: "Etc/UTC",
+                dataSource: {
+                    batch: true,
+                    transport: {
+                        read: {
+                            url: "https://demos.telerik.com/kendo-ui/service/meetings",
+                            dataType: "jsonp"
+                        },
+                        update: {
+                            url: "https://demos.telerik.com/kendo-ui/service/meetings/update",
+                            dataType: "jsonp"
+                        },
+                        create: {
+                            url: "https://demos.telerik.com/kendo-ui/service/meetings/create",
+                            dataType: "jsonp"
+                        },
+                        destroy: {
+                            url: "https://demos.telerik.com/kendo-ui/service/meetings/destroy",
+                            dataType: "jsonp"
+                        },
+                        parameterMap: function (options, operation) {
+                            if (operation !== "read" && options.models) {
+                                return { models: kendo.stringify(options.models) };
+                            }
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "meetingID",
+                            fields: {
+                                meetingID: { from: "MeetingID", type: "number" },
+                                title: { from: "Title", defaultValue: "No title", validation: { required: true } },
+                                start: { type: "date", from: "Start" },
+                                end: { type: "date", from: "End" },
+                                startTimezone: { from: "StartTimezone" },
+                                endTimezone: { from: "EndTimezone" },
+                                description: { from: "Description" },
+                                recurrenceId: { from: "RecurrenceID" },
+                                recurrenceRule: { from: "RecurrenceRule" },
+                                recurrenceException: { from: "RecurrenceException" },
+                                roomId: { from: "RoomID", nullable: true },
+                                attendees: { from: "Attendees", nullable: true },
+                                isAllDay: { type: "boolean", from: "IsAllDay" }
+                            }
+                        }
+                    }
+                },
+                resources: [
+                    {
+                        field: "attendees",
+                        dataSource: [
+                            { text: "Alex", value: 1, color: "#f8a398" },
+                            { text: "Bob", value: 2, color: "#51a0ed" },
+                            { text: "Charlie", value: 3, color: "#56ca85" }
+                        ],
+                        multiple: true,
+                        title: "Attendees"
+                    },
+                    {
+                        field: "roomId",
+                        dataSource: [
+                            { text: "Meeting Room 101", value: 1, color: "#f58ac0" },
+                            { text: "Meeting Room 201", value: 2, color: "#f58a8a" },
+                            { text: "Meeting Room 301", value: 2, color: "#f5c08a" }
+                        ],
+                        title: "Room"
+                    }
+                ]
+            });
+    
+            $("#scheduler").kendoTooltip({
+                filter: ".k-event:not(.k-event-drag-hint)",
+                position: "top",
+                width: 250,
+                content: kendo.template($('#template').html())
+            });
+        });
+    </script>
+    
+    <script id="template" type="text/x-kendo-template">
+        #var element = target;#
+        #var uid = element.attr("data-uid");#
+        #var scheduler = target.closest("[data-role=scheduler]").data("kendoScheduler");#
+        #var model = scheduler.occurrenceByUid(uid);#
+    
+        #if(model) {#
+        <strong>Title:</strong> #=model.title#
+        <br />
+        <strong>Start:</strong> #=kendo.format('{0:d}',model.start)#
+        <br />
+        <strong>End:</strong> #=kendo.format('{0:d}',model.end)#
+        <br />
+        #} else {#
+        <strong>No event data is available</strong>
+        #}#
+    </script>
+    
+    <style>
+        .k-scheduler-content {
+            height:70vh !important;
+        }
+    </style>
+
+</body>
+
+</html>

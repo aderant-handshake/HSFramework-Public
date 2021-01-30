@@ -1,0 +1,143 @@
+//
+// Fork of bootstra _flex.scss; extended to support applying flex classes to k-listview-content 
+.d-flex {
+    @include kendolistview('display','flex');
+}
+
+.flex-row {
+    @include kendolistview('flex-direction','row');
+}
+
+.flex-column {
+    @include kendolistview('flex-direction','column');
+}
+
+.flex-row-reverse {
+    @include kendolistview('flex-direction','row-reverse');
+}
+
+.flex-column-reverse {
+    @include kendolistview('flex-direction','column-reverse');
+}
+
+.flex-wrap {
+    @include kendolistview('flex-wrap','wrap');
+}
+
+.flex-nowrap {
+    @include kendolistview('flex-wrap','nowrap');
+}
+
+.flex-wrap-reverse {
+    @include kendolistview('flex-wrap','wrap-reverse');
+}
+
+.justify-content-start {
+    @include kendolistview('justify-content','flex-start');
+}
+
+.justify-content-end {
+    @include kendolistview('justify-content','flex-end');
+}
+
+.justify-content-center {
+    @include kendolistview('justify-content','center');
+}
+
+.justify-content-between {
+    @include kendolistview('justify-content','space-between');
+}
+
+.justify-content-around {
+    @include kendolistview('justify-content','space-around');
+}
+
+.align-items-start {
+    @include kendolistview('align-items','flex-start');
+}
+
+.align-items-end {
+    @include kendolistview('align-items','flex-end');
+}
+
+.align-items-center {
+    @include kendolistview('align-items','center');
+}
+
+.align-items-baseline {
+    @include kendolistview('align-items','baseline');
+}
+
+.align-items-stretch {
+    @include kendolistview('align-items','stretch');
+}
+
+.align-content-start {
+    @include kendolistview('align-content','flex-start');
+}
+
+.align-content-end {
+    @include kendolistview('align-content','flex-end');
+}
+
+.align-content-center {
+    @include kendolistview('align-content','center');
+}
+
+.align-content-between {
+    @include kendolistview('align-content','space-between');
+}
+
+.align-content-around {
+    @include kendolistview('align-content','space-around');
+}
+
+.align-content-stretch {
+    @include kendolistview('align-content','stretch');
+}
+
+// rules for flex child items, do not need to account for k-listview-content 
+
+.flex-fill {
+    flex: 1 1 auto !important;
+}
+
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+    flex-shrink: 1 !important;
+}
+
+.align-self-auto {
+    align-self: auto !important;
+}
+
+.align-self-start {
+    align-self: flex-start !important;
+}
+
+.align-self-end {
+    align-self: flex-end !important;
+}
+
+.align-self-center {
+    align-self: center !important;
+}
+
+.align-self-baseline {
+    align-self: baseline !important;
+}
+
+.align-self-stretch {
+    align-self: stretch !important;
+}

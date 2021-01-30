@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HS Grid Sample</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center bg-info">HS Connect 2.0 Kendo HTML5 Grids Samples/Test</div>
+    <div id="grid-toolbar" class="mb-3"></div>
+    <div class="">
+        <div id="plaingrid" class="gridcontainer w-75 mx-auto"></div>
+        <div id="cardgrid" class="gridcontainer d-none">
+
+            <div class="w-75 mx-auto">
+                <div class="k-card">
+                    <div class="k-card-header k-card-header-primary">
+                        <div class="k-card-title">Grid In A Card</div>
+                    </div>
+                    <div class="k-card-body">
+                        <h6 class="k-card-subtitle mb-2 text-muted">A Grid Sample inside a Kendo Card</h6>
+                        <p class="card-text">This bootstrap grid, which is in a container using w-75 mx-auto,
+                            shows a rendering of the test grid.</p>
+                        <div id="grid3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="tabgrid" class="gridcontainer w-75 mx-auto d-none">
+        <ul>
+            <li class="k-state-active">Grid in a Tab Test</li>
+            <li>Description</li>
+        </ul>
+        <div>
+            <div id="grid2"></div>
+        </div>
+        <div>
+            <div class="jumbotron">
+                <h1 class="display-4">Kendo Grid</h1>
+                <p class="lead">Kendo Grid shown inside a kendo tab control.</p>
+                <hr class="my-4" />
+                <p>Toggle Flush in the toolbar to see the effect of using hs-tabstrip-flush on the tab control.</p>
+            </div>
+        </div>
+    </div>
+    <div id="panelgrid" class="gridcontainer w-75 mx-auto d-none">
+        <ul id="grid-panelbar">
+            <li>
+                Grid
+                <div id="grid4"></div>
+            </li>
+            <li>
+                Description
+                <div class="jumbotron">
+                    <h1 class="display-4">Kendo Grid</h1>
+                    <p class="lead">This sample shows a kendo Grid when displayed inside a panel bar.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</body>
+
+</html>

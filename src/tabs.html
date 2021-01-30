@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Kendo Tabs Styles</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center alert-info">HS Connect 2.0 Kendo Tab Style Samples/Test</div>
+
+    <div id="tabtoolbar"></div>
+
+    <div class="m-3">
+        <div id="class-list" class="my-2 h3">Classes: </div>
+        <div id="tabsample1" class="">
+            <ul>
+                <li class="k-state-active">Test Tab 1</li>
+                <li>Test Tab 2</li>
+                <li>Test Tab 3</li>
+                <li>Test Tab 4</li>
+                <li>Test Tab 5</li>
+            </ul>
+            <div>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-full</div>
+                        <p class="mb-1">Tabs will use the entire width of the parent container. Borders are removed,
+                            except for the
+                            bottom border of the active tab.</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-uppercase</div>
+                        <p class="mb-1">Sets the text of the tabs to be in Uppercase.</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-bicolor</div>
+                        <p class="mb-1">Sets the Active Tab to a background of $tabcolor(a), and all inactive tabs
+                            to $tabcolor(b). Text color is set using a function to determine optimim color based on the
+                            background-color.
+                            A slight box-shadow is set on the active tab.</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-fullcolor</div>
+                        <p class="mb-1">Sets the background color of each tab to $tabcolor(a..e), then repeats.
+                            The opacticy of inactive tabs is $tabcolor(opacity), while the opacity for active and
+                            onhover tabs is 1
+                            A slight box-shadow is set on the active tab.
+                        </p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-rounded</div>
+                        <p class="mb-1">Set a radius to the top left/right corners. Radius is defined in the
+                            $tabcolor(radius)</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-radio</div>
+                        <p class="mb-1">Renders the tabs as a set of radio control buttons</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-shaded</div>
+                        <p class="mb-1">Tabs will use full width of the parent container. Active tab will use
+                            $tabcolor(a) as the background.
+                            Hover backgroud will be $tabcolor(b).</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-noshadow</div>
+                        <p class="mb-1">Removes any box-shadow that may be set by another class such as
+                            hs-tabstrip-fullcolor.</p>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="text-secondary h5">hs-tabstrip-flush</div>
+                        <p class="mb-1">Removes padding and border of child elements such as a HTML5Grid or a list-group
+                            inside an HTML5ListView when it is a direct deciendent to the active tab container</p>
+                    </div>
+                    <div class="list-group-item bg-info text-white">
+                        <div class="h5">TIPS</div>
+                        <ul>
+                            <li>Classes may be combined like fullwidth & fullcolor, but not all will make sense like
+                                fullcolor and bicolor.</li>
+                            <li>For consistency in your site, like all tabs should be fullwidth and upper case, use an
+                                Application Option to set the desired classes.
+                                <br />Application Option: tabclasses = "hs-tabstrip-fullwidth hs-tabstrip-uppercase"
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>Tab Test Content 2 dynamically replaced with active content</div>
+            <div>Tab Test Content 3 dynamically replaced with active content</div>
+            <div>Tab Test Content 4 dynamically replaced with active content</div>
+            <div>Tab Test Content 5 dynamically replaced with active content</div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>

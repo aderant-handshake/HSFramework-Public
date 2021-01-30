@@ -1,0 +1,101 @@
+$userprofilecard-width:640px !default;
+
+.hs-userphoto--grid-inline {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-size: 32px 32px;
+    background-position: center center;
+    vertical-align: middle;
+    line-height: 32px;
+    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, .2);
+    margin-left: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.hs-userphoto--grid-inline:hover {
+    transform: scale(2.0);
+    background-size: cover;
+    background-position: center top;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hs-username--grid-inline {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    padding-left: 3px;
+}
+
+.hs-userprofile-card {
+    width: $userprofilecard-width;
+
+    .k-card-header {
+        letter-spacing: .125rem;
+    }
+
+    img.k-card-image {
+        min-width: 33%;
+        border-top-right-radius: 0 !important;
+    }
+
+    .hs-address-block {
+        line-height: 1.25em;
+        margin: .25rem 1.25rem 0 1.25rem;
+    }
+
+    .phones {
+        display: flex;
+        justify-content: space-around;
+        font-size: .9rem;
+    }
+
+    hr.k-card-seperator {
+        margin: .5rem 0
+    }
+
+    &.hs-userprofile-card-nopic {
+        width: $userprofilecard-width * .6633;
+
+        img.k-card-image {
+            display: none;
+        }
+    }
+
+    &.hs-userprofile-card-slim {
+        width: $userprofilecard-width / 2 !important;
+
+        img.k-card-image {
+            min-width: 100%
+        }
+
+        .k-card-header {
+            letter-spacing: normal;
+        }
+
+        .phones {
+            flex-direction: column;
+            margin-left: 1.25rem;
+        }
+
+        flex-flow:column !important;
+    }
+
+    &.hs-userprofile-card-picname {
+        .hs-address-block, .phones, .k-card-actions, .k-card-seperator {
+            display:none;
+            margin:0 0; 
+            padding:0 0; 
+        }
+
+        img.k-card-image {
+            min-width:0 !important;
+        }
+        .k-card-header {
+            border:none;
+            background-color:transparent;
+        }
+    }
+}

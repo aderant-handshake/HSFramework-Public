@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cards</title>
+  <link rel="stylesheet" href="../release/hsframework.min.css">
+  <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+  <script src="demo.js"></script>
+
+  <style>
+    #cardtest .k-card {
+      width: 375px;
+    }
+  </style>
+</head>
+
+<body class="bg-body">
+
+  <div id="kendomenu"></div>
+  <div class="h4 k-p-3 k-mb-3 k-text-center bg-info">Kendo Cards</div>
+  <div id="toolbar" class="mb-3"></div>
+  <div class="lead k-mb-1 k-p-3 bg-warning">Display 3 k-cards in a k-card-group.
+    Each card has a width of 31% and a right/left margin of 1% each. </div>
+
+
+
+  <div id="cardtest" class="k-display-flex k-justify-content-center">
+    <div class="k-card-deck">
+      <div class="k-card">
+        <div class="k-card-header k-card-primary k-text-center">Kendo Cards (Primary)</div>
+        <img src="http://picsum.photos/300/200?random=1" class="k-card-img">
+        <div class="k-card-header">
+          <div class="k-card-title">Hitchhiker's Guide to the Galaxy</div>
+          <div class="k-card-subtitle">by Douglas Adams</div>
+        </div>
+        <div class="k-card-body">
+          <p class="k-card-text">Far out in the uncharted backwaters of the unfashionable end of
+            the western spiral arm of the Galaxy lies a small unregarded
+            yellow sun.</p>
+          <div class="">
+            <a href="https://docs.telerik.com/kendo-ui/styles-and-layout/cards" target="_blank">Component Details</a>
+          </div>
+        </div>
+        <ul class="list-group" id="book-list-1"></ul>
+        <div class="k-card-actions k-card-actions-stretched">
+          <span class="k-card-action">
+            <span class="k-button k-flat k-primary">Book</span>
+          </span>
+          <span class="k-card-action">
+            <span class="k-button k-flat k-primary">Film</span>
+          </span>
+        </div>
+      </div>
+      <div class="k-card">
+        <div class="k-card-header k-text-center k-card-secondary">Kendo Cards (Secondary header)</div>
+        <img src="http://picsum.photos/300/200?random=2" class="k-card-img">
+        <div class="k-card-header">
+          <div class="k-card-title">Hitchhiker's Guide to the Galaxy</div>
+          <div class="k-card-subtitle">by Douglas Adams</div>
+        </div>
+        <div class="k-card-body">
+          <p class="k-card-text">Far out in the uncharted backwaters of the unfashionable end of
+            the western spiral arm of the Galaxy lies a small unregarded
+            yellow sun.</p>
+          <div class="">
+            <a href="https://docs.telerik.com/kendo-ui/styles-and-layout/cards" target="_blank">Component Details</a>
+          </div>
+        </div>
+        <ul class="list-group" id="book-list-2"></ul>
+        <div class="k-card-footer justify-content-between d-flex">
+          <a href="#" class="k-button">Book</a>
+          <a href="#" class="k-button">Film</a>
+        </div>
+      </div>
+      <div class="k-card k-card-vertical">
+        <div class="k-card-header k-display-flex k-align-items-center ">
+          <h5 class="k-card-title">Media Card</h5>
+        </div>
+        <iframe height="267" src="https://www.youtube.com/embed/00EMMRFocNs" class="k-card-media"></iframe>
+        <div class="k-card-body">
+          <p><strong>k-card with a k-card-media section:</strong> Technical Leadership: Lessons Learned at NASA with
+            Jody
+            Davis</p>
+          <p>
+            The height of this card is streched to match the height of other cards in the deck.
+          </p>
+        </div>
+        <span class="k-card-separator"></span>
+        <div class="k-card-actions k-card-actions-end">
+          <span class="k-button k-flat k-button-icon"><span class="k-icon k-i-heart-outline"></span></span>
+          <span class="k-button k-flat k-button-icon"><span class="k-icon k-i-comment"></span></span>
+          <span class="k-button k-flat k-button-icon"><span class="k-icon k-i-share"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="samplecards" class="k-m-5 d-grid" style="grid-template-columns: 2fr 1fr 1fr;">    
+    <div>
+      <div class="lead my-2">Standard User Profile Card</div>
+      <div class="k-card k-card-horizontal hs-userprofile-card"></div>
+      <div class="lead my-2">User Name/Pic only </div>
+      <div class="k-card k-card-horizontal hs-userprofile-card hs-userprofile-card-picname"></div>
+    </div>
+    <div>
+      <div class="lead my-2">Slim User Profile Card</div>
+      <div class="k-card k-card-horizontal hs-userprofile-card hs-userprofile-card-slim"></div>
+    </div>
+    <div>
+      <div class="lead my-2">User Profile Card - No picture </div>
+      <div class="k-card k-card-horizontal hs-userprofile-card hs-userprofile-card-nopic"></div>
+      <div class="lead my-2">User Profile Card - Slim, no picture </div>
+      <div class="k-card k-card-horizontal hs-userprofile-card hs-userprofile-card-slim hs-userprofile-card-nopic"></div>
+    </div>
+  </div>
+
+  <div id="userprofile" class="k-display-none">
+    <img class="k-card-image" src="https://thispersondoesnotexist.com/image" />
+        <div class="k-card-body k-card-vertical k-p-0">
+          <div class="k-card-header">
+            <h4 class="k-card-title">Cameron Simmons, Partner</h4>
+            <h5 class="k-card-subtitle">Intellectual Property, Chicago</h5>
+          </div>
+          <div class="hs-address-block">
+            <div>1919 North Main Street, Suite 6000</div>
+            <div>Chicago IL 60606</div>
+            <div>cameron.simmons@jlalaw.com</div>
+          </div>
+          <hr class="k-card-seperator" />
+          <div class="phones">
+            <span class="p-office">512.555.1212 (o)</span>
+            <span class="p-mobile"> 512.555.1212 (m)</span>
+            <span class="p-fax">512.555.1212 (f)<span>
+          </div>
+          <hr class="k-card-seperator" />
+          <div class="k-card-actions k-card-actions-center">
+            <span class="k-button k-flat">E-Mail</span>
+            <span class="k-button k-flat">Bio Page</span>
+            <span class="k-button k-flat">LinkedIn</span>
+          </div>
+        </div>
+  </div>
+
+  <script>
+    // replicate userprofile markup to sample cards 
+    var up = jQuery('#userprofile').html(); 
+    jQuery('#samplecards .hs-userprofile-card').html(up);
+  </script>
+</body>
+
+
+
+</html>
