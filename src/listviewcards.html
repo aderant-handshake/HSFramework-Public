@@ -5,24 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Doc Template</title>
+    <title>ListViews</title>
     <link rel="stylesheet" href="../release/hsframework.min.css">
-    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
     <script src="demo.js"></script>
 </head>
 
 <body class="bg-body">
     <div id="kendomenu"></div>
-    <div class="h4 p-3 mb-3 text-center bg-info">Bootstrap Cards in a Card Deck inside a list view</div>
-    <div id="some-toolbar" class="mb-3"></div>
-    <div class="w-75 mx-auto py-5">
-        <div class="text-center bg-primary py-1 my-3">Isolated Card Deck</div>
-        <div class="k-card-deck text-center">
-            <div class="k-card">One</div>
-            <div class="k-card">Two</div>
-            <div class="k-card">Three</div>
-        </div>
+    <div class="h4 p-3 mb-3 text-center bg-info">Kendo Cards in list views</div>
+
+    <div class="w-75 mx-auto py-2">
 
         <div class="text-center bg-primary py-1 my-3">
             <div>Kendo Cards inside a kendo listview</div>
@@ -35,7 +29,14 @@
             <div class="small">Adding hs-grid to the listview element...</div>
         </div>
         <div id="listviewcard1" class="border-0 hs-grid"></div>
-    </div>
+
+        <div class="text-center bg-primary py-1 my-3">
+            <div>Kendo Cards inside a bootstrap d-flex container /div>
+                <div class="small">Adding d-flex, flex-wrap and justify-content-between to the listview element. any
+                    element with d-flex and flex-wrap will have a bottom margin applied to each element by default</div>
+            </div>
+            <div id="listviewcard1" class="border-0 d-flex flex-wrap justify-content-between"></div>
+        </div>
 </body>
 
 </html>

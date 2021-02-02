@@ -20,6 +20,8 @@ Your best references for this framework are:
   * [User Profile Cards](#user-profile-cards)
   * [Kendo Tab Styles](#kendo-tab-styles)
   * [HS Layouts](#hs-layouts)
+* [Bootstrap](#bootstrap) 
+* [Kendo Listview Issue](#kendo-listview-issue)
 
 
 ## Usage
@@ -154,3 +156,102 @@ The is framework provides a number of layout pre-defined layout options.  They a
 All layouts are responsive, in that on mobile devices that will appear as stacked elements. 
 
 CSS Grids are the most straighforward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with approriate CSS.  [this is an excellent resource](https://css-tricks.com/snippets/css/complete-guide-grid/) if you are just starting with CSS grid.
+
+## Bootstrap
+This framework is built from the **@Progress/kendo-bootstrap-theme** npm package.  It includes many, but not all, bootstrap utilities and modules. Modules  were excluded if:
+
+1.  It had a similar feature built into kendo (card, navbar, modal)
+2.  Required bootstrap javascript in order to function (carousel, collapse)
+3.  Caused excessive complexity in an environment that would include SharePoint, Kendo and Bootstrap (responsive grid system, reboot)
+4.  Feature did not justify the overhead (progress, transitions)
+
+#### Included modules are
+* Default Variables
+* spacing
+* text
+* display
+* borders
+* shadow
+* sizing
+* tables
+* jumbotron
+* list-group
+* images
+* flex
+* colors
+* type
+* root
+* print
+* media
+* breadcrumbs
+
+#### Excluded modules are 
+* Responsive Grid System
+* transitions
+* tooltips 
+* toasts
+* spinners
+* reboot
+* progress
+* popover
+* pagination
+* navbar/nav/tabs
+* modal
+* dropdowns
+* collapse
+* buttons
+* carousel
+* forms/input 
+* badge
+* accordion
+
+## Kendo Listview Issue
+With Kendo build v2020.2.513, which is included with Handshake 3.9.5 kendo fixed an inconsistency in the listview structure by adding a "middle" element between the listview parent node, and the individual list items. 
+
+This means that a class name that is used to control direct decendants, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
+
+Before 3.9.5 the code below would have caused the child elements to be dislayed in a css grid. 
+```html
+<div class="k-listview d-grid">
+    <div>list element 1</div>
+    <div>list element 2</div>
+    <div>list element 3</div>
+</div>
+```
+With 3.9.5 kendo build 2020.2.513 or greater
+```html
+<div class="k-listview d-grid">
+    <div class="k-listview-content">
+        <div>list element 1</div>
+        <div>list element 2</div>
+        <div>list element 3</div>
+    </div>
+</div>
+```
+Now k-listview-content will have display:grid applied, but the list items will be unaffected. 
+
+#### Work around 
+The following SASS code is included to basically force the rules for the classes named added to the k-listview component to be pushed down to apply to the k-listview-content element. 
+
+```scss
+$listview-content-classes: 
+    hs-grid, hs-grid-center-content, list-group, k-card-deck,
+    k-card-list, k-card-group, k-card-vertical, k-card-horizontal,
+    d-flex, flex-row, flex-column, flex-row-reverse,
+    flex-column-reverse, flex-wrap, flex-nowrap, flex-wrap-reverse,
+    justify-content-start, justify-content-end, justify-content-center,
+    justify-content-between, justify-content-around, align-items-start,
+    align-items-end, align-items-center, align-items-baseline,
+    align-items-stretch, align-content-start, align-content-end,
+    align-content-center, align-content-between, align-content-around,
+    align-content-stretch;
+
+// may be a problem if the classes have code for direct decendents. 
+@each $classname in $listview-content-classes {
+    .k-listview.#{$classname} {
+        >.k-listview-content {
+            @extend .#{$classname}
+        }
+    }
+}
+```

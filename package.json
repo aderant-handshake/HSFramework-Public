@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": "^4.5.2",
     "@progress/kendo-theme-bootstrap": "^4.20.0",
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",

@@ -30,7 +30,7 @@ jQuery(function () {
         transport: {
             read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
         },
-        pageSize: 21
+        pageSize: 10
     };
 
     $testgrid = {
@@ -501,14 +501,14 @@ jQuery(function () {
                 '</div>',
             dataSource: testDS9
         });
-        $("#listviewcard1").kendoListView({
+        $("#listviewcard1, #listviewcard2").kendoListView({
             template: '<div class="k-card p-2 text-center bg-light">' +
                 '  <div>${ContactName}</div>' +
                 '  <div>Job Title: ${ContactTitle}</div>' +
                 '  <div>${CompanyName}</div>' +
                 '  <div>${Country}</div>' +
                 ' <div class="pt-1"><img  src="https://demos.telerik.com/kendo-ui/content/web/Customers/${CustomerID}.jpg" /></div>' +
-                ' # if (ContactTitle==="Owner") { # <div class="my-3 small">For ContactTitle=Owner, we are going to inject some additional text to demonstrate cards that have more content than the other cards</div> # } #' +
+                //' # if (ContactTitle==="Owner") { # <div class="my-3 small">For ContactTitle=Owner, we are going to inject some additional text to demonstrate cards that have more content than the other cards</div> # } #' +
                 '</div>',
             dataSource: testDS9
         });

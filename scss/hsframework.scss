@@ -9,12 +9,14 @@
 
 @import "functions";
 @import "variables";
-@import "fonts";
-@import "mixins";
-@import "utilities";
 
-
+// import all kendo code, which will include bootstrap variables and functions
 @import "../node_modules/@progress/kendo-theme-bootstrap/scss/all";
+
+@import "fonts";
+@import "mixins";       // includes some bootstrap 4 mixins 
+@import "utilities";    // includes some bootstrap 4 utilities.
+
 
 html {
     font-family: sans-serif;
