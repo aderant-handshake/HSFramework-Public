@@ -17,6 +17,7 @@ Your best references for this framework are:
 * [Modules](#Modules)
   * [User Profile Cards](#user-profile-cards)
   * [Kendo Tab Styles](#kendo-tab-styles)
+  * [HS Layouts](#hs-layouts)
 
 
 ## Usage
@@ -144,3 +145,10 @@ where tabstrip = "hs-tabstrip-fullwidth hs-tabstrip-uppercase" in the Applicatio
 
 ##### Tabstrip Sample
 ![tabstrip](src/images/tabstrip-view1.jpg)  
+
+### HS Layouts
+The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Reponsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
+
+All layouts are responsive, in that on mobile devices that will appear as stacked elements. 
+
+CSS Grids are the most straighforward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with approriate CSS.  [this is an excellent resource](https://css-tricks.com/snippets/css/complete-guide-grid/) if you are just starting with CSS grid.
