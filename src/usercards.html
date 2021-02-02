@@ -10,6 +10,7 @@
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
     <script src="demo.js"></script>
+
 </head>
 
 <body class="bg-body">
@@ -17,26 +18,28 @@
     <div class="h4 p-3 mb-3 text-center text-info">User Profile Card Samples</div>
     <div id="usercardtoolbar" class="mb-3"></div>
     <div class="d-flex k-justify-content-center">
-        <div class="k-card k-card-horizontal hs-userprofile-card">
-            <img class="k-card-image" src="https://thispersondoesnotexist.com/image" />
-            <div class="k-card-body k-card-vertical k-p-0">
-                <div class="k-card-header">
-                    <h4 class="k-card-title">Cameron Simmons, Partner</h4>
-                    <h5 class="k-card-subtitle">Intellectual Property, Chicago</h5>
-                </div>
-                <div class="hs-address-block">
+        <div class="hs-upc">
+            <div class="hs-upc-photo">
+                <img alt="" src="https://thispersondoesnotexist.com/image" />
+            </div>
+            <div class="hs-upc-header hs-upc-shade">
+                <div class="hs-upc-title">Cameron Simmons, Partner</div>
+                <div class="hs-upc-subtitle">Intellectual Property, Chicago</div>
+            </div>
+            <div class="hs-upc-details">
+                <div class="hs-upc-h-group">
                     <div>1919 North Main Street, Suite 6000</div>
                     <div>Chicago IL 60606</div>
                     <div>cameron.simmons@jlalaw.com</div>
                 </div>
-                <hr class="k-card-seperator" />
-                <div class="phones">
-                    <span class="p-office">512.555.1212 (o)</span>
-                    <span class="p-mobile"> 512.555.1212 (m)</span>
-                    <span class="p-fax">512.555.1212 (f)<span>
+                <div class="hs-upc-v-group k-mb-2">
+                    <span class="p-office">512.555.1212(o)</span>
+                    <span class="p-mobile">512.555.1212(m)</span>
+                    <span class="p-fax">512.555.1212(f)</span>
                 </div>
-                <hr class="k-card-seperator" />
-                <div class="k-card-actions k-card-actions-center">
+            </div>
+            <div class="hs-upc-footer hs-upc-shade-primary">
+                <div class="hs-upc-v-group">
                     <span class="k-button k-flat">E-Mail</span>
                     <span class="k-button k-flat">Bio Page</span>
                     <span class="k-button k-flat">LinkedIn</span>

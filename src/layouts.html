@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc Template</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center bg-info">HS Layouts</div>
+    <div id="some-toolbar" class="mb-3"></div>
+    <div class="component m-5">
+        <div class="hs-grid-magazine hs-grid-nogap content-left">
+            <div class="sidebar1 bg-primary p-3">This is one sidebar, where supporting information may go</div>
+            <div class="main bg-warning p-3">
+                <div>
+                    hs-grid-magazine defines a layout with the following elements:
+                    <ul>
+                        <li>sidebars (2) </li>
+                        <li>optional header</li>
+                        <li>optional footer</li>
+                        <li>main content area</li>
+                    </ul>
+                    <p>Additionally, you may use helper classes to alter the layout.
+                    </p>
+                    <ul>
+                        <li>hs-grid-topbars: position the sidebars next to each other (50/50) above the main content.
+                        </li>
+                        <li>hs-grid-content-left: position the main content to the left of the 2 sidebars rather than
+                            the
+                            right.</li>
+                        <li>hs-grid-nogap : may be used on any hs-grid* container to make the grid gap zero at all
+                            viewport
+                            sizes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar2 p-3 bg-secondary">
+                <div class="lead">Of note, classes applied to the header element are bg-success, h1, m-0, p-2 and
+                    text-center</div>
+            </div>
+            <div class="header">
+                <div class="bg-success">
+                    <div class="h1 m-0 p-2 text-center">This layout is in a container classed as hs-grid-magazine</div>
+                </div>
+            </div>
+            <div class="footer bg-danger p-3 d-flex justify-content-around">
+                <div>Thing 1 in Footer</div>
+                <div>This elements have classes d-flex and justitfy-content-around applied</div>
+                <div>Thing 2 in Footer</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component m-5">
+        <div class="hs-grid">
+            <div class="p-3 bg-secondary">This is an hs-grid, notice it has a gap between elements, which may be eliminated with hs-grid-nogap</div>
+            <div class="p-3 bg-light hs-grid-double">It will contain however many columns are in the markup, all will have an equal width. Though you may apply the classes hs-grid-double, triple or even quad to increase the width of an element</div>
+            <div class="p-3 bg-primary">note that using double or triple classes may cause the columns to wrap to a new row.</div>
+        </div>
+    </div>
+
+    <div class="component m-5">
+        <div class="hs-grid-84split">
+            <div class="sidebar1 p-3 bg-secondary">This is an hs-grid-84split</div>
+            <div class="main p-3 bg-light">It will contain a 2 column grid, where the first column is 4/12 the container width and the main conteiner is 8/12th the width. Takes it's name from the common bootstratp col-4 col-8 approach.</div>
+        </div>
+    </div>
+
+    <div class="component m-5">
+        <div class="hs-grid-48split">
+            <div class="sidebar1 p-3 bg-secondary">This is an hs-grid-48split</div>
+            <div class="main p-3 bg-light">it is just the reverse of the 84 split, in fact only the classname nees to be changed, the order of the html markup does not matter .</div>
+        </div>
+    </div>
+</body>
+
+</html>

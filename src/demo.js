@@ -78,6 +78,10 @@ jQuery(function () {
                     url: "index.html"
                 },
                 {
+                    text: "Layouts",
+                    url: "layouts.html"
+                },
+                {
                     text: "Tabs",
                     url: "tabs.html"
                 },
@@ -429,7 +433,7 @@ jQuery(function () {
                 {
                     type: "button",
                     togglable: true,
-                    text: "noshadow",
+                    text: "flat",
                     selected: false
                 },
                 {
@@ -456,25 +460,25 @@ jQuery(function () {
             items: [{
                     type: "button",
                     togglable: true,
-                    text: "slim",
+                    text: "stacked",
                     selected: false
                 },
                 {
                     type: "button",
                     togglable: true,
-                    text: "nopic",
+                    text: "compact",
                     selected: false
                 },
                 {
                     type: "button",
                     togglable: true,
-                    text: "picname",
+                    text: "nophoto",
                     selected: false
                 }
             ],
             toggle: function (e) {
-                $('.hs-userprofile-card').toggleClass('hs-userprofile-card-' + e.item.options.text);
-                var cl = $('.hs-userprofile-card').attr('class').split(' ');
+                $('.hs-upc').toggleClass('hs-upc-' + e.item.options.text);
+                var cl = $('.hs-upc').attr('class').split(' ');
                 classes = cl.filter(function (item, idx) {
                     return item.startsWith('hs');
                 });
