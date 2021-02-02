@@ -116,11 +116,11 @@ In addition to the section classes, the following css can alter the view for spe
 
 ### User Profile Cards
 ##### Standard
-![standardview](src/images/upc-standard-view.jpg)
+![standardview](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-standard-view.jpg)
 ##### Mobile 
-![mobile](src/images/upc-mobile-view.jpg)
+![mobile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-mobile-view.jpg)
 ##### Stacked 
-![mobile](src/images/upc-stacked-view.jpg) 
+![mobile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-stacked-view.jpg) 
 
 ### Kendo Tab Styles 
 The following classes are included to support useful customizations to kendo tabs that use appropriate bootstrap and kendo variables. They are each pre-fixed by hs-tabstrip- 
@@ -144,7 +144,7 @@ The following classes are included to support useful customizations to kendo tab
 where tabstrip = "hs-tabstrip-fullwidth hs-tabstrip-uppercase" in the Application Options Table
 
 ##### Tabstrip Sample
-![tabstrip](src/images/tabstrip-view1.jpg)  
+![tabstrip](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/tabstrip-view1.JPG)  
 
 ### HS Layouts
 The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Reponsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
