@@ -123,7 +123,7 @@ jQuery(function () {
                 },
                 {
                     text: "Readme Docs",
-                    url: "https://github.com/smchargue/HSConnect-20-Review"
+                    url: "https://github.com/smchargue/HSFramework"
                 },
                 // A test sub-item collection.            
                 {
