@@ -493,7 +493,7 @@ jQuery(function () {
      */
     jQuery(function () {
         $("#listviewcard0").kendoListView({
-            template: '<div class="card hs-box-150 px-2 py-0 my-2 text-center justify-content-center bg-light">' +
+            template: '<div class="k-card px-2 py-0 my-2 text-center justify-content-center bg-light">' +
                 ' <div class="h5 font-weight-bold">${ContactName}</div>' +
                 ' <div>${CompanyName}</div>'
                 //+ ' <div class="pt-1"><img style="width:50px" src="https://demos.telerik.com/kendo-ui/content/web/Customers/${CustomerID}.jpg" /></div>' 
@@ -502,7 +502,7 @@ jQuery(function () {
             dataSource: testDS9
         });
         $("#listviewcard1").kendoListView({
-            template: '<div class="card p-2 text-center bg-light">' +
+            template: '<div class="k-card p-2 text-center bg-light">' +
                 '  <div>${ContactName}</div>' +
                 '  <div>Job Title: ${ContactTitle}</div>' +
                 '  <div>${CompanyName}</div>' +

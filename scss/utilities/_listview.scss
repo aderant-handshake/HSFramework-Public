@@ -16,3 +16,15 @@
         }
     }
 } 
+
+.k-listview.k-card-deck {
+    > .k-listview-content {
+        @extend .k-card-deck 
+    }
+}
+
+.k-listview.hs-grid {
+    > .k-listview-content {
+        @extend .hs-grid
+    }
+}
