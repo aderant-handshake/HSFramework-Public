@@ -1,0 +1,143 @@
+$action-tile-width: 320px;
+$action-center-item-width: 200px;
+
+@mixin action-container() {
+    // common properties for all action containers - button, tile and action-center 
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: $cell-padding-y $cell-padding-x;
+    color: $component-color;
+}
+
+.hs-action-header {
+    color: $component-color;
+    font-weight: 700;
+}
+
+.hs-action-metric {
+    font-size: 3rem;
+    font-weight: 500;
+    color: $info;
+}
+
+.hs-action-group-title {
+    font-size: $lead-font-size;
+    font-weight: 700;
+    color: $component-color;
+    border-bottom: 2px solid $primary;
+    padding: $header-cell-padding-y $header-cell-padding-x;
+}
+
+@each $color,
+$value in $theme-colors {
+    &.hs-action-#{$color} {
+        .hs-action-metric,
+        .hs-action-icon {
+            color: $value;
+        }
+    }
+}
+
+.hs-action-tiles-list {
+    display: grid;
+    grid-gap: 1em;
+}
+
+.hs-action-tiles-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($action-tile-width, 1fr));
+    grid-gap: 0.5em;
+}
+
+.hs-action-button {
+    display: flex;
+    flex-direction: column;
+    @include action-container();
+    width: $action-tile-width / 2;
+
+    .hs-action-metric {
+        font-size: 2.8rem;
+        align-self: center;
+    }
+
+    .hs-action-todo {
+        align-self: center;
+        text-align: center;
+    }
+
+}
+
+.hs-action-tile {
+    display: flex;
+    flex-flow: column nowrap;
+    @include action-container();
+    width: $action-tile-width;
+
+    .hs-action-detail {
+        font-size:$small-font-size;
+    }
+
+    .hs-action-todo {
+        margin-top: auto;
+        margin-bottom:0.5em;
+        padding: 0.25rem 0.25rem;
+        border: 1px solid $border-color;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 6px;
+
+        &.no-shadow {
+            box-shadow: none;
+        }
+
+        &:hover {
+            background-color: $hovered-bg;
+            color: $hovered-text;
+        }
+    }
+}
+
+.hs-action-center {
+    @include action-container();
+    width: 100%;
+    padding:0 0; 
+    align-self:start;
+    
+    .hs-action-center-items {
+        padding: $cell-padding-y $cell-padding-x;
+        background-color:$light;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, $action-center-item-width);
+        grid-gap: 1em;
+
+        .hs-action-item {
+            width: $action-center-item-width;
+            display: grid;
+            grid-column-gap: .5rem;
+            grid-template-columns: 22px 1fr;
+            grid-template-rows: 1.4em 1.1rem;
+            overflow: hidden;
+            grid-template-areas: "a b""a c";
+
+            .hs-action-icon {
+                grid-area: a;
+                align-self: center;
+
+                >* {
+                    font-size: 22px;
+                }
+            }
+
+            .hs-action-title {
+                grid-area: c;
+                font-size: $small-font-size;
+            }
+
+            .hs-action-metric {
+                align-self: center;
+                grid-area: b;
+                font-size: $lead-font-size;
+                font-weight: 500;
+                color: $info;
+            }
+        }
+    }
+}

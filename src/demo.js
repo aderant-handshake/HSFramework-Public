@@ -122,6 +122,10 @@ jQuery(function () {
                     url: "usercards.html"
                 },
                 {
+                    text: "Action Tiles",
+                    url: "actiontiles.html"
+                },
+                {
                     text: "Readme Docs",
                     url: "https://github.com/smchargue/HSFramework"
                 },
@@ -521,4 +525,53 @@ jQuery(function () {
         })
 
     });
+    randomText();
 });
+var ppp; 
+function randomText() {
+    function rnd(min,max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    // populate random lorem ipsom where rt = a title with one line of text and 
+    // .rc is a content block with 1 to 6 paragraph blocks.
+    _url = "https://www.randomtext.me/api/lorem/p-64/5-30";
+    jQuery.get(_url, function (data) {
+      var p = data.text_out;
+      paragraphs = p.split("\r");
+      ppp = paragraphs;
+
+      jQuery(".rt").each(function() {
+        var $elem = jQuery(this);
+        var maxwords = $elem.data('max') || 7;
+        var minwords = $elem.data('min') || 2;
+        // pick one random paragraph...
+        var p = rnd(1, paragraphs.length-1)
+        var t = paragraphs[p];
+        // extracts x number of max words from it.  
+        var wordcnt = rnd(minwords, maxwords);
+        t = jQuery(t).text().split(' ').slice(0,wordcnt).join(' ');
+        $elem.text(t);
+      });
+
+      jQuery(".rc").each(function() {
+        var $elem = jQuery(this);
+        var c = '';
+        var max = $elem.data('max') || 6;
+        for (i = 0; i <  Math.floor(Math.random() * max+1); i++) {
+          c += paragraphs[Math.floor(Math.random() * paragraphs.length)]
+        }
+        $elem.html(c);
+      });
+
+      jQuery(".rnum").each(function() {
+        var $elem = jQuery(this);
+        var max = $elem.data('max') || 100;
+        var min = $elem.data('min') || 10;
+        var fmt = $elem.data('fmt') || 'n0';
+        var value = rnd(min,max); 
+        var vstr = kendo.toString(value,fmt);
+        $elem.html(vstr);
+      });
+
+    });
+  }
