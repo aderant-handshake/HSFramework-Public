@@ -266,8 +266,8 @@ A action item may contain one of more of the following elements:
 * Description
 * To Do link
 
-Below is one example. 
-![tabstrip](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/actionitem.jpg.jpg)  
+Here is an action tile 
+![atile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-item.jpg)  
 
 ### Action Metric Colors
 All Bootstrap Color Theme names are usable to control the color of the action metric and icon.
@@ -288,6 +288,10 @@ Actions may be grouped as:
 * A horizontal list using the class **hs-action-tiles-group**
 * A box of smaller action "buttons" in the class **hs-action-tiles-center** 
 
+Here is a group of action buttons, arranged in an action center
+![abtn](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-center.jpg)  
+
+### HTML Markup
 Below are some sample markups, which can be see in the [live demo site.](https://smchargue.github.io/HSFramework/src/actiontiles.html)
 
 ```html
