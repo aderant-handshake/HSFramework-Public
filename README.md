@@ -271,7 +271,7 @@ A action item may contain one of more of the following elements:
 ![atile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-item.jpg)  
 
 ### Action Metric Colors
-All Bootstrap Color Theme names are usable to control the color of the action metric and icon.
+All Bootstrap Color Theme names are available to control the color of the action metric and icon.
 
 *   Primary
 *   Secondary
@@ -287,7 +287,10 @@ Actions may be grouped as:
 
 * A vertical list using the class **hs-action-tiles-list**
 * A horizontal list using the class **hs-action-tiles-group**
-* A box of smaller action "buttons" in the class **hs-action-tiles-center** 
+* A box of smaller action icons in the class **hs-action-tiles-center** 
+* A smaller action item using **hs-action-button** will display just a title and a metric. 
+
+> You can add the class hs-action-sugar to the top level grouping for 
 
 > Sample: an action center
 
