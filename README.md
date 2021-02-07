@@ -20,6 +20,7 @@ Your best references for this framework are:
   * [User Profile Cards](#user-profile-cards)
   * [Kendo Tab Styles](#kendo-tab-styles)
   * [HS Layouts](#hs-layouts)
+  * [HS Action Items](#hs-action-items)
 * [Bootstrap](#bootstrap) 
 * [Kendo Listview Issue](#kendo-listview-issue)
 
@@ -255,3 +256,52 @@ $listview-content-classes:
     }
 }
 ```
+## HS Action Items
+Action Tiles are a way to present the state of some business activity and a way to act on that state.  This could be conflicts that need to be checked, bills to approve, time entry that is late as examples.
+
+A action item may contain one of more of the following elements:
+
+* Title
+* Metric
+* Description
+* To Do link
+
+Below is one example. 
+![tabstrip](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/actionitem.jpg.jpg)  
+
+### Action Metric Colors
+All Bootstrap Color Theme names are usable to control the color of the action metric and icon.
+
+*   Primary
+*   Secondary
+*   Info (default)
+*   Success
+*   Warning
+*   Danger
+*   Dark
+*   Light
+
+### Action Groupings
+Actions may be grouped as:
+
+* A vertical list using the class **hs-action-tiles-list**
+* A horizontal list using the class **hs-action-tiles-group**
+* A box of smaller action "buttons" in the class **hs-action-tiles-center** 
+
+Below are some sample markups, which can be see in the [live demo site.](https://smchargue.github.io/HSFramework/src/actiontiles.html)
+
+```html
+<div class="hs-action-tile hs-action-danger">
+    <div class="hs-action-header">Missing Time</div>
+    <div class="hs-action-metric">3 days</div>
+    <div class="hs-action-detail">Please enter your time ASAP</div>
+    <div class="hs-action-todo">Open iTimekeep</div>
+</div>
+```
+```html
+<div class="hs-action-item hs-action-success">
+    <div class="hs-action-icon"><span class="k-icon k-i-share"></span> </span> </div> <div
+            class="hs-action-title">Interdum agestas ut lectus</div>
+    <div class="hs-action-metric">1.2K</div>
+</div>
+``` 
