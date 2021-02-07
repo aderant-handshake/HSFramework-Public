@@ -266,7 +266,8 @@ A action item may contain one of more of the following elements:
 * Description
 * To Do link
 
-Here is an action tile 
+> Sample: an action tile
+
 ![atile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-item.jpg)  
 
 ### Action Metric Colors
@@ -288,7 +289,8 @@ Actions may be grouped as:
 * A horizontal list using the class **hs-action-tiles-group**
 * A box of smaller action "buttons" in the class **hs-action-tiles-center** 
 
-Here is a group of action buttons, arranged in an action center
+> Sample: an action center
+
 ![abtn](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-center.jpg)  
 
 ### HTML Markup
