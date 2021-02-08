@@ -141,3 +141,23 @@ $value in $theme-colors {
         }
     }
 }
+
+// eye candy folder corner effect on hover
+.hs-action-sugar {
+    .hs-action-button,.hs-action-tile {
+        position:relative;
+        &:hover {
+            border-top-right-radius:26px;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -2px;
+                border-width: 0 18px 20px 0;
+                border-style: solid;
+                border-color: $border-color  #fff;
+            }
+        }
+    }
+
+}

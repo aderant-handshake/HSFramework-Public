@@ -38786,6 +38786,24 @@ div.tester > div:hover {
   color: #5c6466;
 }
 
+.hs-action-sugar .hs-action-button, .hs-action-sugar .hs-action-tile {
+  position: relative;
+}
+
+.hs-action-sugar .hs-action-button:hover, .hs-action-sugar .hs-action-tile:hover {
+  border-top-right-radius: 26px;
+}
+
+.hs-action-sugar .hs-action-button:hover:before, .hs-action-sugar .hs-action-tile:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -2px;
+  border-width: 0 18px 20px 0;
+  border-style: solid;
+  border-color: #dee2e6 #fff;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
