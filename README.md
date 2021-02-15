@@ -1,7 +1,7 @@
 # Handshake CSS Framework Project 2021
 Last update February 1, 2021
 
-A live demo of this framework can be reviewed [here](https://smchargue.github.io/HSFramework/src/index.html)
+A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework/src/index.html)
 
 ## Purpose
 This project is a ground up rebuild of the Handshake UI Framework that includes SASS modules from: 
