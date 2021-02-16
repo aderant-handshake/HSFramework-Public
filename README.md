@@ -44,7 +44,7 @@ Install and confirure node.js/gulp if you don't already have it on your build ma
 
 ```
 npm install
-npm --global gulp
+npm install --global gulp
 
 gulp build | watch
 ```
