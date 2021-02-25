@@ -172,12 +172,14 @@ $value in $theme-colors {
 }
 
 // Block Tile Containers
+.hs-listview-tile-grid > .k-listview-content, 
 .hs-tile-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, $tilesize);
     grid-gap: 1em;
 }
 
+.hs-listview-tile-grid-sm > .k-listview-content, 
 .hs-tile-grid-sm {
     @extend .hs-tile-grid;
     grid-template-columns: repeat(auto-fill, $tilesize-sm);
@@ -188,6 +190,7 @@ $value in $theme-colors {
     }
 }
 
+.hs-listview-tile-grid-lg > .k-listview-content, 
 .hs-tile-grid-lg {
     @extend .hs-tile-grid;
     grid-template-columns: repeat(auto-fill, $tilesize-lg);

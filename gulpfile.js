@@ -5,7 +5,8 @@ const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 
-const dist = './release'
+//const dist = './release'
+const dist = 'c:/program files/handshake/handshakethemes/themes/hsframework';
 
 gulp.task('build', function () {
 	return gulp.src("./scss/hsframework.scss", {
