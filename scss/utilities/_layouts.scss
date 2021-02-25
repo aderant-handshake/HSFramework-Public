@@ -40,12 +40,6 @@ $grid-max: 2400px;
   grid-gap: 0 !important;
 }
 
-.hs-grid-center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .hs-grid {
   @include hs-grid-common();
 

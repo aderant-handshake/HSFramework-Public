@@ -122,8 +122,8 @@ jQuery(function () {
                     url: "usercards.html"
                 },
                 {
-                    text: "Action Tiles",
-                    url: "actiontiles.html"
+                    text: "Tiles",
+                    url: "tiles.html"
                 },
                 {
                     text: "Readme Docs",

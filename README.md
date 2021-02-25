@@ -11,7 +11,7 @@ This project is a ground up rebuild of the Handshake UI Framework that includes 
 
 #### References
 Your best references for this framework are: 
-* [Bootstrap 4 documenation site](https://getbootstrap.com/docs/4.5/layout/overview/).  
+* [Bootstrap 4 documentation site](https://getbootstrap.com/docs/4.5/layout/overview/).  
 * [Kendo UI for jQuery Styles and Appearance](https://docs.telerik.com/kendo-ui/styles-and-layout/sass-themes)
 
 # Table of Contents 
@@ -20,7 +20,7 @@ Your best references for this framework are:
   * [User Profile Cards](#user-profile-cards)
   * [Kendo Tab Styles](#kendo-tab-styles)
   * [HS Layouts](#hs-layouts)
-  * [HS Action Items](#hs-action-items)
+  * [HS Action Items and Tiles](#hs-action-items-and-tiles)
 * [Bootstrap](#bootstrap) 
 * [Kendo Listview Issue](#kendo-listview-issue)
 
@@ -34,7 +34,7 @@ All you need is the GitHub project folders and files.  You are not required to d
 If you do plan on updating this repository, make sure that you understand how to fork the project and create a pull request for the updates. 
 
 #### Setup your machine to support a node.js/gulp build workflow 
-Install and confirure node.js/gulp if you don't already have it on your build machine:
+Install and configure node.js/gulp if you don't already have it on your build machine:
 
 * Install [node.js](https://nodejs.org/en)
 * Launch node.js command prompt, go to local work folder (the local drive/folder where you cloned this repository)
@@ -115,7 +115,7 @@ In addition to the section classes, the following css can alter the view for spe
 *   **h-group, v-group**:  display the content in the section as either a vertical or horizontal list 
 *   **stacked**:  sets all sections in a single vertical grid 
 *   **compact**:  set the photo and header on top, and puts details and footer stacked beneath, this is also the layout that will be used on small viewport 
-*   **title, subtitle** - child elements of the header section, will expand font size and spacing on medium and greater viewports.
+*   **title, subtitle** - child elements of the header section, will expand font size and spacing on medium and greater view ports.
 
 > Note: except for **hs-upc-photo**, the content contained in a particular section is arbitrary.  If your use-case doesn't require a section, like a footer, then supply a grid-template-areas rule that leaves that section out.  The photo section expect a photo, if you do not have/need one, then add hs-upc-nophoto class to the root element.
 
@@ -134,12 +134,12 @@ The following classes are included to support useful customizations to kendo tab
 * **uppercase**: Sets the text of the tabs to be in Uppercase.
 * **full**:  Tabs will use the entire width of the parent container. Borders are removed, except for the bottom border of the active tab.
 * **bicolor**:  Sets the Active Tab to a background of $tabcolor(a), and all inactive tabs to $tabcolor(b). Text color is set using a function to determine optimim color based on the background-color. A slight box-shadow is set on the active tab.
-* **fullcolor**:  Sets the background color of each tab to $tabcolor(a..e), then repeats. The opacticy of inactive tabs is $tabcolor(opacity), while the opacity for active and onhover tabs is 1 A slight box-shadow is set on the active tab. 
+* **fullcolor**:  Sets the background color of each tab to $tabcolor(a..e), then repeats. The opacity of inactive tabs is $tabcolor(opacity), while the opacity for active and on hover tabs is 1 A slight box-shadow is set on the active tab. 
 * **rounded**:  Set a radius to the top left/right corners. Radius is defined in the $tabcolor(radius)
 * **radio**:  Renders the tabs as a set of radio control buttons
 * **shaded**:  Tabs will use full width of the parent container. Active tab will use $tabcolor(a) as the background. Hover backgroud will be $tabcolor(b).
 * **flat**:  Removes any box-shadow that may be set by another class such as hs-tabstrip-fullcolor.
-* **flush**:  Removes padding and border of child elements such as a HTML5Grid or a list-group inside an HTML5ListView when it is a direct deciendent to the active tab container
+* **flush**:  Removes padding and border of child elements such as a HTML5Grid or a list-group inside an HTML5ListView when it is a direct descendent to the active tab container
 
 > **TIPS** Many of these classes may be combined like fullwidth & fullcolor, but not all will make sense like fullcolor and bicolor. For consistency in your site, you may elect to use and Application Option variable to define on or more class name that may be used in the skin.
  
@@ -152,11 +152,11 @@ where tabstrip = "hs-tabstrip-fullwidth hs-tabstrip-uppercase" in the Applicatio
 ![tabstrip](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/tabstrip-view1.jpg)  
 
 ### HS Layouts
-The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Reponsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
+The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Responsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
 
 All layouts are responsive, in that on mobile devices that will appear as stacked elements. 
 
-CSS Grids are the most straighforward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with approriate CSS.  [this is an excellent resource](https://css-tricks.com/snippets/css/complete-guide-grid/) if you are just starting with CSS grid.
+CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [this is an excellent resource](https://css-tricks.com/snippets/css/complete-guide-grid/) if you are just starting with CSS grid.
 
 ## Bootstrap
 This framework is built from the **@Progress/kendo-bootstrap-theme** npm package.  It includes many, but not all, bootstrap utilities and modules. Modules  were excluded if:
@@ -209,9 +209,9 @@ This framework is built from the **@Progress/kendo-bootstrap-theme** npm package
 ## Kendo Listview Issue
 With Kendo build v2020.2.513, which is included with Handshake 3.9.5 kendo fixed an inconsistency in the listview structure by adding a "middle" element between the listview parent node, and the individual list items. 
 
-This means that a class name that is used to control direct decendants, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
+This means that a class name that is used to control direct decedents, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
 
-Before 3.9.5 the code below would have caused the child elements to be dislayed in a css grid. 
+Before 3.9.5 the code below would have caused the child elements to be displayed in a css grid. 
 ```html
 <div class="k-listview d-grid">
     <div>list element 1</div>
@@ -236,7 +236,7 @@ The following SASS code is included to basically force the rules for the classes
 
 ```scss
 $listview-content-classes: 
-    hs-grid, hs-grid-center-content, list-group, k-card-deck,
+    hs-grid, list-group, k-card-deck,
     k-card-list, k-card-group, k-card-vertical, k-card-horizontal,
     d-flex, flex-row, flex-column, flex-row-reverse,
     flex-column-reverse, flex-wrap, flex-nowrap, flex-wrap-reverse,
@@ -256,7 +256,49 @@ $listview-content-classes:
     }
 }
 ```
-## HS Action Items
+## HS Action Items and Tiles
+
+### Tiles
+Tiles display child elements in a boxed container.   Elements will be spaced and centered evenly in the container.  
+
+You may use hs-tile as a standalone container or grouped in a grid using hs-tile-grid. 
+
+Tiles may be small, medium or large.
+
+* hs-tile-sm : 150px * 0.75
+* hs-tile    : 150px
+* hs-tile-lg : 150px * 1.50
+
+Use hs-tile-grid-sm or hs-tile-grid-lg to affect all tiles in the grid container. 
+
+All Bootstrap Color Theme names are available to control the color of the tile
+
+*   Primary
+*   Secondary
+*   Info (default)
+*   Success
+*   Warning
+*   Danger
+*   Dark 
+*   Light
+
+To set the color use the class hs-tile-grid-{themecolor} or hs-tile-{themecolor}
+
+#### Basic Markup for Container Tiles 
+```html
+<div class="hs-tile-grid">
+    <div class="hs-tile" onclick="someaction();">
+        <div>Some Title</div>
+        <div><span class="k-icon k-i-image k-icon-xl"></span></div>
+    </div>
+    <div class="hs-tile" onclick="someaction();">
+        <div>Some Other Title</div>
+        <div><span class="k-icon k-i-image k-icon-xl"></span></div>
+    </div>
+</div>
+```
+
+### Action Tiles
 Action Tiles are a way to present the state of some business activity and a way to act on that state.  This could be conflicts that need to be checked, bills to approve, time entry that is late as examples.
 
 A action item may contain one of more of the following elements:

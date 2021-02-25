@@ -14,8 +14,66 @@
 
 <body class="bg-body">
     <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center bg-info">Container Tiles</div>
+
+    <div class="hs-grid mx-3 mb-2">
+
+        <div class="hs-tile-grid hs-tile-grid-sm">
+            <div class="hs-tile  hs-tile-primary" onclick="alert('hello world.');">
+                <div>Primary</div>
+                <div class="small">entire container should be clickable</div>
+            </div>
+            <div class="hs-tile hs-tile-secondary">
+                <div>overflow text will truncate, like this is, so be mindful of what you put in it</div>
+            </div>
+            <div class="hs-tile hs-tile-success">
+                <div>success</div>
+                <div>
+                    <span class="k-icon k-i-image k-icon-xl"></span>
+                </div>
+            </div>
+            <div class="hs-tile hs-tile-warning">
+                <div>warning</div>
+                <div>
+                    <span class="k-icon k-i-book k-icon-lg"></span>
+                </div>
+            </div>
+            <div class="hs-tile hs-tile-danger">
+                <div>danger</div>
+                <div>
+                    <span class="k-icon k-i-calendar-date k-icon-md"></span>
+                </div>
+            </div>
+            <div class="hs-tile hs-tile-info">
+                <div>info</div>
+            </div>
+            <div class="hs-tile hs-tile-light">
+                <div>light</div>
+            </div>
+        </div>
+
+        <div class="hs-tile-grid hs-tile-grid-success">
+            <div class="hs-tile" onclick="alert('hello world.');">
+                <div>Element 1</div>
+                <div>Element 2 - Normal Size Tile</div>
+            </div>
+            <div class="hs-tile hs-tile-danger">
+                <div>
+                    Override this Tile Color
+                </div>
+                <div>
+                    <span class="k-icon k-i-image k-icon-xl"></span>
+                </div>
+            </div>
+            <div class="hs-tile">
+                <div>Share the size and color setting </div>
+            </div>
+        </div>
+    </div>
+
     <div class="h4 p-3 mb-3 text-center bg-info">HS Action Items</div>
     <div id="some-toolbar" class="mb-3"></div>
+
     <div class="mx-5">
         <div class="hs-grid">
             <div class="">
@@ -23,38 +81,47 @@
                 <p class="small">Smaller foot print displaying only a metric and title.</p>
                 <div class="d-flex hs-action-sugar">
                     <div class="hs-action-button hs-action-success">
-                        <div class="hs-action-metric"><span class="rnum" data-min="1000" data-max="9999" ></span></div>
-                        <div class="hs-action-todo"><span class="rt small k-button k-flat" data-max="3"></span></div>
+                        <div class="hs-action-metric"><span class="rnum" data-min="1000" data-max="9999"></span>
+                        </div>
+                        <div class="hs-action-todo"><span class="rt small k-button k-flat" data-max="3"></span>
+                        </div>
                     </div>
                     <div class="ml-2 hs-action-button hs-action-danger">
-                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="99" ></span></div>
-                        <div class="hs-action-todo"><span class="rt small k-button k-flat" data-max="3"></span></div>
+                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="99"></span></div>
+                        <div class="hs-action-todo"><span class="rt small k-button k-flat" data-max="3"></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="mt-2 p-2 bg-primary">Action Tiles</div>
-                <p class="small">Action Tiles display each action item as a seperate tile. Tiles are expected to have a
+                <p class="small">Action Tiles display each action item as a seperate tile. Tiles are expected to
+                    have a
                     fixed width
-                    which will default to 320px, defined as $action-tile-width in the SASS build. This may be altered
-                    ad-hoc. The list below is contained in and element with class hs-action-tiles-list which will stack
+                    which will default to 320px, defined as $action-tile-width in the SASS build. This may be
+                    altered
+                    ad-hoc. The list below is contained in and element with class hs-action-tiles-list which will
+                    stack
                     the action tiles.</p>
 
                 <div class="hs-action-tiles-list">
                     <div class="hs-action-tile">
                         <div class="hs-action-header"><span class="rt"></span></div>
-                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days</div>
+                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days
+                        </div>
                         <div class="hs-action-detail"><span data-max="1" class="rc"></span></div>
                         <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                     </div>
                     <div class="hs-action-tile hs-action-warning">
                         <div class="hs-action-header"><span class="rt"></span></div>
-                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days</div>
+                        <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days
+                        </div>
                         <div class="hs-action-detail"></div>
                         <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                     </div>
                     <div class="hs-action-tile hs-action-danger">
                         <div class="hs-action-header"><span class="rt"></span></div>
-                        <div class="hs-action-metric"><span class="rnum" data-min="50000" data-max="99999" data-fmt="c0"></span></div>
+                        <div class="hs-action-metric"><span class="rnum" data-min="50000" data-max="99999"
+                                data-fmt="c0"></span></div>
                         <div class="hs-action-detail"><span data-max="3" class="rc"></span></div>
                         <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                     </div>
@@ -70,36 +137,37 @@
                     <div class="p-2 bg-primary">Action Center</div>
                     <div class="p-2 hs-grid" style="grid-template-columns:repeat(auto-fill, 460px);grid-gap:1em;">
                         <div class="hs-action-center">
-                            <div class="hs-action-group-title">This is the (optional) title of the action center</div>
+                            <div class="hs-action-group-title">This is the (optional) title of the action center
+                            </div>
                             <div class="hs-action-center-items">
                                 <div class="hs-action-item hs-action-success">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-share"></span> </div> <div
-                                            class="hs-action-title">hs action item success</div>
+                                    <div class="hs-action-icon"><span class="k-icon k-i-share"></span> </div>
+                                    <div class="hs-action-title">hs action item success</div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
                                 <div class="hs-action-item hs-action-danger">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-user"></span> </div> <div
-                                            class="hs-action-title">hs action item danger</div>
+                                    <div class="hs-action-icon"><span class="k-icon k-i-user"></span> </div>
+                                    <div class="hs-action-title">hs action item danger</div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
                                 <div class="hs-action-item hs-action-warning">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-rss"></span> </div> <div
-                                            class="hs-action-title">hs action item warning</div>
+                                    <div class="hs-action-icon"><span class="k-icon k-i-rss"></span> </div>
+                                    <div class="hs-action-title">hs action item warning</div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
                                 <div class="hs-action-item hs-action-info">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-file-pdf"></span> </div> <div
-                                            class="hs-action-title">hs action item info</div>
+                                    <div class="hs-action-icon"><span class="k-icon k-i-file-pdf"></span> </div>
+                                    <div class="hs-action-title">hs action item info</div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
                                 <div class="hs-action-item hs-action-primary">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-globe"></span> </div> <div
-                                            class="hs-action-title">hs action item primary</div>
+                                    <div class="hs-action-icon"><span class="k-icon k-i-globe"></span> </div>
+                                    <div class="hs-action-title">hs action item primary</div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
                                 <div class="hs-action-item hs-action-secondary">
-                                    <div class="hs-action-icon"><span class="k-icon k-i-bell"></span> </div> <div
-                                            class="hs-action-title">hs action item secondary and other long test text
+                                    <div class="hs-action-icon"><span class="k-icon k-i-bell"></span> </div>
+                                    <div class="hs-action-title">hs action item secondary and other long test text
                                     </div>
                                     <div class="hs-action-metric">35</div>
                                 </div>
@@ -107,7 +175,8 @@
                         </div>
                         <div class="small">
                             <p>The action center supports a smaller footprint of multiple items. The items will be
-                                arrange in a grid, with each item being 200px wide (set by the $action-center-item-width
+                                arrange in a grid, with each item being 200px wide (set by the
+                                $action-center-item-width
                                 sass variable)</p>
                             <p>You can leave the border off the title by applying the class border-0; which works in
                                 most cases where there is a default border you don't want.</p>
@@ -116,25 +185,29 @@
                 </div>
                 <div>
                     <div class="p-2 bg-primary">Action Group</div>
-                    <p class="small">hs-actions-tile-group will distribute the tiles horizontally. Each tile will be the
+                    <p class="small">hs-actions-tile-group will distribute the tiles horizontally. Each tile will be
+                        the
                         height of the tallest item.
-                        The "todo" button will be at the bottom. </p>
+                        The "todo" button will be at the bottom. These tiles use a class name "hs-action-sugar" which produces a folded corner effect when you hover over the tile.</p>
                     <div class="hs-action-tiles-group hs-action-sugar">
                         <div class="hs-action-tile hs-action-success">
                             <div class="hs-action-header"><span class="rt"></span></div>
-                            <div class="hs-action-metric"><span class="rnum" data-min="50000" data-max="99999" data-fmt="c0"></span></div>
+                            <div class="hs-action-metric"><span class="rnum" data-min="50000" data-max="99999"
+                                    data-fmt="c0"></span></div>
                             <div class="hs-action-detail"><span data-max="1" class="rc"></span></div>
                             <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                         </div>
                         <div class="hs-action-tile hs-action-warning">
                             <div class="hs-action-header"><span class="rt"></span></div>
-                            <div class="hs-action-metric"><span class="rnum" data-min="100000" data-max="999999" data-fmt="c0"></span></div>
+                            <div class="hs-action-metric"><span class="rnum" data-min="100000" data-max="999999"
+                                    data-fmt="c0"></span></div>
                             <div class="hs-action-detail"><span data-max="1" class="rc"></span></div>
                             <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                         </div>
                         <div class="hs-action-tile hs-action-danger">
                             <div class="hs-action-header"><span class="rt"></span></div>
-                            <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days</div>
+                            <div class="hs-action-metric"><span class="rnum" data-min="1" data-max="31"></span> days
+                            </div>
                             <div class="hs-action-detail"><span data-max="1" class="rc"></span></div>
                             <div class="hs-action-todo"><span class="rt" data-max="5"></span></div>
                         </div>
@@ -146,7 +219,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
