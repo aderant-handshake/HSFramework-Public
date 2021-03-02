@@ -18,6 +18,11 @@
 @import "utilities";    // includes some bootstrap 4 utilities.
 
 
+// any div in a handshake component that has an onclick propery, make the cursor a pointer...
+div[__hsrootnode] div[onclick] {
+    cursor: pointer;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;

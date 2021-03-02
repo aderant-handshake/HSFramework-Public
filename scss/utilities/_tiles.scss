@@ -35,7 +35,6 @@ $tilesize-lg: $tilesize * 1.5;
 @each $color,
 $value in $theme-colors {
     &.hs-action-#{$color} {
-
         .hs-action-metric,
         .hs-action-icon {
             color: $value;
@@ -106,14 +105,19 @@ $value in $theme-colors {
     padding: 0 0;
     align-self: start;
 
+    .k-listview-content, 
     .hs-action-center-items {
-        padding: $cell-padding-y $cell-padding-x;
+        padding: $cell-padding-y - .25rem $cell-padding-x - .25rem;
         background-color: $light;
         display: grid;
         grid-template-columns: repeat(auto-fit, $action-center-item-width);
         grid-gap: 1em;
 
         .hs-action-item {
+            padding:.25rem;
+            &:hover {
+                background-color: darken($light, 10%);
+            }
             width: $action-center-item-width;
             display: grid;
             grid-column-gap: .5rem;
