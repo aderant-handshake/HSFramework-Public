@@ -1,7 +1,7 @@
 # Handshake CSS Framework Project 2021
 Last update February 1, 2021
 
-A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework-Public/src/index.html)
+A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework/src/index.html)
 
 ## Purpose
 This project is a ground up rebuild of the Handshake UI Framework that includes SASS modules from: 
@@ -23,6 +23,8 @@ Your best references for this framework are:
   * [HS Action Items and Tiles](#hs-action-items-and-tiles)
 * [Bootstrap](#bootstrap) 
 * [Kendo Listview Issue](#kendo-listview-issue)
+* [Helpers](#Helpers)
+  * [Font Icon Helpers](#font-icon-helpers)
 
 
 ## Usage
@@ -121,11 +123,11 @@ In addition to the section classes, the following css can alter the view for spe
 
 ### User Profile Cards
 ##### Standard
-![standardview](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-standard-view.jpg)
+![standardview](images/upc-standard-view.jpg)
 ##### Mobile 
-![mobile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-mobile-view.jpg)
+![mobile](images/upc-mobile-view.jpg)
 ##### Stacked 
-![mobile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/upc-stacked-view.jpg) 
+![mobile](images/upc-stacked-view.jpg) 
 
 ### Kendo Tab Styles 
 The following classes are included to support useful customizations to kendo tabs that use appropriate bootstrap and kendo variables. They are each pre-fixed by hs-tabstrip- 
@@ -140,6 +142,7 @@ The following classes are included to support useful customizations to kendo tab
 * **shaded**:  Tabs will use full width of the parent container. Active tab will use $tabcolor(a) as the background. Hover backgroud will be $tabcolor(b).
 * **flat**:  Removes any box-shadow that may be set by another class such as hs-tabstrip-fullcolor.
 * **flush**:  Removes padding and border of child elements such as a HTML5Grid or a list-group inside an HTML5ListView when it is a direct descendent to the active tab container
+* **hs-tabstrip-cleanleft**: Provides a cleaner/minimal vertical-left tab interface. 
 
 > **TIPS** Many of these classes may be combined like fullwidth & fullcolor, but not all will make sense like fullcolor and bicolor. For consistency in your site, you may elect to use and Application Option variable to define on or more class name that may be used in the skin.
  
@@ -149,7 +152,9 @@ The following classes are included to support useful customizations to kendo tab
 where tabstrip = "hs-tabstrip-fullwidth hs-tabstrip-uppercase" in the Application Options Table
 
 ##### Tabstrip Sample
-![tabstrip](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/tabstrip-view1.jpg)  
+![tabstrip](images/tabstrip-view1.jpg)  
+
+![vertical-tabs](images/hs-tabstrip-cleanleft.png)
 
 ### HS Layouts
 The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Responsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
@@ -211,51 +216,9 @@ With Kendo build v2020.2.513, which is included with Handshake 3.9.5 kendo fixed
 
 This means that a class name that is used to control direct decedents, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
 
-Before 3.9.5 the code below would have caused the child elements to be displayed in a css grid. 
-```html
-<div class="k-listview d-grid">
-    <div>list element 1</div>
-    <div>list element 2</div>
-    <div>list element 3</div>
-</div>
-```
-With 3.9.5 kendo build 2020.2.513 or greater
-```html
-<div class="k-listview d-grid">
-    <div class="k-listview-content">
-        <div>list element 1</div>
-        <div>list element 2</div>
-        <div>list element 3</div>
-    </div>
-</div>
-```
-Now k-listview-content will have display:grid applied, but the list items will be unaffected. 
-
 #### Work around 
-The following SASS code is included to basically force the rules for the classes named added to the k-listview component to be pushed down to apply to the k-listview-content element. 
+This has been resolved by the dev team by moving any classnames or styles applied to the HTML5ListView Element down to the k-listview-content element. 
 
-```scss
-$listview-content-classes: 
-    hs-grid, list-group, k-card-deck,
-    k-card-list, k-card-group, k-card-vertical, k-card-horizontal,
-    d-flex, flex-row, flex-column, flex-row-reverse,
-    flex-column-reverse, flex-wrap, flex-nowrap, flex-wrap-reverse,
-    justify-content-start, justify-content-end, justify-content-center,
-    justify-content-between, justify-content-around, align-items-start,
-    align-items-end, align-items-center, align-items-baseline,
-    align-items-stretch, align-content-start, align-content-end,
-    align-content-center, align-content-between, align-content-around,
-    align-content-stretch;
-
-// may be a problem if the classes have code for direct decendents. 
-@each $classname in $listview-content-classes {
-    .k-listview.#{$classname} {
-        >.k-listview-content {
-            @extend .#{$classname}
-        }
-    }
-}
-```
 ## HS Action Items and Tiles
 
 ### Tiles
@@ -310,7 +273,7 @@ A action item may contain one of more of the following elements:
 
 > Sample: an action tile
 
-![atile](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-item.jpg)  
+![atile](images/action-item.jpg)  
 
 ### Action Metric Colors
 All Bootstrap Color Theme names are available to control the color of the action metric and icon.
@@ -336,7 +299,7 @@ Actions may be grouped as:
 
 > Sample: an action center
 
-![abtn](https://raw.githubusercontent.com/smchargue/HSFramework/main/src/images/action-center.jpg)  
+![abtn](images/action-center.jpg)  
 
 ### HTML Markup
 Below are some sample markups, which can be see in the [live demo site.](https://smchargue.github.io/HSFramework/src/actiontiles.html)
@@ -356,3 +319,31 @@ Below are some sample markups, which can be see in the [live demo site.](https:/
     <div class="hs-action-metric">1.2K</div>
 </div>
 ``` 
+
+## Helpers
+
+### Font Icon Helpers 
+
+A few helper classes are included to extend the usefulness of the kendo web fonts. 
+
+- hs-icons-stack : this class will overlay 2 child elements that are both kendo icons. 
+- hs-stack-2x : the larger of the 2 font icons
+- hs-stack-1x : the smaller of the 2 font icons
+- hs-icons-stack-2 : when added to hs-icons-stack the 2 child element will be 1.75em as large. 
+- hs-stack-\[top|bottom]\-\[left|right\] - will position a smaller icon in the specified quadrant of the larger icon 
+- hs-icon-\[theme-color] - support all named themed colors: info, warning, success, danger, etc...
+
+Sample markup 
+```html
+<span class="hs-icons-stack">
+  <i class="k-icon k-i-edit hs-stack-1x"></i>
+  <i class="k-icon k-i-cancel-outline hs-stack-2x hs-icon-danger"></i>
+</span>
+
+<span class="hs-icons-stack">
+  <i class="k-icon k-i-file hs-stack-2x"></i>
+  <i title="checked out" class="k-icon k-i-check-circle hs-stack-bottom-right hs-icon-success"></i> 
+</span>
+```
+
+![hs-icon-sample](images/hs-icon-sample.png)
