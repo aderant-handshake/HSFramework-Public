@@ -1,7 +1,7 @@
 # Handshake CSS Framework Project 2021
 Last update February 1, 2021
 
-A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework/src/index.html)
+A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework-Public/src/index.html)
 
 ## Purpose
 This project is a ground up rebuild of the Handshake UI Framework that includes SASS modules from: 
@@ -217,7 +217,11 @@ With Kendo build v2020.2.513, which is included with Handshake 3.9.5 kendo fixed
 This means that a class name that is used to control direct decedents, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
 
 #### Work around 
-This has been resolved by the dev team by moving any classnames or styles applied to the HTML5ListView Element down to the k-listview-content element. 
+This has been resolved by the dev team by moving any classnames or styles applied to the HTML5ListView Element down to the k-listview-content element. There is one use case where this does not produce 
+the desired result.  Turning the default border off of an html5listview requries setting styles on the list view parent, not the k-listview-content.  To achive this apply the class .hs-listview-border-0 to the parent div of the listview element. 
+
+```xml
+```
 
 ## HS Action Items and Tiles
 
