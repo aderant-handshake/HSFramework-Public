@@ -1,5 +1,5 @@
 # Handshake CSS Framework Project 2021
-Last update February 1, 2021
+Last update April 16 2021
 
 A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework-Public/src/index.html)
 
