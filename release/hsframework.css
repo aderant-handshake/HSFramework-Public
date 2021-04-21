@@ -38219,12 +38219,12 @@ button.bg-white:focus {
   }
 }
 
-.hs-grid-48split {
+.hs-grid-84split {
   grid-template-areas: "main" "sidebar1";
 }
 
 @media screen and (min-width: 720px) {
-  .hs-grid-48split {
+  .hs-grid-84split {
     grid-template-areas: "main main sidebar1";
   }
 }
@@ -38556,7 +38556,12 @@ button.bg-white:focus {
   border: none;
 }
 
-.hs-listview-border-0 .k-widget.k-listview.k-listview-bordered {
+.hs-listview-border .k-widget.k-listview.k-listview-bordered {
+  border: 1px;
+  border-color: #dee2e6;
+}
+
+.k-widget.k-listview.k-listview-bordered {
   border: none !important;
 }
 
@@ -39608,6 +39613,109 @@ div.tester > div:hover {
 .hs-inactivelink {
   pointer-events: none;
   cursor: default;
+}
+
+.hs-icon-primary {
+  color: #263d4b;
+}
+
+.hs-icon-secondary {
+  color: #B30838;
+}
+
+.hs-icon-tertiary {
+  color: #6f42c1;
+}
+
+.hs-icon-info {
+  color: #5c6466;
+}
+
+.hs-icon-success {
+  color: #008e6f;
+}
+
+.hs-icon-warning {
+  color: #FFCC00;
+}
+
+.hs-icon-error {
+  color: #dc1d3b;
+}
+
+.hs-icon-dark {
+  color: #5c6466;
+}
+
+.hs-icon-light {
+  color: #edf2f2;
+}
+
+.hs-icon-inverse {
+  color: #5c6466;
+}
+
+.hs-icon-danger {
+  color: #dc1d3b;
+}
+
+.hs-icon-white {
+  color: #fff;
+}
+
+.hs-icons-stack {
+  position: relative;
+  display: inline-block;
+  height: 1.3em;
+  line-height: 1.3em;
+  vertical-align: middle;
+  width: 1.3em;
+  font-size: 1.3em;
+}
+
+.hs-icons-stack.hs-icons-stack-2 {
+  font-size: 2.275em;
+}
+
+.hs-icons-stack > .k-icon {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.hs-icons-stack > .hs-stack-2x {
+  font-size: 1.3em;
+}
+
+.hs-icons-stack > .hs-stack-1x {
+  line-height: inherit;
+  font-size: 0.65em;
+}
+
+.hs-icons-stack > .hs-stack-bottom-right {
+  font-size: 0.585em;
+  top: 0.91em;
+  left: 0.195em;
+}
+
+.hs-icons-stack > .hs-stack-top-left {
+  font-size: 0.585em;
+  bottom: 0.91em;
+  left: -0.195em;
+}
+
+.hs-icons-stack > .hs-stack-top-right {
+  font-size: 0.585em;
+  bottom: 0.91em;
+  left: 0.195em;
+}
+
+.hs-icons-stack > .hs-stack-bottom-left {
+  font-size: 0.585em;
+  top: 0.91em;
+  left: -0.195em;
 }
 
 :root {

@@ -214,6 +214,13 @@ All layouts are responsive, in that on mobile devices that will appear as stacke
 
 CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)  is an excellent resource if you are just starting with CSS grid.
 
+Supplied Layout Classes are:
+-   hs-grid-magazine
+-   hs-grid
+-   hs-grid-[ double | triple | quad ]
+-   hs-grid-84split
+-   hs-grid-48split
+
 
 ## HS Action Items and Tiles
 
