@@ -1,30 +1,39 @@
-# Handshake CSS Framework Project 2021
+# Handshake CSS Framework Project 2021 <!-- omit in toc -->
 Last update April 16 2021
 
 A live demo of this framework can be reviewed [here](https://aderant-handshake.github.io/HSFramework-Public/src/index.html)
 
-## Purpose
+## Purpose <!-- omit in toc -->
 This project is a ground up rebuild of the Handshake UI Framework that includes SASS modules from: 
 
 * Selected components of Bootstrap 4.5 
 * Kendo Bootstrap Theme SASS files
+* New CSS created to support general Handshake usages, especially in Connect 2.0
 
-#### References
+This Framework may be used for any Handshake Installation and Connect is not required. The Build files are available to Handshake customers on request. 
+
+## References <!-- omit in toc -->
 Your best references for this framework are: 
 * [Bootstrap 4 documentation site](https://getbootstrap.com/docs/4.5/layout/overview/).  
 * [Kendo UI for jQuery Styles and Appearance](https://docs.telerik.com/kendo-ui/styles-and-layout/sass-themes)
 
-# Table of Contents 
-* [Usage](#usage) 
-* [Modules](#Modules)
-  * [User Profile Cards](#user-profile-cards)
-  * [Kendo Tab Styles](#kendo-tab-styles)
-  * [HS Layouts](#hs-layouts)
-  * [HS Action Items and Tiles](#hs-action-items-and-tiles)
-* [Bootstrap](#bootstrap) 
-* [Kendo Listview Issue](#kendo-listview-issue)
-* [Helpers](#Helpers)
-  * [Font Icon Helpers](#font-icon-helpers)
+# Table of Contents <!-- omit in toc -->
+- [Modules](#modules)
+  - [User Profile Cards](#user-profile-cards)
+  - [Kendo Tab Styles](#kendo-tab-styles)
+  - [Kendo Listview](#kendo-listview)
+    - [ListView Border](#listview-border)
+    - [Minimal Pager Style](#minimal-pager-style)
+  - [Handshake Layouts](#handshake-layouts)
+  - [HS Action Items and Tiles](#hs-action-items-and-tiles)
+    - [Tiles](#tiles)
+    - [Action Tiles](#action-tiles)
+    - [Action Metric Colors](#action-metric-colors)
+    - [Action Groupings](#action-groupings)
+    - [HTML Markup](#html-markup)
+  - [Helpers](#helpers)
+    - [Font Icon Helpers](#font-icon-helpers)
+- [Bootstrap](#bootstrap)
 
 
 ## Usage
@@ -56,10 +65,10 @@ npm config set strict-ssl false
 npm install
 ```
 
-## Modules 
-Description of modules 
+# Modules 
+The framework is broken down into the following modules.
 
-### User Profile Cards 
+## User Profile Cards 
 User Profile Cards provide a number of options for displaying user information.  It is both responsive and declarative.  Meaning, at a "phone" level breakpoint, it will automatically display a compressed view, or your may choose to display the compressed mobile view even on a large screen. 
 
 Them html markup should contain 3-4 areas:
@@ -121,15 +130,18 @@ In addition to the section classes, the following css can alter the view for spe
 
 > Note: except for **hs-upc-photo**, the content contained in a particular section is arbitrary.  If your use-case doesn't require a section, like a footer, then supply a grid-template-areas rule that leaves that section out.  The photo section expect a photo, if you do not have/need one, then add hs-upc-nophoto class to the root element.
 
-### User Profile Cards
-##### Standard
+#### User Profile Sample Cards
+
+###### Standard
 ![standardview](images/upc-standard-view.jpg)
-##### Mobile 
+
+###### Mobile 
 ![mobile](images/upc-mobile-view.jpg)
-##### Stacked 
+
+###### Stacked 
 ![mobile](images/upc-stacked-view.jpg) 
 
-### Kendo Tab Styles 
+## Kendo Tab Styles 
 The following classes are included to support useful customizations to kendo tabs that use appropriate bootstrap and kendo variables. They are each pre-fixed by hs-tabstrip- 
 
 
@@ -156,72 +168,52 @@ where tabstrip = "hs-tabstrip-fullwidth hs-tabstrip-uppercase" in the Applicatio
 
 ![vertical-tabs](images/hs-tabstrip-cleanleft.png)
 
-### HS Layouts
-The is framework provides a number of layout pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Responsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
 
-All layouts are responsive, in that on mobile devices that will appear as stacked elements. 
-
-CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [this is an excellent resource](https://css-tricks.com/snippets/css/complete-guide-grid/) if you are just starting with CSS grid.
-
-## Bootstrap
-This framework is built from the **@Progress/kendo-bootstrap-theme** npm package.  It includes many, but not all, bootstrap utilities and modules. Modules  were excluded if:
-
-1.  It had a similar feature built into kendo (card, navbar, modal)
-2.  Required bootstrap javascript in order to function (carousel, collapse)
-3.  Caused excessive complexity in an environment that would include SharePoint, Kendo and Bootstrap (responsive grid system, reboot)
-4.  Feature did not justify the overhead (progress, transitions)
-
-#### Included modules are
-* Default Variables
-* spacing
-* text
-* display
-* borders
-* shadow
-* sizing
-* tables
-* jumbotron
-* list-group
-* images
-* flex
-* colors
-* type
-* root
-* print
-* media
-* breadcrumbs
-
-#### Excluded modules are 
-* Responsive Grid System
-* transitions
-* tooltips 
-* toasts
-* spinners
-* reboot
-* progress
-* popover
-* pagination
-* navbar/nav/tabs
-* modal
-* dropdowns
-* collapse
-* buttons
-* carousel
-* forms/input 
-* badge
-* accordion
-
-## Kendo Listview Issue
+## Kendo Listview
 With Kendo build v2020.2.513, which is included with Handshake 3.9.5 kendo fixed an inconsistency in the listview structure by adding a "middle" element between the listview parent node, and the individual list items. 
 
 This means that a class name that is used to control direct decedents, like flex and grid, are added to HTML5ListView class list, it will not be applied to the list items as expected. 
 
 #### Work around 
-This has been resolved by the dev team by moving any classnames or styles applied to the HTML5ListView Element down to the k-listview-content element. There is one use case where this does not produce 
-the desired result.  Turning the default border off of an html5listview requries setting styles on the list view parent, not the k-listview-content.  To achive this apply the class .hs-listview-border-0 to the parent div of the listview element. 
+This has been resolved by the dev team by **moving** any classnames or styles applied to the HTML5ListView Element a level down to the k-listview-content element. There is one use case where this does not produce the desired result, and that is when you do need to apply a classname/style to the HTML5ListView Element.  In this case you would need to apply a classname to the HTML5ListView container, and construct your css to act on the child element (the HTML5ListView) of that container. 
+
+### ListView Border
+Standard OOTB kendo ListView behavior adds a border to the kendo listview element. It almost every use case in Connect this ends up a producing an undersireable double-border effect. 
+
+Rather than turning it off 95% of the time, the default behavior has been changed in this framework to remove the border.   If you need an HTLM5ListView element to have a border, apply **hs-listview-border** class to the parent container of the HTM5ListView element. 
+
+### Minimal Pager Style
+This Framework along with templates included in Connect 2.0 provide a minimal bulleted listview pager control.
+
+HCP20-PagerSelectTemplate
+```xml
+<li class="hs-listview-bullet-pager"><a tabindex="-1" href="\#" class="k-link hs-inactivelink"><span class="k-state-selected"><i class="k-icon k-i-circle"></i></span></a></li>
+```
 
 ```xml
+<li class="hs-listview-bullet-pager">
+    <a tabindex="-1" href="\#" class="k-link" data-page="#:text#">
+        <i class="k-icon k-i-shape-circle"></i>
+    </a>
+</li>
 ```
+
+#### Classes to produce a minimal page style
+Apply these to get a minimal / bulleted list view pager. These classes must be applied to the parent div of the HTML5ListView element.
+- hs-center-listview-pager 
+- hs-hide-outer-nav 
+- hs-pager-minimal
+
+#### Samples
+![list-view-sample](images/list-view-pager-samples.png)
+
+## Handshake Layouts
+This framework provides a number of pre-defined layout options.  They are built using CSS Display Grids.  The Bootstrap Responsive Grid Framework is not included in this build, and every effort has been made with these layout to mitigate that. 
+
+All layouts are responsive, in that on mobile devices that will appear as stacked elements. 
+
+CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)  is an excellent resource if you are just starting with CSS grid.
+
 
 ## HS Action Items and Tiles
 
@@ -351,3 +343,51 @@ Sample markup
 ```
 
 ![hs-icon-sample](images/hs-icon-sample.png)
+
+# Bootstrap
+This framework is built from the **@Progress/kendo-bootstrap-theme** npm package.  It includes many, but not all, bootstrap utilities and modules. Modules  were excluded if:
+
+1.  It had a similar feature built into kendo (card, navbar, modal)
+2.  Required bootstrap javascript in order to function (carousel, collapse)
+3.  Caused excessive complexity in an environment that would include SharePoint, Kendo and Bootstrap (responsive grid system, reboot)
+4.  Feature did not justify the overhead (progress, transitions)
+
+#### Included modules are
+* Default Variables
+* spacing
+* text
+* display
+* borders
+* shadow
+* sizing
+* tables
+* jumbotron
+* list-group
+* images
+* flex
+* colors
+* type
+* root
+* print
+* media
+* breadcrumbs
+
+#### Excluded modules are 
+* Responsive Grid System
+* transitions
+* tooltips 
+* toasts
+* spinners
+* reboot
+* progress
+* popover
+* pagination
+* navbar/nav/tabs
+* modal
+* dropdowns
+* collapse
+* buttons
+* carousel
+* forms/input 
+* badge
+* accordion
