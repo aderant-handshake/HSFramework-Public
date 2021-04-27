@@ -38663,6 +38663,40 @@ button.bg-white:focus {
   font-weight: 700;
 }
 
+.hs-agenda-slim .k-scheduler-header,
+.hs-agenda-slim .k-scheduler-navigation,
+.hs-agenda-slim .k-scheduler-refresh,
+.hs-agenda-slim .k-scheduler-timecolumn {
+  display: none !important;
+}
+
+.hs-agenda-slim .k-scheduler-toolbar {
+  background-color: transparent;
+}
+
+.hs-agenda-slim .k-scheduler-table td {
+  white-space: normal;
+}
+
+.hs-agenda-slim td.k-scheduler-datecolumn {
+  width: 90px;
+  font-size: 12px;
+}
+
+.hs-agenda-slim td.k-scheduler-datecolumn .hs-agenda-slim-datecolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hs-agenda-slim td.k-scheduler-datecolumn .hs-agenda-slim-datecolumn .hs-agenda-date {
+  font-size: 1.75em;
+}
+
+.hs-agenda-slim td.k-scheduler-datecolumn .hs-agenda-slim-datecolumn .hs-agenda-day {
+  font-size: 1.25em;
+}
+
 .k-draghandle:hover {
   box-shadow: 0 0 0 8px rgba(222, 226, 230, 0.5);
 }
