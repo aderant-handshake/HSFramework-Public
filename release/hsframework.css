@@ -45210,24 +45210,28 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items {
+.k-tabstrip.m-0 > .k-tabstrip-items {
+  margin: 0 !important;
+}
+
+.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items, .hsbody .k-tabstrip > ul.k-tabstrip-items {
   justify-content: space-between;
 }
 
-.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item {
+.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item {
   flex: 1 1 auto;
   border-width: 0 0 2px 0;
 }
 
-.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item.k-state-active {
+.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item.k-state-active, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item.k-state-active {
   border-color: #263d4b;
 }
 
-.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item:hover {
+.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li.k-item:hover, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item:hover {
   border-color: #B30838;
 }
 
-.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li > .k-link {
+.k-tabstrip.hs-tabstrip-full > ul.k-tabstrip-items > li > .k-link, .hsbody .k-tabstrip > ul.k-tabstrip-items > li > .k-link {
   text-align: center;
   display: block;
 }
@@ -45266,7 +45270,7 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
 }
 
 .k-tabstrip.hs-tabstrip-bicolor > ul.k-tabstrip-items > li.k-item {
-  background-color: #464866;
+  background-color: #B30838;
 }
 
 .k-tabstrip.hs-tabstrip-bicolor > ul.k-tabstrip-items > li.k-item .k-link {
@@ -45274,7 +45278,7 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
 }
 
 .k-tabstrip.hs-tabstrip-bicolor > ul.k-tabstrip-items > li.k-item.k-state-active {
-  background-color: #25274d;
+  background-color: #263d4b;
 }
 
 .k-tabstrip.hs-tabstrip-bicolor > ul.k-tabstrip-items > li.k-item.k-state-active .k-link {
@@ -45282,7 +45286,7 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+1) {
-  background-color: #25274d;
+  background-color: #263d4b;
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+1) .k-link {
@@ -45290,7 +45294,7 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+2) {
-  background-color: #464866;
+  background-color: #B30838;
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+2) .k-link {
@@ -45298,47 +45302,47 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+3) {
-  background-color: #AAABB8;
+  background-color: #008e6f;
 }
 
 .k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+3) .k-link {
-  color: #5c6466;
-}
-
-.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+4) {
-  background-color: #2e9cca;
-}
-
-.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+4) .k-link {
-  color: #5c6466;
-}
-
-.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+5) {
-  background-color: #29648a;
-}
-
-.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+5) .k-link {
   color: #edf2f2;
 }
 
-.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item {
+.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+4) {
+  background-color: #5c6466;
+}
+
+.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+4) .k-link {
+  color: #edf2f2;
+}
+
+.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+5) {
+  background-color: #FFCC00;
+}
+
+.k-tabstrip.hs-tabstrip-fullcolor > ul.k-tabstrip-items > li.k-item:nth-child(5n+5) .k-link {
+  color: #5c6466;
+}
+
+.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item {
   flex: 1 1 auto;
   border-width: 0;
   border-radius: 0;
   box-shadow: none;
 }
 
-.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item.k-state-active {
-  background-color: #25274d;
+.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item.k-state-active, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item.k-state-active {
+  background-color: #263d4b;
   color: #edf2f2;
 }
 
-.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item:hover {
-  background-color: #464866;
+.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li.k-item:hover, .hsbody .k-tabstrip > ul.k-tabstrip-items > li.k-item:hover {
+  background-color: #B30838;
   color: #edf2f2;
 }
 
-.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li > .k-link {
+.k-tabstrip.hs-tabstrip-shaded > ul.k-tabstrip-items > li > .k-link, .hsbody .k-tabstrip > ul.k-tabstrip-items > li > .k-link {
   text-align: center;
   display: block;
 }
@@ -45382,8 +45386,14 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
   border: 0;
 }
 
+.k-tabstrip.hs-tabstrip-flush > .k-tabstrip-items {
+  margin-bottom: 1rem;
+}
+
 .k-tabstrip.hs-tabstrip-flush > .k-content.k-state-active {
   border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .k-tabstrip.p-0 > .k-content.k-state-active {
@@ -46263,6 +46273,134 @@ div.tester > div:hover {
   .hs-upc .hs-upc-v-group {
     justify-content: space-around;
   }
+}
+
+/* create some rules for ms teams dark mode, this is a first pass, will likely need several dozen more lines of code 
+for different kendo widgets  */
+.hsbody {
+  background-color: #f5f5f5;
+}
+
+.hsbody .hs-teams-bg-color {
+  background-color: #f5f5f5;
+}
+
+.hsbody .hs-teams-bg-color .k-content {
+  background-color: #f5f5f5;
+}
+
+.hsbody .k-tabstrip ul.k-tabstrip-items li.k-item {
+  background-color: #9291AE;
+  color: #fff;
+}
+
+.hsbody .k-tabstrip ul.k-tabstrip-items li.k-item.k-state-active {
+  background-color: #3A3852 !important;
+}
+
+.hsbody.v-contrast,
+.hsbody.v-dark {
+  background-color: #1f1f1f;
+}
+
+.hsbody.v-contrast .hs-teams-bg-color,
+.hsbody.v-dark .hs-teams-bg-color {
+  background-color: #1f1f1f;
+}
+
+.hsbody.v-contrast .hs-teams-bg-color .k-content,
+.hsbody.v-dark .hs-teams-bg-color .k-content {
+  background-color: #1f1f1f;
+}
+
+.hsbody.v-contrast .k-card,
+.hsbody.v-contrast .k-listview-content,
+.hsbody.v-dark .k-card,
+.hsbody.v-dark .k-listview-content {
+  background-color: #3A3852 !important;
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .k-tabstrip li.k-item:not(.k-state-active),
+.hsbody.v-dark .k-tabstrip li.k-item:not(.k-state-active) {
+  background-color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-primary,
+.hsbody.v-dark .text-primary {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-secondary,
+.hsbody.v-dark .text-secondary {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-tertiary,
+.hsbody.v-dark .text-tertiary {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-info,
+.hsbody.v-dark .text-info {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-success,
+.hsbody.v-dark .text-success {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-warning,
+.hsbody.v-dark .text-warning {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-error,
+.hsbody.v-dark .text-error {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-dark,
+.hsbody.v-dark .text-dark {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-light,
+.hsbody.v-dark .text-light {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-inverse,
+.hsbody.v-dark .text-inverse {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-danger,
+.hsbody.v-dark .text-danger {
+  color: #9291AE !important;
+}
+
+.hsbody.v-contrast .text-white,
+.hsbody.v-dark .text-white {
+  color: #9291AE !important;
+}
+
+.hsbody.v-dark .k-scheduler * {
+  background-color: #3A3852 !important;
+  border-color: #1f1f1f;
+}
+
+.hsbody.v-dark .k-scheduler * .k-header {
+  background-color: #3A3852 !important;
+  border-color: #1f1f1f;
+}
+
+.hsbody.v-dark .k-scheduler * .k-scheduler-table tr:hover *,
+.hsbody.v-dark .k-scheduler * .k-state-hover {
+  background-color: #9291AE !important;
+  color: #fff;
+  border-color: #3A3852 !important;
 }
 
 :root {
