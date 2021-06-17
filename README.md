@@ -216,11 +216,16 @@ All layouts are responsive, in that on mobile devices that will appear as stacke
 CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)  is an excellent resource if you are just starting with CSS grid.
 
 Supplied Layout Classes are:
--   hs-grid-magazine
--   hs-grid
+-   hs-grid-magazine : provides full width header, left and right sidebars, main article and full width footer
+-   hs-grid : basic grid declaration
 -   hs-grid-[ double | triple | quad ]
--   hs-grid-84split
--   hs-grid-48split
+-   hs-grid-84split : responsive 2 columun layout with left being 3/4 the width, and the right being 1/4
+-   hs-grid-48split : responsive 2 columun layout with left being 1/4 the width, and the right being 3/4
+-   hs-grid-resp2col : response 2 column layout with a header, sidebar (2/5), main (3/5) and footer. 
+
+Helper classes 
+- hs-rtl : moves the main content to the right of the sidebar, default is to the left
+- hs-grid-demoware : applies fixed height, width padding and content to the hs grid elements for validation/testing without content.
 
 
 ## HS Action Items and Tiles
@@ -230,13 +235,33 @@ Tiles display child elements in a boxed container.   Elements will be spaced and
 
 You may use hs-tile as a standalone container or grouped in a grid using hs-tile-grid. 
 
-Tiles may be small, medium or large.
+Container Classes include: 
+* hs-tile-grid 
+* hs-tile-grid-sm
+* hs-tile-grid-lg
+* hs-tile-grid-landscape 
 
-* hs-tile-sm : 150px * 0.75
+> small, large and landscape will effect all tiles in the container
+
+The container class will have one or move divs with a class of hs-tile.
+
 * hs-tile    : 150px
+* hs-tile-sm : 150px * 0.75
 * hs-tile-lg : 150px * 1.50
+* hs-tile-landscape : creates a tile with a 16:9 width/height ratio where width = 185px
+* hs-action-tile-landscape: elements classed as hs-action-metric, hs-action-icon and hs-action-title they will be positioned in a grid using
+```css
+grid-template-areas: "metric icon""detail detail";
+```
+* hs-teams-tile : a special class that will set the colors to match Microsoft Teams for both dark and default mode. Outside of teams it will render as a normal tile, as long as it also has hs-tile class.
 
-Use hs-tile-grid-sm or hs-tile-grid-lg to affect all tiles in the grid container. 
+![hs-teams-tiles](images/hs-teams-tiles.png)
+
+By default the contents of the tile will be rendered as a flex column, centered on the x/y axis and spaced using just-content:space-around. 
+
+
+> Tile class names may be used outside of a container class for an individual tile.
+
 
 All Bootstrap Color Theme names are available to control the color of the tile
 
