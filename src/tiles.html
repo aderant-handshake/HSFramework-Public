@@ -16,7 +16,7 @@
     <div id="kendomenu"></div>
     <div class="h4 p-3 mb-3 text-center bg-info">Container Tiles</div>
 
-    <div class="hs-grid mx-3 mb-2">
+    <div class="hs-grid mx-3 mb-2" style="grid-template-columns:1fr 1fr">
 
         <div class="hs-tile-grid hs-tile-grid-sm">
             <div class="hs-tile  hs-tile-primary" onclick="alert('hello world.');">
@@ -52,8 +52,8 @@
             </div>
         </div>
 
-        <div class="hs-tile-grid hs-tile-grid-success">
-            <div class="hs-tile" onclick="alert('hello world.');">
+        <div class="hs-tile-grid">
+            <div class="hs-tile hs-tile-success" onclick="alert('hello world.');">
                 <div>Element 1</div>
                 <div>Element 2 - Normal Size Tile</div>
             </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="hs-tile">
-                <div>Share the size and color setting </div>
+                <div>Default size and color setting </div>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
     <div id="some-toolbar" class="mb-3"></div>
 
     <div class="mx-5">
-        <div class="hs-grid">
+        <div class="hs-grid hs-grid-48split">
             <div class="">
                 <div class="p-2 bg-primary">Action Buttons</div>
                 <p class="small">Smaller foot print displaying only a metric and title.</p>
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="mt-2 p-2 bg-primary">Action Tiles</div>
-                <p class="small">Action Tiles display each action item as a seperate tile. Tiles are expected to
+                <p class="small">Action Tiles display each action item as a separate tile. Tiles are expected to
                     have a
                     fixed width
                     which will default to 320px, defined as $action-tile-width in the SASS build. This may be

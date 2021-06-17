@@ -527,51 +527,73 @@ jQuery(function () {
     });
     randomText();
 });
-var ppp; 
+var ppp;
+
 function randomText() {
-    function rnd(min,max) {
+    function rnd(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     // populate random lorem ipsom where rt = a title with one line of text and 
     // .rc is a content block with 1 to 6 paragraph blocks.
-    _url = "https://www.randomtext.me/api/lorem/p-64/5-30";
-    jQuery.get(_url, function (data) {
-      var p = data.text_out;
-      paragraphs = p.split("\r");
-      ppp = paragraphs;
 
-      jQuery(".rt").each(function() {
-        var $elem = jQuery(this);
-        var maxwords = $elem.data('max') || 7;
-        var minwords = $elem.data('min') || 2;
-        // pick one random paragraph...
-        var p = rnd(1, paragraphs.length-1)
-        var t = paragraphs[p];
-        // extracts x number of max words from it.  
-        var wordcnt = rnd(minwords, maxwords);
-        t = jQuery(t).text().split(' ').slice(0,wordcnt).join(' ');
-        $elem.text(t);
-      });
-
-      jQuery(".rc").each(function() {
-        var $elem = jQuery(this);
-        var c = '';
-        var max = $elem.data('max') || 6;
-        for (i = 0; i <  Math.floor(Math.random() * max+1); i++) {
-          c += paragraphs[Math.floor(Math.random() * paragraphs.length)]
-        }
-        $elem.html(c);
-      });
-
-      jQuery(".rnum").each(function() {
+    jQuery(".rnum").each(function () {
         var $elem = jQuery(this);
         var max = $elem.data('max') || 100;
         var min = $elem.data('min') || 10;
         var fmt = $elem.data('fmt') || 'n0';
-        var value = rnd(min,max); 
-        var vstr = kendo.toString(value,fmt);
+        var value = rnd(min, max);
+        var vstr = kendo.toString(value, fmt);
         $elem.html(vstr);
-      });
-
     });
-  }
+
+    var data = `Lorem ipsum dolor sit amet consectetur adipiscing elit
+    Qui autem diffidet perpetuitati bonorum suorum timeat necesse est ne aliquando amissis illis sit miser
+    Illum mallem levares quo optimum atque humanissimum virum Cn
+    Conferam tecum quam cuique verso rem subicias
+    Praeteritis inquit gaudeo. Ut optime secundum naturam affectum esse possit
+    Varietates autem iniurasque fortunae facile veteres philosophorum praeceptis instituta vita superabat
+    Certe nihil nisi quod possit ipsum propter se iure laudari
+    Sed haec quidem liberius ab eo dicuntur et saepius
+    Duo Reges constructio interrete. Semper enim ex eo quod maximas partes continet latissimeque funditur tota res appellatur
+    Venit ad extremum; Hinc ceteri particulas arripere conati suam quisque videro voluit afferre sententiam`;
+    var paragraphs = data.split("\n");
+    ppp = paragraphs;
+    console.log(paragraphs)
+
+    jQuery(".rt").each(function () {
+        try {
+            var $elem = jQuery(this);
+            var maxwords = $elem.data('max') || 7;
+            var minwords = $elem.data('min') || 2;
+            // pick one random paragraph...
+            var p = rnd(1, paragraphs.length - 1)
+            var t = paragraphs[p].trim();
+            // extracts x number of max words from it.  
+            var wordcnt = rnd(minwords, maxwords);
+            t = t.split(' ').slice(0, wordcnt).join(' ');
+            $elem.text(t);
+            if ($elem.parent().attr('class') === 'hs-action-todo') {
+                console.log(maxwords, minwords, p, t);
+            }
+        } catch (e) {
+            console.log('rt block',maxwords,minwords,t,wordcnt);
+            console.log(e);
+        }
+    });
+
+
+    try {
+        jQuery(".rc").each(function () {
+            var $elem = jQuery(this);
+            var c = '';
+            var max = $elem.data('max') || 6;
+            for (i = 0; i < Math.floor(Math.random() * max + 1); i++) {
+                c += paragraphs[Math.floor(Math.random() * paragraphs.length)]
+            }
+            $elem.html(c);
+        });
+    } catch (e) {
+        console.log('rc block');
+        console.log(e);
+    }
+}
