@@ -44498,7 +44498,7 @@ button.hs-bg-gray-white:focus {
 }
 
 /* classes to support __HS.Connect.seeMore functionality.*/
-.hs-more {
+.hs-more-content {
   display: none;
 }
 
@@ -44519,7 +44519,7 @@ div[__hsrootnode] div[onclick] {
   display: none;
 }
 
-.hs-inactivelink {
+.hs-links-inactivelink {
   pointer-events: none;
   cursor: default;
 }
@@ -44594,34 +44594,34 @@ div[__hsrootnode] div[onclick] {
   text-align: center;
 }
 
-.hs-icons-stack > .hs-stack-2x {
+.hs-icons-stack > .hs-icons-stack-2x {
   font-size: 1.3em;
 }
 
-.hs-icons-stack > .hs-stack-1x {
+.hs-icons-stack > .hs-icons-stack-1x {
   line-height: inherit;
   font-size: 0.65em;
 }
 
-.hs-icons-stack > .hs-stack-bottom-right {
+.hs-icons-stack > .hs-icons-stack-bottom-right {
   font-size: 0.585em;
   top: 0.91em;
   left: 0.195em;
 }
 
-.hs-icons-stack > .hs-stack-top-left {
+.hs-icons-stack > .hs-icons-stack-top-left {
   font-size: 0.585em;
   bottom: 0.91em;
   left: -0.195em;
 }
 
-.hs-icons-stack > .hs-stack-top-right {
+.hs-icons-stack > .hs-icons-stack-top-right {
   font-size: 0.585em;
   bottom: 0.91em;
   left: 0.195em;
 }
 
-.hs-icons-stack > .hs-stack-bottom-left {
+.hs-icons-stack > .hs-icons-stack-bottom-left {
   font-size: 0.585em;
   top: 0.91em;
   left: -0.195em;
@@ -47208,7 +47208,7 @@ div.tester > div:hover {
   border-color: #dee2e6 #fff;
 }
 
-.hs-userphoto--grid-inline {
+.hs-upc-userphoto--grid-inline {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -47222,7 +47222,7 @@ div.tester > div:hover {
   transition: all .2s ease-in-out;
 }
 
-.hs-userphoto--grid-inline:hover {
+.hs-upc-userphoto--grid-inline:hover {
   transform: scale(2);
   background-size: cover;
   background-position: center top;
@@ -47230,7 +47230,7 @@ div.tester > div:hover {
   box-shadow: none;
 }
 
-.hs-username--grid-inline {
+.hs-upc-username--grid-inline {
   display: inline-block;
   vertical-align: middle;
   line-height: 32px;

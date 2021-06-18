@@ -75,10 +75,10 @@ jQuery(function () {
         $("#kendomenu").kendoMenu({
             select: function (ev) {
                 var ds = ev.sender.dataSource;
-                      var item = ds.getByUid($(ev.item).data("uid"));
-                      if (item.tclass) {
-                        jQuery('body').attr('class', item.tclass)
-                      }
+                var item = ds.getByUid($(ev.item).data("uid"));
+                if (item.tclass) {
+                    jQuery('body').attr('class', item.tclass)
+                }
             },
             dataSource: [{
                     text: "Home",
@@ -133,6 +133,10 @@ jQuery(function () {
                     url: "tiles.html"
                 },
                 {
+                    text: "Class Names",
+                    url: "classnames.html"
+                },
+                {
                     text: "Readme Docs",
                     url: "https://github.com/smchargue/HSFramework"
                 },
@@ -140,11 +144,14 @@ jQuery(function () {
                 {
                     text: "Teams Drop Down ",
                     items: [{
-                        text: "No Teams view", tclass:'hsbody'
+                        text: "No Teams view",
+                        tclass: 'hsbody'
                     }, {
-                        text: "Teams Default View", tclass:'hsbody hsteams v-default'
+                        text: "Teams Default View",
+                        tclass: 'hsbody hsteams v-default'
                     }, {
-                        text: "Teams Dark View", tclass:'hsbody hsteams v-dark'
+                        text: "Teams Dark View",
+                        tclass: 'hsbody hsteams v-dark'
                     }]
                 }
             ],
@@ -627,4 +634,38 @@ function toggleTeams(elem) {
     if (index < states.length - 1)
         $e.siblings().find('.classnames').text(' : ' + states[index].split(' ')[2]);
     else $e.siblings().find('.classnames').text(' : Not Teams');
+}
+
+function GetClassName() {
+    function dedup(data) {
+        return [...new Set(data)]
+    }
+    var arr = [];
+    var groups = [];
+    Array.prototype.forEach.call(document.styleSheets[0].cssRules, function (a) {
+        if (typeof a.selectorText === 'string') {
+            var classes = a.selectorText.split(/[ ,.]+/);
+            classes.forEach(function (c) {
+                if (c.startsWith('hs-')) {
+                    groups.push( c.split(':')[0].split('-').slice(0,2).join('-')+'*');
+                    arr.push(c.split(':')[0].trim());
+                }
+            })
+
+        }
+    });
+    groups = dedup(groups).sort();
+    arr = dedup(arr).sort();
+    var r = arr.concat(groups);
+    return '<div>' + r.sort().join('</div><div>') + '</div>'
+}
+
+function AddClassNameHeaders($e) {
+    // head-ify elments with an '*' character
+    $e.find('div:contains("*")').addClass('h5 hs-bg-accent4 py-1 pl-1 m-0').each( function() {
+        var tx = jQuery(this).text();
+        jQuery(this).text(tx.replace('*',''));
+    });
+    
+    $e.find('div').addClass('pl-2')
 }

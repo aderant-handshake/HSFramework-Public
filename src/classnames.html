@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc Template</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+
+    <style>
+        .classnames {
+            display: flex;
+            flex-flow: wrap;
+            height: 87vh;
+            flex-direction: column;
+            gap: .5em;
+        }
+        .classnames > div {
+            flex:0 1;
+            font-family : Roboto;
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center bg-info">Dynamic HS Class Name Inventory</div>
+
+    <div class="classnames"></div>
+</body>
+    <script>
+        $('.classnames').html(GetClassName());
+        AddClassNameHeaders($('.classnames'));
+    </script>
+</html>
