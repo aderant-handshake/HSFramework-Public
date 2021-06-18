@@ -73,6 +73,13 @@ jQuery(function () {
     jQuery(function () {
 
         $("#kendomenu").kendoMenu({
+            select: function (ev) {
+                var ds = ev.sender.dataSource;
+                      var item = ds.getByUid($(ev.item).data("uid"));
+                      if (item.tclass) {
+                        jQuery('body').attr('class', item.tclass)
+                      }
+            },
             dataSource: [{
                     text: "Home",
                     url: "index.html"
@@ -131,11 +138,13 @@ jQuery(function () {
                 },
                 // A test sub-item collection.            
                 {
-                    text: "Test Drop Down ",
+                    text: "Teams Drop Down ",
                     items: [{
-                        text: "Sub Item 1"
+                        text: "No Teams view", tclass:'hsbody'
                     }, {
-                        text: "Sub Item 2"
+                        text: "Teams Default View", tclass:'hsbody hsteams v-default'
+                    }, {
+                        text: "Teams Dark View", tclass:'hsbody hsteams v-dark'
                     }]
                 }
             ],
@@ -143,6 +152,8 @@ jQuery(function () {
         var pageparts = location.pathname.split('/');
         var page = pageparts[pageparts.length - 1]
         $('.k-menu a[href="' + page + '"]').parent('li').addClass('k-state-selected');
+
+
     });
 
     /*
@@ -564,7 +575,6 @@ function randomText() {
     Venit ad extremum; Hinc ceteri particulas arripere conati suam quisque videro voluit afferre sententiam`;
     var paragraphs = data.split("\n");
     ppp = paragraphs;
-    console.log(paragraphs)
 
     jQuery(".rt").each(function () {
         try {
@@ -578,11 +588,8 @@ function randomText() {
             var wordcnt = rnd(minwords, maxwords);
             t = t.split(' ').slice(0, wordcnt).join(' ');
             $elem.text(t);
-            if ($elem.parent().attr('class') === 'hs-action-todo') {
-                console.log(maxwords, minwords, p, t);
-            }
         } catch (e) {
-            console.log('rt block',maxwords,minwords,t,wordcnt);
+            console.log('rt block', maxwords, minwords, t, wordcnt);
             console.log(e);
         }
     });
@@ -602,4 +609,22 @@ function randomText() {
         console.log('rc block');
         console.log(e);
     }
+}
+
+function toggleTeams(elem) {
+
+    var states = ['hsbody hsteams v-dark', 'hsbody hsteams v-default', 'hsbody'];
+    var $e = jQuery(elem).closest('.hsbody');
+    var state = $e.attr('class');
+    var index = 0;
+    states.forEach(function (elem, i) {
+        if (elem === state) {
+            index = (i + 1) % states.length;
+        }
+    });
+    console.log(index);
+    $e.attr('class', states[index]);
+    if (index < states.length - 1)
+        $e.siblings().find('.classnames').text(' : ' + states[index].split(' ')[2]);
+    else $e.siblings().find('.classnames').text(' : Not Teams');
 }

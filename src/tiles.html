@@ -71,15 +71,15 @@
         </div>
     </div>
 
-    <div class="h4 p-3 mt-0 mb-0 text-center bg-info">HS Teams Tiles</div>
+    <div class="h4 p-3 mt-0 mb-0 text-center bg-info">HS Teams Tiles  <span class='classnames'></span></div>
     <div class="hsbody hsteams v-dark">
-        <div class="p-5">
+        <div class="p-5">           
             <div class="hs-tile-grid">
-                <div class="hs-teams-tile" onclick="alert('hello world.');">
+                <div class="hs-teams-tile hs-tile-primary" onclick="alert('hello world.');">
                     <div>Element 1</div>
                     <div>Element 2 - Normal Size Tile</div>
                 </div>
-                <div class="hs-teams-tile">
+                <div class="hs-teams-tile hs-tile-primary">
                     <div>
                         Teams Tile using Teams Branding
                     </div>
@@ -87,8 +87,11 @@
                         <span class="k-icon k-i-image k-icon-xl"></span>
                     </div>
                 </div>
-                <div class="hs-teams-tile">
+                <div class="hs-teams-tile hs-tile-primary">
                     <div>Default size and color setting </div>
+                </div>
+                <div class="hs-teams-tile hs-tile-primary" onclick="toggleTeams(this);">
+                    <div>click here to toggle teams default/dark and no teams. </div>
                 </div>
             </div>
         </div>
