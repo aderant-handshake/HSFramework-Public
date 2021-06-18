@@ -5,69 +5,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Bootstrap Kenodo Theme</title>  
+    <title>Test Bootstrap Kenodo Theme</title>
     <link rel="stylesheet" href="../release/hsframework.min.css">
-    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>  
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
     <script src="demo.js"></script>
     <style>
         .inline-color {
-            /* defaults for IE 11 */ 
-            color:white;
-            background-color:green; 
+            /* defaults for IE 11 */
+            color: white;
+            background-color: green;
             /* modern browsers support css vars */
-            background-color:var(--theme-success);
-            color:var(--theme-light);
+            background-color: var(--success);
+            color: var(--light);
+        }
+
+        .root-box {
+            display: grid;
+
+            grid-template-columns: 8em 1em;
+        }
+
+        .root-box div {
+            min-height: 1em;
+            margin: 2px 0px;
+        }
+
+        .d-flex {
+            gap: .25em;
         }
     </style>
 </head>
 
 <body class="bg-body">
     <div id="kendomenu"></div>
-    <div class="p-3 text-center alert-info">Color Elements</div>
+    <div class="h4 p-3 text-center alert-info">Color Elements</div>
     <div id="toolbar" class="mb-3"></div>
+    <div style="display:grid; grid-template-columns: 1fr 200px; grid-gap:1em;">
+        <div>
+            <div class="h5 my-2">Bootstrap Color Values</div>
+            <div class="hs-tile-grid">
+                <div class="h5 hs-tile hs-tile-sm bg-primary">Bootstrap primary</div>
+                <div class="h5 hs-tile hs-tile-sm bg-success">Bootstrap success</div>
+                <div class="h5 hs-tile hs-tile-sm bg-danger">Bootstrap danger</div>
+                <div class="h5 hs-tile hs-tile-sm bg-info">Bootstrap info</div>
+                <div class="h5 hs-tile hs-tile-sm bg-warning">Bootstrap warning </div>
+                <div class="h5 hs-tile hs-tile-sm bg-light text-dark">Bootstrap light </div>
+                <div class="h5 hs-tile hs-tile-sm bg-dark">Bootstrap dark</div>
+                <div class="h5 hs-tile hs-tile-sm bg-secondary">Bootstrap secondary </div>
+            </div>
 
-    <div class="tester">
-        <div class="text-center bg-primary">Bootstrap<br />primary</div>
-        <div class="text-center bg-success">Bootstrap<br />success</div>
-        <div class="text-center bg-danger">Bootstrap<br />danger</div>
-        <div class="text-center bg-info">Bootstrap<br />info</div>
-        <div class="text-center bg-warning">Bootstrap<br />warning </div>
-        <div class="text-center bg-light text-dark">Bootstrap<br />light </div>
-        <div class="text-center bg-dark">Bootstrap<br />dark</div>
-        <div class="text-center bg-secondary">Bootstrap<br />secondary </div>
-    </div>
+            <div class="h5 my-2">Kendo Color Values</div>
+            <div class="hs-tile-grid">
+                <div class="h5 hs-tile hs-tile-sm k-bg-primary">kendo primary</div>
+                <div class="h5 hs-tile hs-tile-sm k-bg-success">kendo success</div>
+                <div class="h5 hs-tile hs-tile-sm k-bg-error">kendo error</div>
+                <div class="h5 hs-tile hs-tile-sm k-bg-info">kendo info</div>
+                <div class="h5 hs-tile hs-tile-sm k-bg-warning">kendo warining</div>
+            </div>
 
-    <div class="tester">
-        <div class="text-center k-bg-primary">kendo<br />primary</div>
-        <div class="text-center k-bg-success">kendo<br />success</div>
-        <div class="text-center k-bg-error">kendo<br />error</div>
-        <div class="text-center k-bg-info">kendo<br />info</div>
-        <div class="text-center k-bg-warning">kendo<br />warining</div>
-    </div>
+            <div class="h5 my-2">Handshake Accent Values</div>
+            <div class="hs-tile-grid">
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent1">Accent 1</div>
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent2">Accent 2</div>
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent3">Accent 3</div>
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent4">Accent 4</div>
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent5">Accent 5</div>
+                <div class="h5 hs-tile hs-tile-sm hs-bg-accent6">Accent 6</div>
+            </div>
 
-    <div>
-        <span class="m-3 k-icon k-i-gear k-icon-48 text-primary"></span>
-        <span class="m-3 k-icon k-i-notification k-icon-48 text-secondary"></span>
-        <span class="m-3 k-icon k-i-photo-camera k-icon-48 text-success"></span>
-        <span class="m-3 k-icon k-i-image k-icon-48 text-info"></span>
-    </div>
+            <div class="h5 my-2">Handshake Gray Values</div>
+            <div class="hs-tile-grid">
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-black">Gray : black</div>
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-dark">Gray : dark</div>
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-disabled">Gray : disabled</div>
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-border hs-text-gray-black">Gray : border</div>
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-light hs-text-gray-black">Gray : light</div>
+                <div class="h4 hs-tile hs-tile-sm hs-bg-gray-white hs-text-gray-black">Gray : white</div>
+            </div>
 
-    <div class="my-2 p-3 inline-color" >
-        This div is using a background color defined in the variable --theme-success.  It uses a feature in CSS that is not supported in any version of IE.  
-        This following code is used to define a fallback to IE 11 when required.
-    </div>
-<pre>
+            <div class="h5 my-2 ">Handshake Text Values</div>
+            <div class="border p-2 hs-bg-gray-light d-flex">
+                <div class="p-2 hs-text-accent1">hs-text-accent1</div>
+                <div class="p-2 hs-text-accent2">hs-text-accent2</div>
+                <div class="p-2 hs-text-accent3">hs-text-accent3</div>
+                <div class="p-2 hs-text-accent4">hs-text-accent4</div>
+                <div class="p-2 hs-text-accent5">hs-text-accent5</div>
+                <div class="p-2 hs-text-accent6">hs-text-accent6</div>
+            </div>
+            <div class="border p-2 mt-2 hs-bg-gray-light d-flex">
+                <div class="p-2 hs-text-gray-black">hs-text-gray-black</div>
+                <div class="p-2 hs-text-gray-dark">hs-text-gray-dark</div>
+                <div class="p-2 hs-text-gray-disabled">hs-text-gray-disabled</div>
+                <div class="p-2 hs-text-gray-border hs-bg-gray-black">hs-text-gray-border hs-bg-gray-black</div>
+                <div class="p-2 hs-text-gray-light hs-bg-gray-black">hs-text-gray-light hs-bg-gray-black</div>
+                <div class="p-2 hs-text-gray-white hs-bg-gray-black">hs-text-gray-white hs-bg-gray-black</div>
+            </div>
+
+
+            <div>
+                <div class="m-3 k-icon k-i-gear k-icon-48 text-primary"></div>
+                <div class="m-3 k-icon k-i-notification k-icon-48 text-secondary"></div>
+                <div class="m-3 k-icon k-i-photo-camera k-icon-48 text-success"></div>
+                <div class="m-3 k-icon k-i-image k-icon-48 text-info"></div>
+            </div>
+
+            <div class="my-2 p-3 inline-color">
+                This div is using a background color defined in the variable --success. It uses a feature in CSS that
+                is not supported in any version of IE. This code is used to define a fallback to IE 11 when required.
+            </div>
+            <pre>
 .inline-color {
     /* defaults for IE 11 */ 
     color:white;
     background-color:green; 
     /* modern browsers support css vars */
-    background-color:var(--theme-success);
-    color:var(--theme-light);
+    background-color:var(--success);
+    color:var(--light);
 }
 </pre>
-
+        </div>
+        <div>
+            <div class="h5">Exposed :root values</div>
+            <div class="root-box">
+                <div>--component-color</div>
+                <div style="background-color:var(--component-color)"></div>
+                <div>--component-bg</div>
+                <div style="background-color:var(--component-bg)"></div>
+                <div>--accent1</div>
+                <div style="background-color:var(--accent1)"></div>
+                <div>--accent2</div>
+                <div style="background-color:var(--accent2)"></div>
+                <div>--accent3</div>
+                <div style="background-color:var(--accent3)"></div>
+                <div>--accent4</div>
+                <div style="background-color:var(--accent4)"></div>
+                <div>--accent5</div>
+                <div style="background-color:var(--accent5)"></div>
+                <div>--accent6</div>
+                <div style="background-color:var(--accent6)"></div>
+                <div>--gray-black</div>
+                <div style="background-color:var(--gray-black)"></div>
+                <div>--gray-dark</div>
+                <div style="background-color:var(--gray-dark)"></div>
+                <div>--gray-disabled</div>
+                <div style="background-color:var(--gray-disabled)"></div>
+                <div>--gray-border</div>
+                <div style="background-color:var(--gray-border)"></div>
+                <div>--gray-light</div>
+                <div style="background-color:var(--gray-light)"></div>
+                <div>--gray-white</div>
+                <div style="background-color:var(--gray-white)"></div>
+                <div>--blue</div>
+                <div style="background-color:var(--blue)"></div>
+                <div>--indigo</div>
+                <div style="background-color:var(--indigo)"></div>
+                <div>--purple</div>
+                <div style="background-color:var(--purple)"></div>
+                <div>--pink</div>
+                <div style="background-color:var(--pink)"></div>
+                <div>--red</div>
+                <div style="background-color:var(--red)"></div>
+                <div>--orange</div>
+                <div style="background-color:var(--orange)"></div>
+                <div>--yellow</div>
+                <div style="background-color:var(--yellow)"></div>
+                <div>--green</div>
+                <div style="background-color:var(--green)"></div>
+                <div>--teal</div>
+                <div style="background-color:var(--teal)"></div>
+                <div>--cyan</div>
+                <div style="background-color:var(--cyan)"></div>
+                <div>--gray</div>
+                <div style="background-color:var(--gray)"></div>
+                <div>--gray-dark</div>
+                <div style="background-color:var(--gray-dark)"></div>
+                <div>--primary</div>
+                <div style="background-color:var(--primary)"></div>
+                <div>--secondary</div>
+                <div style="background-color:var(--secondary)"></div>
+                <div>--tertiary</div>
+                <div style="background-color:var(--tertiary)"></div>
+                <div>--info</div>
+                <div style="background-color:var(--info)"></div>
+                <div>--success</div>
+                <div style="background-color:var(--success)"></div>
+                <div>--warning</div>
+                <div style="background-color:var(--warning)"></div>
+                <div>--error</div>
+                <div style="background-color:var(--error)"></div>
+                <div>--dark</div>
+                <div style="background-color:var(--dark)"></div>
+                <div>--light</div>
+                <div style="background-color:var(--light)"></div>
+                <div>--inverse</div>
+                <div style="background-color:var(--inverse)"></div>
+                <div>--danger</div>
+                <div style="background-color:var(--danger)"></div>
+                <div>--white</div>
+                <div style="background-color:var(--white)"></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

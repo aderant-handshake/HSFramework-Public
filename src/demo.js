@@ -443,6 +443,12 @@ jQuery(function () {
                 {
                     type: "button",
                     togglable: true,
+                    text: "compact",
+                    selected: false
+                },
+                {
+                    type: "button",
+                    togglable: true,
                     text: "flush",
                     selected: false
                 }
