@@ -44807,7 +44807,7 @@ div[__hsrootnode] div[onclick] {
   display: grid;
   grid-gap: 0.125rem;
   grid-template-columns: minmax(270px, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: auto auto 1fr auto auto;
   grid-template-areas: "header header header header header" "sidebar sidebar sidebar sidebar sidebar" "main main main main main" "footer footer footer footer footer";
 }
 
@@ -44835,6 +44835,10 @@ div[__hsrootnode] div[onclick] {
   grid-area: header;
 }
 
+.hs-grid-resp2col .sidebar {
+  max-width: 100%;
+}
+
 @media (min-width: 768px) {
   .hs-grid-resp2col {
     grid-gap: 0.375rem;
@@ -44842,6 +44846,19 @@ div[__hsrootnode] div[onclick] {
   }
   .hs-grid-resp2col.hs-rtl {
     grid-template-areas: "header header header header header" "sidebar sidebar main main main" "footer footer footer footer footer";
+  }
+}
+
+@media (min-width: 768px) and (min-width: 1200px) {
+  .hs-grid-resp2col {
+    grid-gap: 0.375rem;
+    grid-template-areas: "header header header header header" "main main main main sidebar" "footer footer footer footer footer";
+  }
+}
+
+@media (min-width: 768px) {
+  .hs-grid-resp2col.hs-rtl {
+    grid-template-areas: "header header header header header" "sidebar main main main main" "footer footer footer footer footer";
   }
 }
 
@@ -47485,27 +47502,6 @@ div.tester > div:hover {
 
 /* create some rules for ms teams dark mode, this is a first pass, will likely need several dozen more lines of code 
 for different kendo widgets  */
-:root {
-  --hsteam-default-bg1: #f5f5f5;
-  --hsteam-default-bg2: #33344a;
-  --hsteam-default-bg3: #373644;
-  --hsteam-default-bg-hover: #f4f4fc;
-  --hsteam-default-card-bg: #fff;
-  --hsteam-default-card-title-bg: #e2e2f6;
-  --hsteam-default-border: #e2e2f6;
-  --hsteam-default-text1: #323131;
-  --hsteam-default-text2: #292828;
-  --hsteam-dark-bg1: #1f1f1f;
-  --hsteam-dark-bg2: #33344a;
-  --hsteam-dark-bg3: #373644;
-  --hsteam-dark-bg-hover: #33344a;
-  --hsteam-dark-card-bg: #33344a;
-  --hsteam-dark-card-title-bg: #a6a7dc;
-  --hsteam-dark-border: #464775;
-  --hsteam-dark-text1: #fff;
-  --hsteam-dark-text2: #f3f2f1;
-}
-
 .hsbody.hsteams .hs-teams-tile {
   background-color: #6264A7 !important;
   color: #f5f5f5 !important;
@@ -47688,6 +47684,18 @@ for different kendo widgets  */
   color: #fff;
 }
 
+.hsbody.hsteams.v-contrast .k-listview-content.list-group .list-group-item,
+.hsbody.hsteams.v-dark .k-listview-content.list-group .list-group-item {
+  background-color: #33344a;
+  color: #f3f2f1;
+}
+
+.hsbody.hsteams.v-contrast .k-listview-content.list-group .list-group-item:hover,
+.hsbody.hsteams.v-dark .k-listview-content.list-group .list-group-item:hover {
+  background-color: #a6a7dc;
+  color: #fff;
+}
+
 .hsbody.hsteams.v-contrast .k-tabstrip-wrapper,
 .hsbody.hsteams.v-dark .k-tabstrip-wrapper {
   background-color: #1f1f1f;
@@ -47817,6 +47825,23 @@ for different kendo widgets  */
   --gray-border: #DCDCDC;
   --gray-light: #F2F2F2;
   --gray-white: #FFF;
+  --hsteam-default-bg1: #f5f5f5;
+  --hsteam-default-bg2: #33344a;
+  --hsteam-default-bg3: #373644;
+  --hsteam-default-bg-hover: #f4f4fc;
+  --hsteam-default-card-bg: #fff;
+  --hsteam-default-card-title-bg: #e2e2f6;
+  --hsteam-default-border: #e2e2f6;
+  --hsteam-default-text1: #323131;
+  --hsteam-default-text2: #292828;
+  --hsteam-dark-bg1: #1f1f1f;
+  --hsteam-dark-bg2: #33344a;
+  --hsteam-dark-bg3: #a6a7dc;
+  --hsteam-dark-bg-hover: #33344a;
+  --hsteam-dark-card-bg: #33344a;
+  --hsteam-dark-border: #464775;
+  --hsteam-dark-text1: #fff;
+  --hsteam-dark-text2: #f3f2f1;
 }
 
 /* deprecate - not sure we should be setting these when we always exist in a SP page, or a teams page. 
