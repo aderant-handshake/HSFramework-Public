@@ -13,7 +13,7 @@ This project is a ground up rebuild of the Handshake UI Framework that includes 
 This Framework may be used for any Handshake Installation and Connect is not required. The Build files are available to Handshake customers on request. 
 
 ## References <!-- omit in toc -->
-Your best references for this framework are: 
+Besides this document, your best references for this framework are: 
 * [Bootstrap 4 documentation site](https://getbootstrap.com/docs/4.5/layout/overview/).  
 * [Kendo UI for jQuery Styles and Appearance](https://docs.telerik.com/kendo-ui/styles-and-layout/sass-themes)
 
@@ -35,6 +35,14 @@ Your best references for this framework are:
   - [Helpers](#helpers)
     - [Font Icon Helpers](#font-icon-helpers)
 - [Bootstrap](#bootstrap)
+- [Weekly Build Notes](#weekly-build-notes)
+  - [June 14-18](#june-14-18)
+    - [Tiles](#tiles-1)
+    - [MS Teams](#ms-teams)
+    - [Colors](#colors)
+    - [Tabs](#tabs)
+    - [Build](#build)
+  - [June 21-25](#june-21-25)
 
 
 ## Usage
@@ -216,12 +224,12 @@ All layouts are responsive, in that on mobile devices that will appear as stacke
 CSS Grids are the most straight forward way to construct page layouts, if you have a complex custom use case it is not difficult to build that in the skin with appropriate CSS.  [css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)  is an excellent resource if you are just starting with CSS grid.
 
 Supplied Layout Classes are:
--   hs-grid-magazine : provides full width header, left and right sidebars, main article and full width footer
--   hs-grid : basic grid declaration
--   hs-grid-[ double | triple | quad ]
--   hs-grid-84split : responsive 2 columun layout with left being 3/4 the width, and the right being 1/4
--   hs-grid-48split : responsive 2 columun layout with left being 1/4 the width, and the right being 3/4
--   hs-grid-resp2col : response 2 column layout with a header, sidebar (2/5), main (3/5) and footer. 
+- hs-grid-magazine : provides full width header, left and right sidebars, main article and full width footer
+- hs-grid : basic grid declaration
+- hs-grid-[ double | triple | quad ]
+- hs-grid-84split : responsive 2 columun layout with left being 3/4 the width, and the right being 1/4
+- hs-grid-48split : responsive 2 columun layout with left being 1/4 the width, and the right being 3/4
+- hs-grid-resp2col : response 2 column layout with a header, sidebar (2/5), main (3/5) and footer. Note that the sidebar may have a fixed/max width in the skin and it should layout correctly
 
 Helper classes 
 - hs-rtl : moves the main content to the right of the sidebar, default is to the left
@@ -449,3 +457,80 @@ This framework is built from the **@Progress/kendo-bootstrap-theme** npm package
 * forms/input 
 * badge
 * accordion
+
+# Weekly Build Notes
+Below are notes by week of changes made to the framework 
+
+## June 14-18 
+### Tiles 
+- Refined the code for hs-tiles.
+- Added class **hs-tile-landscape** to render a tile wider than tall (16:9)
+- Added class **hs-teams-tile** to render tiles in MS Teams colors for default and dark mode. If a tile has the class hs-teams-tile and is rendered outside of teams, it will be ignored.  So, ```class="hs-teams-tile hs-tile-primary"``` will render one way in teams and another on a SharePoint Page 
+
+### MS Teams
+Add styles to adapt to how Teams should look in default and dark mode, currently:  
+- Tabs rendered in teams will default to the Teams tab styling 
+- Colors set in k-cards, bootstrap and kendo themes class (i.e. text-primary or bg-secondary) will be overridden when rendered in teams, depending on the teams theme in play
+- Scheduler colors will be overridden for the Teams palette
+- All teams colors are exposed as :root variables (see  colors.html)
+  
+> Expect ongoing improvements to ms teams apps over the next several weeks
+
+### Colors 
+Based on consultant input, added a number of color variables to work more closely with custom/designer demands: 
+- Additional accents Accent1 .. Accent2, exposed as :root variables and also as text and backgrounds: 
+- h**s-text-accent1**, **hs-text-accent2**, etc. 
+- **hs-bg-accent1**, **hs-bg-accent2**, etc.. 
+- A Gray theme added gray-black, gray-dark, gray-disabled, gray-border, gray-light, gray-white  
+  - **hs-text-gray-dark**, **hs-text-gray-disabled**, etc.. 
+  - **hs-bg-gray-dark**, **hs-bg-gray-disabled**, etc.. 
+- Rebuilt ../src/colors.html to show these changes more clearly. 
+
+### Tabs 
+- As noted above, styles added for tabs rendered in Teams
+- Added **hs-tabstrip-compact** – renders tabs using only an underline with minimal spacing, borders.  Active/Hover underline will display only beneath the text and the width of any tab element is limited to 20em;  
+
+![hs-tabstrip-compact](images/hs-tabstrip-compact.png) 
+
+### Build
+Added the following files to the build 
+* _root.scss – code to expose more custom variables as :root vars
+* _connect-ui.scss – custom connect styles, moved several from hsframework.scss to here
+* _text.scss – code to expose custom text colors, i.e. hs-text-accent1  
+
+## June 21-25
+- .hs-grid-respcol : modified class so that
+  - The "sidebar" element can be given a fixed or max width in the screen, and it will still  layout properly
+  - On "md" to "xl" monitors the template will be "main main main sidebar sidebar" and on x+l monitors the layout is "main main main main sidebar" 
+- Added code to better handle list-group > list-group-item in teams dark mode
+- Exported Teams colors to :root variables and added to colors.html page 
+- Supress extra border around list-group-item when it is in a k-card container, but not in a k-card-body container.
+- Fixed an issue with **hs-listview-border** to correctly reapply a border around k-listview-bordered when desired.  The default border around ```k-listview k-listview-bordered``` has been suppressed. Adding **hs-listview-border** to the **parent** element of the HTML5ListView will restore the default. 
+- Numerous adjustments to fine-tune color settings when running a skin in teams.
+- Added **hs-card-img-left** which is a simple card structure with a 150px image on the left and a body on the right.  The image will be in a circle. To override use:
+  
+```html
+  <img class="hs-card-img-left-image square" />
+```
+
+sample markup for this
+```html
+<div class="hs-card-img-left">
+    <div>
+        <img class="hs-card-img-left-image" src="#:photourl#" />
+    </div>
+    <div class="hs-card-img-left-body">
+        <div class="hs-card-img-left-title">#:fullname#</div>
+        <div class="hs-card-img-left-subtitle">#:jobtitle#</div>
+        <div class="hs-card-img-left-text">
+            <div>#:phonenumber#</div>
+            <div>#:department# (#:office#)</div>
+            <div>
+                <a title="mailto #:email#" href="mailto:#:email#">
+                    <i class="fas fa-envelope"></i>
+                </a> e-mail
+            </div>
+        </div>
+    </div>
+</div>
+```
