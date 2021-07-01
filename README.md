@@ -36,13 +36,14 @@ Besides this document, your best references for this framework are:
     - [Font Icon Helpers](#font-icon-helpers)
 - [Bootstrap](#bootstrap)
 - [Weekly Build Notes](#weekly-build-notes)
+  - [June 28-July 2](#june-28-july-2)
+  - [June 21-25](#june-21-25)
   - [June 14-18](#june-14-18)
     - [Tiles](#tiles-1)
     - [MS Teams](#ms-teams)
     - [Colors](#colors)
     - [Tabs](#tabs)
     - [Build](#build)
-  - [June 21-25](#june-21-25)
 
 
 ## Usage
@@ -461,42 +462,13 @@ This framework is built from the **@Progress/kendo-bootstrap-theme** npm package
 # Weekly Build Notes
 Below are notes by week of changes made to the framework 
 
-## June 14-18 
-### Tiles 
-- Refined the code for hs-tiles.
-- Added class **hs-tile-landscape** to render a tile wider than tall (16:9)
-- Added class **hs-teams-tile** to render tiles in MS Teams colors for default and dark mode. If a tile has the class hs-teams-tile and is rendered outside of teams, it will be ignored.  So, ```class="hs-teams-tile hs-tile-primary"``` will render one way in teams and another on a SharePoint Page 
+## June 28-July 2 
 
-### MS Teams
-Add styles to adapt to how Teams should look in default and dark mode, currently:  
-- Tabs rendered in teams will default to the Teams tab styling 
-- Colors set in k-cards, bootstrap and kendo themes class (i.e. text-primary or bg-secondary) will be overridden when rendered in teams, depending on the teams theme in play
-- Scheduler colors will be overridden for the Teams palette
-- All teams colors are exposed as :root variables (see  colors.html)
-  
-> Expect ongoing improvements to ms teams apps over the next several weeks
-
-### Colors 
-Based on consultant input, added a number of color variables to work more closely with custom/designer demands: 
-- Additional accents Accent1 .. Accent2, exposed as :root variables and also as text and backgrounds: 
-- h**s-text-accent1**, **hs-text-accent2**, etc. 
-- **hs-bg-accent1**, **hs-bg-accent2**, etc.. 
-- A Gray theme added gray-black, gray-dark, gray-disabled, gray-border, gray-light, gray-white  
-  - **hs-text-gray-dark**, **hs-text-gray-disabled**, etc.. 
-  - **hs-bg-gray-dark**, **hs-bg-gray-disabled**, etc.. 
-- Rebuilt ../src/colors.html to show these changes more clearly. 
-
-### Tabs 
-- As noted above, styles added for tabs rendered in Teams
-- Added **hs-tabstrip-compact** – renders tabs using only an underline with minimal spacing, borders.  Active/Hover underline will display only beneath the text and the width of any tab element is limited to 20em;  
-
-![hs-tabstrip-compact](images/hs-tabstrip-compact.png) 
-
-### Build
-Added the following files to the build 
-* _root.scss – code to expose more custom variables as :root vars
-* _connect-ui.scss – custom connect styles, moved several from hsframework.scss to here
-* _text.scss – code to expose custom text colors, i.e. hs-text-accent1  
+Few changes this week. 
+- Modified default font family to match what is used OOTB for SharePoint Online and Team Sites ```$font-family-base: "Segoe UI",system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif;```
+- Modified gulp to update the ExtraNetSite.css file in the ../Themes/Extranet/Custom folder as well. 
+- Added sharepoint.scss to deal with SP / Bootstrap / Kendo conflicts.
+  - fixed issue where SharePoint makes button a min width of 6em; button.k-button will have a min-width of 0;
 
 ## June 21-25
 - .hs-grid-respcol : modified class so that
@@ -534,3 +506,40 @@ sample markup for this
     </div>
 </div>
 ```
+
+## June 14-18 
+### Tiles 
+- Refined the code for hs-tiles.
+- Added class **hs-tile-landscape** to render a tile wider than tall (16:9)
+- Added class **hs-teams-tile** to render tiles in MS Teams colors for default and dark mode. If a tile has the class hs-teams-tile and is rendered outside of teams, it will be ignored.  So, ```class="hs-teams-tile hs-tile-primary"``` will render one way in teams and another on a SharePoint Page 
+
+### MS Teams
+Add styles to adapt to how Teams should look in default and dark mode, currently:  
+- Tabs rendered in teams will default to the Teams tab styling 
+- Colors set in k-cards, bootstrap and kendo themes class (i.e. text-primary or bg-secondary) will be overridden when rendered in teams, depending on the teams theme in play
+- Scheduler colors will be overridden for the Teams palette
+- All teams colors are exposed as :root variables (see  colors.html)
+  
+> Expect ongoing improvements to ms teams apps over the next several weeks
+
+### Colors 
+Based on consultant input, added a number of color variables to work more closely with custom/designer demands: 
+- Additional accents Accent1 .. Accent2, exposed as :root variables and also as text and backgrounds: 
+- h**s-text-accent1**, **hs-text-accent2**, etc. 
+- **hs-bg-accent1**, **hs-bg-accent2**, etc.. 
+- A Gray theme added gray-black, gray-dark, gray-disabled, gray-border, gray-light, gray-white  
+  - **hs-text-gray-dark**, **hs-text-gray-disabled**, etc.. 
+  - **hs-bg-gray-dark**, **hs-bg-gray-disabled**, etc.. 
+- Rebuilt ../src/colors.html to show these changes more clearly. 
+
+### Tabs 
+- As noted above, styles added for tabs rendered in Teams
+- Added **hs-tabstrip-compact** – renders tabs using only an underline with minimal spacing, borders.  Active/Hover underline will display only beneath the text and the width of any tab element is limited to 20em;  
+
+![hs-tabstrip-compact](images/hs-tabstrip-compact.png) 
+
+### Build
+Added the following files to the build 
+* _root.scss – code to expose more custom variables as :root vars
+* _connect-ui.scss – custom connect styles, moved several from hsframework.scss to here
+* _text.scss – code to expose custom text colors, i.e. hs-text-accent1  
