@@ -9,8 +9,6 @@
 /*
 $font-family-base: Roboto,"Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";*/
 /* Aderant Color Pallette */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 .k-theme-test-class,
 .k-common-test-class {
   opacity: 0;
@@ -39913,6 +39911,18 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+/* Defaulting to Segoe UI since it is the default font for SP Online and teams 
+// For Roboto Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// For Open Sans Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*/
+div[__hsrootnode] {
+  font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+
 .m-0 {
   margin: 0 !important;
 }
@@ -47580,6 +47590,10 @@ input[hsrole="refiner"] {
 
 /* create some rules for ms teams dark mode, this is a first pass, will likely need several dozen more lines of code 
 for different kendo widgets  */
+.hsbody.hsteams {
+  font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+
 .hsbody.hsteams.v-contrast .k-grid,
 .hsbody.hsteams.v-dark .k-grid {
   background-color: #3B3A39;

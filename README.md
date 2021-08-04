@@ -36,6 +36,7 @@ Besides this document, your best references for this framework are:
     - [Font Icon Helpers](#font-icon-helpers)
 - [Bootstrap](#bootstrap)
 - [Weekly Build Notes](#weekly-build-notes)
+  - [July 26 - July 30](#july-26---july-30)
   - [June 28-July 2](#june-28-july-2)
   - [June 21-25](#june-21-25)
   - [June 14-18](#june-14-18)
@@ -461,6 +462,10 @@ This framework is built from the **@Progress/kendo-bootstrap-theme** npm package
 
 # Weekly Build Notes
 Below are notes by week of changes made to the framework 
+
+## July 26 - July 30
+- Set font-family for div[__hsrootnode] to $font-family-base
+- Remove references to imported fonts Roboto and Open Sans in favor of Segoe UI
 
 ## June 28-July 2 
 
