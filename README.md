@@ -18,6 +18,9 @@ Besides this document, your best references for this framework are:
 * [Kendo UI for jQuery Styles and Appearance](https://docs.telerik.com/kendo-ui/styles-and-layout/sass-themes)
 
 # Table of Contents <!-- omit in toc -->
+- [Usage](#usage)
+  - [Clone this repository](#clone-this-repository)
+  - [Setup your build environment](#setup-your-build-environment)
 - [Modules](#modules)
   - [User Profile Cards](#user-profile-cards)
   - [Kendo Tab Styles](#kendo-tab-styles)
@@ -48,16 +51,16 @@ Besides this document, your best references for this framework are:
     - [Build](#build)
 
 
-## Usage
+# Usage
 To use this repository to create a new/custom client build 
 
-#### Clone this repository to a local folder 
+## Clone this repository
 All you need is the GitHub project folders and files.  You are not required to download, install or use Git unless you intend to check files back into this repository. 
 
 If you do plan on updating this repository, make sure that you understand how to fork the project and create a pull request for the updates. 
 
-#### Setup your machine to support a node.js/gulp build workflow 
-Install and configure node.js/gulp if you don't already have it on your build machine:
+## Setup your build environment  
+Use node.js/gulp for the build workflow.  Install and configure node.js/gulp if you don't already have it on your build machine:
 
 * Install [node.js](https://nodejs.org/en)
 * Launch node.js command prompt, go to local work folder (the local drive/folder where you cloned this repository)
@@ -466,6 +469,7 @@ Below are notes by week of changes made to the framework
 
 ## Aug 1 - 6
 - Added _myhsclient.scss to allow for project customizations.  added this file to .gitignore to not track changes. 
+- Removed unneccessary code k-card-header in _card.scss
 
 ## July 26 - July 30
 - Set font-family for div[__hsrootnode] to $font-family-base

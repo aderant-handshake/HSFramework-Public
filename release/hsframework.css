@@ -44406,13 +44406,6 @@ button.hs-bg-gray-white:focus {
   color: #fff;
 }
 
-.k-card .k-card-header {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #5c6466;
-  padding: 0.75rem 0.75rem;
-}
-
 .k-card .k-card-header.hs-card-header-primary {
   background-color: #263d4b !important;
   color: #edf2f2 !important;
@@ -44477,7 +44470,7 @@ button.hs-bg-gray-white:focus {
   border-bottom: 2px solid #1c97bf;
 }
 
-.k-card .k-card-title {
+.k-card .k-card-header .k-card-title {
   line-height: inherit;
 }
 
