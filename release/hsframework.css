@@ -48071,6 +48071,11 @@ for different kendo widgets  */
   margin: 0.75rem 0.75rem;
 }
 
+/*
+    This file may be used to add client specific SASS you want in your build.  
+    You are responsible for insuring the file is not over-written when you download 
+    an update to the framework code. This file added to .gitignore 
+*/
 :root {
   --component-color: #5c6466;
   --component-bg: #fff;
