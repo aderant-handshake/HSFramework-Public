@@ -470,6 +470,8 @@ Below are notes by week of changes made to the framework
 ## Aug 1 - 6
 - Added _myhsclient.scss to allow for project customizations.  added this file to .gitignore to not track changes. 
 - Removed unneccessary code k-card-header in _card.scss
+- Modified default chart palette 
+- Modified Teams Tiles / Brand color a little darker. 
 
 ## July 26 - July 30
 - Set font-family for div[__hsrootnode] to $font-family-base
