@@ -47292,6 +47292,16 @@ div.tester > div:hover {
   border-color: #dee2e6 #fff;
 }
 
+.hs-upc-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.hs-upc-item .item-image {
+  width: 75px;
+  border-radius: 50%;
+}
+
 .hs-upc-userphoto--grid-inline {
   display: inline-block;
   width: 32px;
