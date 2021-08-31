@@ -39,6 +39,7 @@ Besides this document, your best references for this framework are:
     - [Font Icon Helpers](#font-icon-helpers)
 - [Bootstrap](#bootstrap)
 - [Weekly Build Notes](#weekly-build-notes)
+  - [Aug 16 - 20](#aug-16---20)
   - [Aug 1 - 6](#aug-1---6)
   - [July 26 - July 30](#july-26---july-30)
   - [June 28-July 2](#june-28-july-2)
@@ -466,6 +467,10 @@ This framework is built from the **@Progress/kendo-bootstrap-theme** npm package
 
 # Weekly Build Notes
 Below are notes by week of changes made to the framework 
+
+## Aug 16 - 20 
+- Refinements for Ms Teams Dark Theme
+- Added Sean's fancy Ribbbon the cards.scss 
 
 ## Aug 1 - 6
 - Added _myhsclient.scss to allow for project customizations.  added this file to .gitignore to not track changes. 

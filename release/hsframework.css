@@ -44507,6 +44507,62 @@ button.hs-bg-gray-white:focus {
   overflow: hidden;
 }
 
+.k-card .hs-card-ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 5;
+}
+
+.k-card .hs-card-ribbon:before, .k-card .hs-card-ribbon:after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+
+.k-card .hs-card-ribbon > span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 700 18px/1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.k-card .hs-card-ribbon.top-right {
+  top: -10px;
+  right: -10px;
+}
+
+.k-card .hs-card-ribbon.top-right:before, .k-card .hs-card-ribbon.top-right:after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.k-card .hs-card-ribbon.top-right:before {
+  top: 0;
+  left: 0;
+}
+
+.k-card .hs-card-ribbon.top-right:after {
+  bottom: 0;
+  right: 0;
+}
+
+.k-card .hs-card-ribbon.top-right > span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
 /* classes to support __HS.Connect.seeMore functionality.*/
 .hs-more-content {
   display: none;
@@ -44649,49 +44705,49 @@ div[__hsrootnode] div[onclick] {
   grid-gap: 1.25em !important;
 }
 
-.hs-grid {
+.hs-grid, .hs-listgroup-grid {
   max-width: 2400px;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: minmax(270px, 1fr);
 }
 
-.hs-grid > .sidebar {
+.hs-grid > .sidebar, .hs-listgroup-grid > .sidebar {
   grid-area: sidebar;
 }
 
-.hs-grid > .sidebar1 {
+.hs-grid > .sidebar1, .hs-listgroup-grid > .sidebar1 {
   grid-area: sidebar1;
 }
 
-.hs-grid > .sidebar2 {
+.hs-grid > .sidebar2, .hs-listgroup-grid > .sidebar2 {
   grid-area: sidebar2;
 }
 
-.hs-grid > .main {
+.hs-grid > .main, .hs-listgroup-grid > .main {
   grid-area: main;
 }
 
-.hs-grid > .footer {
+.hs-grid > .footer, .hs-listgroup-grid > .footer {
   grid-area: footer;
 }
 
-.hs-grid > .header {
+.hs-grid > .header, .hs-listgroup-grid > .header {
   grid-area: header;
 }
 
 @media screen and (min-width: 720px) {
-  .hs-grid {
+  .hs-grid, .hs-listgroup-grid {
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   }
-  .hs-grid .hs-grid-double {
+  .hs-grid .hs-grid-double, .hs-listgroup-grid .hs-grid-double {
     grid-column: span 2;
   }
-  .hs-grid .hs-grid-triple {
+  .hs-grid .hs-grid-triple, .hs-listgroup-grid .hs-grid-triple {
     grid-column: span 3;
   }
-  .hs-grid .hs-grid-quad {
+  .hs-grid .hs-grid-quad, .hs-listgroup-grid .hs-grid-quad {
     grid-column: span 4;
   }
 }
@@ -44962,6 +45018,10 @@ div[__hsrootnode] div[onclick] {
   border: none;
 }
 
+.hs-listgroup-grid .list-group-item {
+  border: 1px !important;
+}
+
 .hs-listview-border .k-widget.k-listview.k-listview-bordered {
   border-width: 1px;
   border-color: #dee2e6;
@@ -45149,6 +45209,10 @@ div.hs-pager-dark .k-pager-wrap.k-widget.k-floatwrap ul.k-pager-numbers li.hs-li
   border-bottom: 3px solid #B30838;
   color: #263d4b;
   font-weight: 700;
+}
+
+.k-card div:not(.k-card-body) .hs-agenda-slim {
+  border-width: 0;
 }
 
 .hs-agenda-slim .k-scheduler-header,
@@ -45988,7 +46052,7 @@ div.tester > div:hover {
   grid-gap: 1em;
 }
 
-.hs-tile-grid.hs-tile-square .hs-tile, .hs-tile-square.hs-tile-grid-sm .hs-tile, .hs-tile-square.hs-tile-grid-lg .hs-tile, .hs-tile-square.hs-tile-grid-landscape .hs-tile, .hs-tile-square.hs-tile-grid-primary .hs-tile, .hs-tile-square.hs-tile-grid-secondary .hs-tile, .hs-tile-square.hs-tile-grid-tertiary .hs-tile, .hs-tile-square.hs-tile-grid-info .hs-tile, .hs-tile-square.hs-tile-grid-success .hs-tile, .hs-tile-square.hs-tile-grid-warning .hs-tile, .hs-tile-square.hs-tile-grid-error .hs-tile, .hs-tile-square.hs-tile-grid-dark .hs-tile, .hs-tile-square.hs-tile-grid-light .hs-tile, .hs-tile-square.hs-tile-grid-inverse .hs-tile, .hs-tile-square.hs-tile-grid-danger .hs-tile, .hs-tile-square.hs-tile-grid-white .hs-tile, .hs-tile-grid.hs-tile-square .hs-tile-sm, .hs-tile-square.hs-tile-grid-sm .hs-tile-sm, .hs-tile-square.hs-tile-grid-lg .hs-tile-sm, .hs-tile-square.hs-tile-grid-landscape .hs-tile-sm, .hs-tile-square.hs-tile-grid-primary .hs-tile-sm, .hs-tile-square.hs-tile-grid-secondary .hs-tile-sm, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-sm, .hs-tile-square.hs-tile-grid-info .hs-tile-sm, .hs-tile-square.hs-tile-grid-success .hs-tile-sm, .hs-tile-square.hs-tile-grid-warning .hs-tile-sm, .hs-tile-square.hs-tile-grid-error .hs-tile-sm, .hs-tile-square.hs-tile-grid-dark .hs-tile-sm, .hs-tile-square.hs-tile-grid-light .hs-tile-sm, .hs-tile-square.hs-tile-grid-inverse .hs-tile-sm, .hs-tile-square.hs-tile-grid-danger .hs-tile-sm, .hs-tile-square.hs-tile-grid-white .hs-tile-sm, .hs-tile-grid.hs-tile-square .hs-tile-lg, .hs-tile-square.hs-tile-grid-sm .hs-tile-lg, .hs-tile-square.hs-tile-grid-lg .hs-tile-lg, .hs-tile-square.hs-tile-grid-landscape .hs-tile-lg, .hs-tile-square.hs-tile-grid-primary .hs-tile-lg, .hs-tile-square.hs-tile-grid-secondary .hs-tile-lg, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-lg, .hs-tile-square.hs-tile-grid-info .hs-tile-lg, .hs-tile-square.hs-tile-grid-success .hs-tile-lg, .hs-tile-square.hs-tile-grid-warning .hs-tile-lg, .hs-tile-square.hs-tile-grid-error .hs-tile-lg, .hs-tile-square.hs-tile-grid-dark .hs-tile-lg, .hs-tile-square.hs-tile-grid-light .hs-tile-lg, .hs-tile-square.hs-tile-grid-inverse .hs-tile-lg, .hs-tile-square.hs-tile-grid-danger .hs-tile-lg, .hs-tile-square.hs-tile-grid-white .hs-tile-lg, .hs-tile-grid.hs-tile-square .hs-tile-landscape, .hs-tile-square.hs-tile-grid-sm .hs-tile-landscape, .hs-tile-square.hs-tile-grid-lg .hs-tile-landscape, .hs-tile-square.hs-tile-grid-landscape .hs-tile-landscape, .hs-tile-square.hs-tile-grid-primary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-secondary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-info .hs-tile-landscape, .hs-tile-square.hs-tile-grid-success .hs-tile-landscape, .hs-tile-square.hs-tile-grid-warning .hs-tile-landscape, .hs-tile-square.hs-tile-grid-error .hs-tile-landscape, .hs-tile-square.hs-tile-grid-dark .hs-tile-landscape, .hs-tile-square.hs-tile-grid-light .hs-tile-landscape, .hs-tile-square.hs-tile-grid-inverse .hs-tile-landscape, .hs-tile-square.hs-tile-grid-danger .hs-tile-landscape, .hs-tile-square.hs-tile-grid-white .hs-tile-landscape, .hs-tile-grid.hs-tile-square .hs-tile-primary, .hs-tile-square.hs-tile-grid-sm .hs-tile-primary, .hs-tile-square.hs-tile-grid-lg .hs-tile-primary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-primary, .hs-tile-square.hs-tile-grid-primary .hs-tile-primary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-primary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-primary, .hs-tile-square.hs-tile-grid-info .hs-tile-primary, .hs-tile-square.hs-tile-grid-success .hs-tile-primary, .hs-tile-square.hs-tile-grid-warning .hs-tile-primary, .hs-tile-square.hs-tile-grid-error .hs-tile-primary, .hs-tile-square.hs-tile-grid-dark .hs-tile-primary, .hs-tile-square.hs-tile-grid-light .hs-tile-primary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-primary, .hs-tile-square.hs-tile-grid-danger .hs-tile-primary, .hs-tile-square.hs-tile-grid-white .hs-tile-primary, .hs-tile-grid.hs-tile-square .hs-tile-secondary, .hs-tile-square.hs-tile-grid-sm .hs-tile-secondary, .hs-tile-square.hs-tile-grid-lg .hs-tile-secondary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-secondary, .hs-tile-square.hs-tile-grid-primary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-info .hs-tile-secondary, .hs-tile-square.hs-tile-grid-success .hs-tile-secondary, .hs-tile-square.hs-tile-grid-warning .hs-tile-secondary, .hs-tile-square.hs-tile-grid-error .hs-tile-secondary, .hs-tile-square.hs-tile-grid-dark .hs-tile-secondary, .hs-tile-square.hs-tile-grid-light .hs-tile-secondary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-secondary, .hs-tile-square.hs-tile-grid-danger .hs-tile-secondary, .hs-tile-square.hs-tile-grid-white .hs-tile-secondary, .hs-tile-grid.hs-tile-square .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-sm .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-lg .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-primary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-info .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-success .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-warning .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-error .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-dark .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-light .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-danger .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-white .hs-tile-tertiary, .hs-tile-grid.hs-tile-square .hs-tile-info, .hs-tile-square.hs-tile-grid-sm .hs-tile-info, .hs-tile-square.hs-tile-grid-lg .hs-tile-info, .hs-tile-square.hs-tile-grid-landscape .hs-tile-info, .hs-tile-square.hs-tile-grid-primary .hs-tile-info, .hs-tile-square.hs-tile-grid-secondary .hs-tile-info, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-info, .hs-tile-square.hs-tile-grid-info .hs-tile-info, .hs-tile-square.hs-tile-grid-success .hs-tile-info, .hs-tile-square.hs-tile-grid-warning .hs-tile-info, .hs-tile-square.hs-tile-grid-error .hs-tile-info, .hs-tile-square.hs-tile-grid-dark .hs-tile-info, .hs-tile-square.hs-tile-grid-light .hs-tile-info, .hs-tile-square.hs-tile-grid-inverse .hs-tile-info, .hs-tile-square.hs-tile-grid-danger .hs-tile-info, .hs-tile-square.hs-tile-grid-white .hs-tile-info, .hs-tile-grid.hs-tile-square .hs-tile-success, .hs-tile-square.hs-tile-grid-sm .hs-tile-success, .hs-tile-square.hs-tile-grid-lg .hs-tile-success, .hs-tile-square.hs-tile-grid-landscape .hs-tile-success, .hs-tile-square.hs-tile-grid-primary .hs-tile-success, .hs-tile-square.hs-tile-grid-secondary .hs-tile-success, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-success, .hs-tile-square.hs-tile-grid-info .hs-tile-success, .hs-tile-square.hs-tile-grid-success .hs-tile-success, .hs-tile-square.hs-tile-grid-warning .hs-tile-success, .hs-tile-square.hs-tile-grid-error .hs-tile-success, .hs-tile-square.hs-tile-grid-dark .hs-tile-success, .hs-tile-square.hs-tile-grid-light .hs-tile-success, .hs-tile-square.hs-tile-grid-inverse .hs-tile-success, .hs-tile-square.hs-tile-grid-danger .hs-tile-success, .hs-tile-square.hs-tile-grid-white .hs-tile-success, .hs-tile-grid.hs-tile-square .hs-tile-warning, .hs-tile-square.hs-tile-grid-sm .hs-tile-warning, .hs-tile-square.hs-tile-grid-lg .hs-tile-warning, .hs-tile-square.hs-tile-grid-landscape .hs-tile-warning, .hs-tile-square.hs-tile-grid-primary .hs-tile-warning, .hs-tile-square.hs-tile-grid-secondary .hs-tile-warning, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-warning, .hs-tile-square.hs-tile-grid-info .hs-tile-warning, .hs-tile-square.hs-tile-grid-success .hs-tile-warning, .hs-tile-square.hs-tile-grid-warning .hs-tile-warning, .hs-tile-square.hs-tile-grid-error .hs-tile-warning, .hs-tile-square.hs-tile-grid-dark .hs-tile-warning, .hs-tile-square.hs-tile-grid-light .hs-tile-warning, .hs-tile-square.hs-tile-grid-inverse .hs-tile-warning, .hs-tile-square.hs-tile-grid-danger .hs-tile-warning, .hs-tile-square.hs-tile-grid-white .hs-tile-warning, .hs-tile-grid.hs-tile-square .hs-tile-error, .hs-tile-square.hs-tile-grid-sm .hs-tile-error, .hs-tile-square.hs-tile-grid-lg .hs-tile-error, .hs-tile-square.hs-tile-grid-landscape .hs-tile-error, .hs-tile-square.hs-tile-grid-primary .hs-tile-error, .hs-tile-square.hs-tile-grid-secondary .hs-tile-error, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-error, .hs-tile-square.hs-tile-grid-info .hs-tile-error, .hs-tile-square.hs-tile-grid-success .hs-tile-error, .hs-tile-square.hs-tile-grid-warning .hs-tile-error, .hs-tile-square.hs-tile-grid-error .hs-tile-error, .hs-tile-square.hs-tile-grid-dark .hs-tile-error, .hs-tile-square.hs-tile-grid-light .hs-tile-error, .hs-tile-square.hs-tile-grid-inverse .hs-tile-error, .hs-tile-square.hs-tile-grid-danger .hs-tile-error, .hs-tile-square.hs-tile-grid-white .hs-tile-error, .hs-tile-grid.hs-tile-square .hs-tile-dark, .hs-tile-square.hs-tile-grid-sm .hs-tile-dark, .hs-tile-square.hs-tile-grid-lg .hs-tile-dark, .hs-tile-square.hs-tile-grid-landscape .hs-tile-dark, .hs-tile-square.hs-tile-grid-primary .hs-tile-dark, .hs-tile-square.hs-tile-grid-secondary .hs-tile-dark, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-dark, .hs-tile-square.hs-tile-grid-info .hs-tile-dark, .hs-tile-square.hs-tile-grid-success .hs-tile-dark, .hs-tile-square.hs-tile-grid-warning .hs-tile-dark, .hs-tile-square.hs-tile-grid-error .hs-tile-dark, .hs-tile-square.hs-tile-grid-dark .hs-tile-dark, .hs-tile-square.hs-tile-grid-light .hs-tile-dark, .hs-tile-square.hs-tile-grid-inverse .hs-tile-dark, .hs-tile-square.hs-tile-grid-danger .hs-tile-dark, .hs-tile-square.hs-tile-grid-white .hs-tile-dark, .hs-tile-grid.hs-tile-square .hs-tile-light, .hs-tile-square.hs-tile-grid-sm .hs-tile-light, .hs-tile-square.hs-tile-grid-lg .hs-tile-light, .hs-tile-square.hs-tile-grid-landscape .hs-tile-light, .hs-tile-square.hs-tile-grid-primary .hs-tile-light, .hs-tile-square.hs-tile-grid-secondary .hs-tile-light, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-light, .hs-tile-square.hs-tile-grid-info .hs-tile-light, .hs-tile-square.hs-tile-grid-success .hs-tile-light, .hs-tile-square.hs-tile-grid-warning .hs-tile-light, .hs-tile-square.hs-tile-grid-error .hs-tile-light, .hs-tile-square.hs-tile-grid-dark .hs-tile-light, .hs-tile-square.hs-tile-grid-light .hs-tile-light, .hs-tile-square.hs-tile-grid-inverse .hs-tile-light, .hs-tile-square.hs-tile-grid-danger .hs-tile-light, .hs-tile-square.hs-tile-grid-white .hs-tile-light, .hs-tile-grid.hs-tile-square .hs-tile-inverse, .hs-tile-square.hs-tile-grid-sm .hs-tile-inverse, .hs-tile-square.hs-tile-grid-lg .hs-tile-inverse, .hs-tile-square.hs-tile-grid-landscape .hs-tile-inverse, .hs-tile-square.hs-tile-grid-primary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-secondary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-info .hs-tile-inverse, .hs-tile-square.hs-tile-grid-success .hs-tile-inverse, .hs-tile-square.hs-tile-grid-warning .hs-tile-inverse, .hs-tile-square.hs-tile-grid-error .hs-tile-inverse, .hs-tile-square.hs-tile-grid-dark .hs-tile-inverse, .hs-tile-square.hs-tile-grid-light .hs-tile-inverse, .hs-tile-square.hs-tile-grid-inverse .hs-tile-inverse, .hs-tile-square.hs-tile-grid-danger .hs-tile-inverse, .hs-tile-square.hs-tile-grid-white .hs-tile-inverse, .hs-tile-grid.hs-tile-square .hs-tile-danger, .hs-tile-square.hs-tile-grid-sm .hs-tile-danger, .hs-tile-square.hs-tile-grid-lg .hs-tile-danger, .hs-tile-square.hs-tile-grid-landscape .hs-tile-danger, .hs-tile-square.hs-tile-grid-primary .hs-tile-danger, .hs-tile-square.hs-tile-grid-secondary .hs-tile-danger, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-danger, .hs-tile-square.hs-tile-grid-info .hs-tile-danger, .hs-tile-square.hs-tile-grid-success .hs-tile-danger, .hs-tile-square.hs-tile-grid-warning .hs-tile-danger, .hs-tile-square.hs-tile-grid-error .hs-tile-danger, .hs-tile-square.hs-tile-grid-dark .hs-tile-danger, .hs-tile-square.hs-tile-grid-light .hs-tile-danger, .hs-tile-square.hs-tile-grid-inverse .hs-tile-danger, .hs-tile-square.hs-tile-grid-danger .hs-tile-danger, .hs-tile-square.hs-tile-grid-white .hs-tile-danger, .hs-tile-grid.hs-tile-square .hs-tile-white, .hs-tile-square.hs-tile-grid-sm .hs-tile-white, .hs-tile-square.hs-tile-grid-lg .hs-tile-white, .hs-tile-square.hs-tile-grid-landscape .hs-tile-white, .hs-tile-square.hs-tile-grid-primary .hs-tile-white, .hs-tile-square.hs-tile-grid-secondary .hs-tile-white, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-white, .hs-tile-square.hs-tile-grid-info .hs-tile-white, .hs-tile-square.hs-tile-grid-success .hs-tile-white, .hs-tile-square.hs-tile-grid-warning .hs-tile-white, .hs-tile-square.hs-tile-grid-error .hs-tile-white, .hs-tile-square.hs-tile-grid-dark .hs-tile-white, .hs-tile-square.hs-tile-grid-light .hs-tile-white, .hs-tile-square.hs-tile-grid-inverse .hs-tile-white, .hs-tile-square.hs-tile-grid-danger .hs-tile-white, .hs-tile-square.hs-tile-grid-white .hs-tile-white, .hs-tile-grid.hs-tile-square .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-sm .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-lg .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-landscape .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-primary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-secondary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-tertiary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-info .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-success .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-warning .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-error .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-dark .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-light .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-inverse .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-danger .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-white .hs-action-tile-landscape, .hs-tile-grid.hs-tile-square .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid.hs-tile-square .hs-teams-tile, .hs-tile-square.hs-tile-grid-sm .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-sm .hs-teams-tile, .hs-tile-square.hs-tile-grid-lg .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-lg .hs-teams-tile, .hs-tile-square.hs-tile-grid-landscape .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-landscape .hs-teams-tile, .hs-tile-square.hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-primary .hs-teams-tile, .hs-tile-square.hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-secondary .hs-teams-tile, .hs-tile-square.hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-tertiary .hs-teams-tile, .hs-tile-square.hs-tile-grid-info .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-info .hs-teams-tile, .hs-tile-square.hs-tile-grid-success .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-success .hs-teams-tile, .hs-tile-square.hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-warning .hs-teams-tile, .hs-tile-square.hs-tile-grid-error .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-error .hs-teams-tile, .hs-tile-square.hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-dark .hs-teams-tile, .hs-tile-square.hs-tile-grid-light .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-light .hs-teams-tile, .hs-tile-square.hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-inverse .hs-teams-tile, .hs-tile-square.hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-danger .hs-teams-tile, .hs-tile-square.hs-tile-grid-white .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-square.hs-tile-grid-white .hs-teams-tile {
+.hs-tile-grid.hs-tile-square .hs-tile, .hs-tile-square.hs-tile-grid-sm .hs-tile, .hs-tile-square.hs-tile-grid-lg .hs-tile, .hs-tile-square.hs-tile-grid-landscape .hs-tile, .hs-tile-square.hs-tile-grid-primary .hs-tile, .hs-tile-square.hs-tile-grid-secondary .hs-tile, .hs-tile-square.hs-tile-grid-tertiary .hs-tile, .hs-tile-square.hs-tile-grid-info .hs-tile, .hs-tile-square.hs-tile-grid-success .hs-tile, .hs-tile-square.hs-tile-grid-warning .hs-tile, .hs-tile-square.hs-tile-grid-error .hs-tile, .hs-tile-square.hs-tile-grid-dark .hs-tile, .hs-tile-square.hs-tile-grid-light .hs-tile, .hs-tile-square.hs-tile-grid-inverse .hs-tile, .hs-tile-square.hs-tile-grid-danger .hs-tile, .hs-tile-square.hs-tile-grid-white .hs-tile, .hs-tile-grid.hs-tile-square .hs-tile-sm, .hs-tile-square.hs-tile-grid-sm .hs-tile-sm, .hs-tile-square.hs-tile-grid-lg .hs-tile-sm, .hs-tile-square.hs-tile-grid-landscape .hs-tile-sm, .hs-tile-square.hs-tile-grid-primary .hs-tile-sm, .hs-tile-square.hs-tile-grid-secondary .hs-tile-sm, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-sm, .hs-tile-square.hs-tile-grid-info .hs-tile-sm, .hs-tile-square.hs-tile-grid-success .hs-tile-sm, .hs-tile-square.hs-tile-grid-warning .hs-tile-sm, .hs-tile-square.hs-tile-grid-error .hs-tile-sm, .hs-tile-square.hs-tile-grid-dark .hs-tile-sm, .hs-tile-square.hs-tile-grid-light .hs-tile-sm, .hs-tile-square.hs-tile-grid-inverse .hs-tile-sm, .hs-tile-square.hs-tile-grid-danger .hs-tile-sm, .hs-tile-square.hs-tile-grid-white .hs-tile-sm, .hs-tile-grid.hs-tile-square .hs-tile-lg, .hs-tile-square.hs-tile-grid-sm .hs-tile-lg, .hs-tile-square.hs-tile-grid-lg .hs-tile-lg, .hs-tile-square.hs-tile-grid-landscape .hs-tile-lg, .hs-tile-square.hs-tile-grid-primary .hs-tile-lg, .hs-tile-square.hs-tile-grid-secondary .hs-tile-lg, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-lg, .hs-tile-square.hs-tile-grid-info .hs-tile-lg, .hs-tile-square.hs-tile-grid-success .hs-tile-lg, .hs-tile-square.hs-tile-grid-warning .hs-tile-lg, .hs-tile-square.hs-tile-grid-error .hs-tile-lg, .hs-tile-square.hs-tile-grid-dark .hs-tile-lg, .hs-tile-square.hs-tile-grid-light .hs-tile-lg, .hs-tile-square.hs-tile-grid-inverse .hs-tile-lg, .hs-tile-square.hs-tile-grid-danger .hs-tile-lg, .hs-tile-square.hs-tile-grid-white .hs-tile-lg, .hs-tile-grid.hs-tile-square .hs-tile-landscape, .hs-tile-square.hs-tile-grid-sm .hs-tile-landscape, .hs-tile-square.hs-tile-grid-lg .hs-tile-landscape, .hs-tile-square.hs-tile-grid-landscape .hs-tile-landscape, .hs-tile-square.hs-tile-grid-primary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-secondary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-landscape, .hs-tile-square.hs-tile-grid-info .hs-tile-landscape, .hs-tile-square.hs-tile-grid-success .hs-tile-landscape, .hs-tile-square.hs-tile-grid-warning .hs-tile-landscape, .hs-tile-square.hs-tile-grid-error .hs-tile-landscape, .hs-tile-square.hs-tile-grid-dark .hs-tile-landscape, .hs-tile-square.hs-tile-grid-light .hs-tile-landscape, .hs-tile-square.hs-tile-grid-inverse .hs-tile-landscape, .hs-tile-square.hs-tile-grid-danger .hs-tile-landscape, .hs-tile-square.hs-tile-grid-white .hs-tile-landscape, .hs-tile-grid.hs-tile-square .hs-tile-primary, .hs-tile-square.hs-tile-grid-sm .hs-tile-primary, .hs-tile-square.hs-tile-grid-lg .hs-tile-primary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-primary, .hs-tile-square.hs-tile-grid-primary .hs-tile-primary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-primary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-primary, .hs-tile-square.hs-tile-grid-info .hs-tile-primary, .hs-tile-square.hs-tile-grid-success .hs-tile-primary, .hs-tile-square.hs-tile-grid-warning .hs-tile-primary, .hs-tile-square.hs-tile-grid-error .hs-tile-primary, .hs-tile-square.hs-tile-grid-dark .hs-tile-primary, .hs-tile-square.hs-tile-grid-light .hs-tile-primary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-primary, .hs-tile-square.hs-tile-grid-danger .hs-tile-primary, .hs-tile-square.hs-tile-grid-white .hs-tile-primary, .hs-tile-grid.hs-tile-square .hs-tile-secondary, .hs-tile-square.hs-tile-grid-sm .hs-tile-secondary, .hs-tile-square.hs-tile-grid-lg .hs-tile-secondary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-secondary, .hs-tile-square.hs-tile-grid-primary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-secondary, .hs-tile-square.hs-tile-grid-info .hs-tile-secondary, .hs-tile-square.hs-tile-grid-success .hs-tile-secondary, .hs-tile-square.hs-tile-grid-warning .hs-tile-secondary, .hs-tile-square.hs-tile-grid-error .hs-tile-secondary, .hs-tile-square.hs-tile-grid-dark .hs-tile-secondary, .hs-tile-square.hs-tile-grid-light .hs-tile-secondary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-secondary, .hs-tile-square.hs-tile-grid-danger .hs-tile-secondary, .hs-tile-square.hs-tile-grid-white .hs-tile-secondary, .hs-tile-grid.hs-tile-square .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-sm .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-lg .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-landscape .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-primary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-secondary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-info .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-success .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-warning .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-error .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-dark .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-light .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-inverse .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-danger .hs-tile-tertiary, .hs-tile-square.hs-tile-grid-white .hs-tile-tertiary, .hs-tile-grid.hs-tile-square .hs-tile-info, .hs-tile-square.hs-tile-grid-sm .hs-tile-info, .hs-tile-square.hs-tile-grid-lg .hs-tile-info, .hs-tile-square.hs-tile-grid-landscape .hs-tile-info, .hs-tile-square.hs-tile-grid-primary .hs-tile-info, .hs-tile-square.hs-tile-grid-secondary .hs-tile-info, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-info, .hs-tile-square.hs-tile-grid-info .hs-tile-info, .hs-tile-square.hs-tile-grid-success .hs-tile-info, .hs-tile-square.hs-tile-grid-warning .hs-tile-info, .hs-tile-square.hs-tile-grid-error .hs-tile-info, .hs-tile-square.hs-tile-grid-dark .hs-tile-info, .hs-tile-square.hs-tile-grid-light .hs-tile-info, .hs-tile-square.hs-tile-grid-inverse .hs-tile-info, .hs-tile-square.hs-tile-grid-danger .hs-tile-info, .hs-tile-square.hs-tile-grid-white .hs-tile-info, .hs-tile-grid.hs-tile-square .hs-tile-success, .hs-tile-square.hs-tile-grid-sm .hs-tile-success, .hs-tile-square.hs-tile-grid-lg .hs-tile-success, .hs-tile-square.hs-tile-grid-landscape .hs-tile-success, .hs-tile-square.hs-tile-grid-primary .hs-tile-success, .hs-tile-square.hs-tile-grid-secondary .hs-tile-success, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-success, .hs-tile-square.hs-tile-grid-info .hs-tile-success, .hs-tile-square.hs-tile-grid-success .hs-tile-success, .hs-tile-square.hs-tile-grid-warning .hs-tile-success, .hs-tile-square.hs-tile-grid-error .hs-tile-success, .hs-tile-square.hs-tile-grid-dark .hs-tile-success, .hs-tile-square.hs-tile-grid-light .hs-tile-success, .hs-tile-square.hs-tile-grid-inverse .hs-tile-success, .hs-tile-square.hs-tile-grid-danger .hs-tile-success, .hs-tile-square.hs-tile-grid-white .hs-tile-success, .hs-tile-grid.hs-tile-square .hs-tile-warning, .hs-tile-square.hs-tile-grid-sm .hs-tile-warning, .hs-tile-square.hs-tile-grid-lg .hs-tile-warning, .hs-tile-square.hs-tile-grid-landscape .hs-tile-warning, .hs-tile-square.hs-tile-grid-primary .hs-tile-warning, .hs-tile-square.hs-tile-grid-secondary .hs-tile-warning, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-warning, .hs-tile-square.hs-tile-grid-info .hs-tile-warning, .hs-tile-square.hs-tile-grid-success .hs-tile-warning, .hs-tile-square.hs-tile-grid-warning .hs-tile-warning, .hs-tile-square.hs-tile-grid-error .hs-tile-warning, .hs-tile-square.hs-tile-grid-dark .hs-tile-warning, .hs-tile-square.hs-tile-grid-light .hs-tile-warning, .hs-tile-square.hs-tile-grid-inverse .hs-tile-warning, .hs-tile-square.hs-tile-grid-danger .hs-tile-warning, .hs-tile-square.hs-tile-grid-white .hs-tile-warning, .hs-tile-grid.hs-tile-square .hs-tile-error, .hs-tile-square.hs-tile-grid-sm .hs-tile-error, .hs-tile-square.hs-tile-grid-lg .hs-tile-error, .hs-tile-square.hs-tile-grid-landscape .hs-tile-error, .hs-tile-square.hs-tile-grid-primary .hs-tile-error, .hs-tile-square.hs-tile-grid-secondary .hs-tile-error, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-error, .hs-tile-square.hs-tile-grid-info .hs-tile-error, .hs-tile-square.hs-tile-grid-success .hs-tile-error, .hs-tile-square.hs-tile-grid-warning .hs-tile-error, .hs-tile-square.hs-tile-grid-error .hs-tile-error, .hs-tile-square.hs-tile-grid-dark .hs-tile-error, .hs-tile-square.hs-tile-grid-light .hs-tile-error, .hs-tile-square.hs-tile-grid-inverse .hs-tile-error, .hs-tile-square.hs-tile-grid-danger .hs-tile-error, .hs-tile-square.hs-tile-grid-white .hs-tile-error, .hs-tile-grid.hs-tile-square .hs-tile-dark, .hs-tile-square.hs-tile-grid-sm .hs-tile-dark, .hs-tile-square.hs-tile-grid-lg .hs-tile-dark, .hs-tile-square.hs-tile-grid-landscape .hs-tile-dark, .hs-tile-square.hs-tile-grid-primary .hs-tile-dark, .hs-tile-square.hs-tile-grid-secondary .hs-tile-dark, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-dark, .hs-tile-square.hs-tile-grid-info .hs-tile-dark, .hs-tile-square.hs-tile-grid-success .hs-tile-dark, .hs-tile-square.hs-tile-grid-warning .hs-tile-dark, .hs-tile-square.hs-tile-grid-error .hs-tile-dark, .hs-tile-square.hs-tile-grid-dark .hs-tile-dark, .hs-tile-square.hs-tile-grid-light .hs-tile-dark, .hs-tile-square.hs-tile-grid-inverse .hs-tile-dark, .hs-tile-square.hs-tile-grid-danger .hs-tile-dark, .hs-tile-square.hs-tile-grid-white .hs-tile-dark, .hs-tile-grid.hs-tile-square .hs-tile-light, .hs-tile-square.hs-tile-grid-sm .hs-tile-light, .hs-tile-square.hs-tile-grid-lg .hs-tile-light, .hs-tile-square.hs-tile-grid-landscape .hs-tile-light, .hs-tile-square.hs-tile-grid-primary .hs-tile-light, .hs-tile-square.hs-tile-grid-secondary .hs-tile-light, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-light, .hs-tile-square.hs-tile-grid-info .hs-tile-light, .hs-tile-square.hs-tile-grid-success .hs-tile-light, .hs-tile-square.hs-tile-grid-warning .hs-tile-light, .hs-tile-square.hs-tile-grid-error .hs-tile-light, .hs-tile-square.hs-tile-grid-dark .hs-tile-light, .hs-tile-square.hs-tile-grid-light .hs-tile-light, .hs-tile-square.hs-tile-grid-inverse .hs-tile-light, .hs-tile-square.hs-tile-grid-danger .hs-tile-light, .hs-tile-square.hs-tile-grid-white .hs-tile-light, .hs-tile-grid.hs-tile-square .hs-tile-inverse, .hs-tile-square.hs-tile-grid-sm .hs-tile-inverse, .hs-tile-square.hs-tile-grid-lg .hs-tile-inverse, .hs-tile-square.hs-tile-grid-landscape .hs-tile-inverse, .hs-tile-square.hs-tile-grid-primary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-secondary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-inverse, .hs-tile-square.hs-tile-grid-info .hs-tile-inverse, .hs-tile-square.hs-tile-grid-success .hs-tile-inverse, .hs-tile-square.hs-tile-grid-warning .hs-tile-inverse, .hs-tile-square.hs-tile-grid-error .hs-tile-inverse, .hs-tile-square.hs-tile-grid-dark .hs-tile-inverse, .hs-tile-square.hs-tile-grid-light .hs-tile-inverse, .hs-tile-square.hs-tile-grid-inverse .hs-tile-inverse, .hs-tile-square.hs-tile-grid-danger .hs-tile-inverse, .hs-tile-square.hs-tile-grid-white .hs-tile-inverse, .hs-tile-grid.hs-tile-square .hs-tile-danger, .hs-tile-square.hs-tile-grid-sm .hs-tile-danger, .hs-tile-square.hs-tile-grid-lg .hs-tile-danger, .hs-tile-square.hs-tile-grid-landscape .hs-tile-danger, .hs-tile-square.hs-tile-grid-primary .hs-tile-danger, .hs-tile-square.hs-tile-grid-secondary .hs-tile-danger, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-danger, .hs-tile-square.hs-tile-grid-info .hs-tile-danger, .hs-tile-square.hs-tile-grid-success .hs-tile-danger, .hs-tile-square.hs-tile-grid-warning .hs-tile-danger, .hs-tile-square.hs-tile-grid-error .hs-tile-danger, .hs-tile-square.hs-tile-grid-dark .hs-tile-danger, .hs-tile-square.hs-tile-grid-light .hs-tile-danger, .hs-tile-square.hs-tile-grid-inverse .hs-tile-danger, .hs-tile-square.hs-tile-grid-danger .hs-tile-danger, .hs-tile-square.hs-tile-grid-white .hs-tile-danger, .hs-tile-grid.hs-tile-square .hs-tile-white, .hs-tile-square.hs-tile-grid-sm .hs-tile-white, .hs-tile-square.hs-tile-grid-lg .hs-tile-white, .hs-tile-square.hs-tile-grid-landscape .hs-tile-white, .hs-tile-square.hs-tile-grid-primary .hs-tile-white, .hs-tile-square.hs-tile-grid-secondary .hs-tile-white, .hs-tile-square.hs-tile-grid-tertiary .hs-tile-white, .hs-tile-square.hs-tile-grid-info .hs-tile-white, .hs-tile-square.hs-tile-grid-success .hs-tile-white, .hs-tile-square.hs-tile-grid-warning .hs-tile-white, .hs-tile-square.hs-tile-grid-error .hs-tile-white, .hs-tile-square.hs-tile-grid-dark .hs-tile-white, .hs-tile-square.hs-tile-grid-light .hs-tile-white, .hs-tile-square.hs-tile-grid-inverse .hs-tile-white, .hs-tile-square.hs-tile-grid-danger .hs-tile-white, .hs-tile-square.hs-tile-grid-white .hs-tile-white, .hs-tile-grid.hs-tile-square .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-sm .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-lg .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-landscape .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-primary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-secondary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-tertiary .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-info .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-success .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-warning .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-error .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-dark .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-light .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-inverse .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-danger .hs-action-tile-landscape, .hs-tile-square.hs-tile-grid-white .hs-action-tile-landscape {
   border-radius: 0px !important;
 }
 
@@ -45996,7 +46060,7 @@ div.tester > div:hover {
   grid-template-columns: repeat(auto-fill, 112.5px);
 }
 
-.hs-tile-grid-sm > .hs-tile, .hs-tile-grid-sm > .hs-tile-sm, .hs-tile-grid-sm > .hs-tile-lg, .hs-tile-grid-sm > .hs-tile-landscape, .hs-tile-grid-sm > .hs-tile-primary, .hs-tile-grid-sm > .hs-tile-secondary, .hs-tile-grid-sm > .hs-tile-tertiary, .hs-tile-grid-sm > .hs-tile-info, .hs-tile-grid-sm > .hs-tile-success, .hs-tile-grid-sm > .hs-tile-warning, .hs-tile-grid-sm > .hs-tile-error, .hs-tile-grid-sm > .hs-tile-dark, .hs-tile-grid-sm > .hs-tile-light, .hs-tile-grid-sm > .hs-tile-inverse, .hs-tile-grid-sm > .hs-tile-danger, .hs-tile-grid-sm > .hs-tile-white, .hs-tile-grid-sm > .hs-action-tile-landscape, .hsbody.hsteams .hs-tile-grid-sm > .hs-teams-tile {
+.hs-tile-grid-sm > .hs-tile, .hs-tile-grid-sm > .hs-tile-sm, .hs-tile-grid-sm > .hs-tile-lg, .hs-tile-grid-sm > .hs-tile-landscape, .hs-tile-grid-sm > .hs-tile-primary, .hs-tile-grid-sm > .hs-tile-secondary, .hs-tile-grid-sm > .hs-tile-tertiary, .hs-tile-grid-sm > .hs-tile-info, .hs-tile-grid-sm > .hs-tile-success, .hs-tile-grid-sm > .hs-tile-warning, .hs-tile-grid-sm > .hs-tile-error, .hs-tile-grid-sm > .hs-tile-dark, .hs-tile-grid-sm > .hs-tile-light, .hs-tile-grid-sm > .hs-tile-inverse, .hs-tile-grid-sm > .hs-tile-danger, .hs-tile-grid-sm > .hs-tile-white, .hs-tile-grid-sm > .hs-action-tile-landscape {
   width: 112.5px;
   height: 112.5px;
 }
@@ -46005,7 +46069,7 @@ div.tester > div:hover {
   grid-template-columns: repeat(auto-fill, 225px);
 }
 
-.hs-tile-grid-lg > .hs-tile, .hs-tile-grid-lg > .hs-tile-sm, .hs-tile-grid-lg > .hs-tile-lg, .hs-tile-grid-lg > .hs-tile-landscape, .hs-tile-grid-lg > .hs-tile-primary, .hs-tile-grid-lg > .hs-tile-secondary, .hs-tile-grid-lg > .hs-tile-tertiary, .hs-tile-grid-lg > .hs-tile-info, .hs-tile-grid-lg > .hs-tile-success, .hs-tile-grid-lg > .hs-tile-warning, .hs-tile-grid-lg > .hs-tile-error, .hs-tile-grid-lg > .hs-tile-dark, .hs-tile-grid-lg > .hs-tile-light, .hs-tile-grid-lg > .hs-tile-inverse, .hs-tile-grid-lg > .hs-tile-danger, .hs-tile-grid-lg > .hs-tile-white, .hs-tile-grid-lg > .hs-action-tile-landscape, .hsbody.hsteams .hs-tile-grid-lg > .hs-teams-tile {
+.hs-tile-grid-lg > .hs-tile, .hs-tile-grid-lg > .hs-tile-sm, .hs-tile-grid-lg > .hs-tile-lg, .hs-tile-grid-lg > .hs-tile-landscape, .hs-tile-grid-lg > .hs-tile-primary, .hs-tile-grid-lg > .hs-tile-secondary, .hs-tile-grid-lg > .hs-tile-tertiary, .hs-tile-grid-lg > .hs-tile-info, .hs-tile-grid-lg > .hs-tile-success, .hs-tile-grid-lg > .hs-tile-warning, .hs-tile-grid-lg > .hs-tile-error, .hs-tile-grid-lg > .hs-tile-dark, .hs-tile-grid-lg > .hs-tile-light, .hs-tile-grid-lg > .hs-tile-inverse, .hs-tile-grid-lg > .hs-tile-danger, .hs-tile-grid-lg > .hs-tile-white, .hs-tile-grid-lg > .hs-action-tile-landscape {
   width: 225px;
   height: 225px;
 }
@@ -46014,12 +46078,12 @@ div.tester > div:hover {
   grid-template-columns: repeat(auto-fill, 185px);
 }
 
-.hs-tile-grid-landscape > .hs-tile, .hs-tile-grid-landscape > .hs-tile-sm, .hs-tile-grid-landscape > .hs-tile-lg, .hs-tile-grid-landscape > .hs-tile-landscape, .hs-tile-grid-landscape > .hs-tile-primary, .hs-tile-grid-landscape > .hs-tile-secondary, .hs-tile-grid-landscape > .hs-tile-tertiary, .hs-tile-grid-landscape > .hs-tile-info, .hs-tile-grid-landscape > .hs-tile-success, .hs-tile-grid-landscape > .hs-tile-warning, .hs-tile-grid-landscape > .hs-tile-error, .hs-tile-grid-landscape > .hs-tile-dark, .hs-tile-grid-landscape > .hs-tile-light, .hs-tile-grid-landscape > .hs-tile-inverse, .hs-tile-grid-landscape > .hs-tile-danger, .hs-tile-grid-landscape > .hs-tile-white, .hs-tile-grid-landscape > .hs-action-tile-landscape, .hsbody.hsteams .hs-tile-grid-landscape > .hs-teams-tile {
+.hs-tile-grid-landscape > .hs-tile, .hs-tile-grid-landscape > .hs-tile-sm, .hs-tile-grid-landscape > .hs-tile-lg, .hs-tile-grid-landscape > .hs-tile-landscape, .hs-tile-grid-landscape > .hs-tile-primary, .hs-tile-grid-landscape > .hs-tile-secondary, .hs-tile-grid-landscape > .hs-tile-tertiary, .hs-tile-grid-landscape > .hs-tile-info, .hs-tile-grid-landscape > .hs-tile-success, .hs-tile-grid-landscape > .hs-tile-warning, .hs-tile-grid-landscape > .hs-tile-error, .hs-tile-grid-landscape > .hs-tile-dark, .hs-tile-grid-landscape > .hs-tile-light, .hs-tile-grid-landscape > .hs-tile-inverse, .hs-tile-grid-landscape > .hs-tile-danger, .hs-tile-grid-landscape > .hs-tile-white, .hs-tile-grid-landscape > .hs-action-tile-landscape {
   width: 185px;
   height: 104px;
 }
 
-.hs-tile, .hs-tile-sm, .hs-tile-lg, .hs-tile-landscape, .hs-tile-primary, .hs-tile-secondary, .hs-tile-tertiary, .hs-tile-info, .hs-tile-success, .hs-tile-warning, .hs-tile-error, .hs-tile-dark, .hs-tile-light, .hs-tile-inverse, .hs-tile-danger, .hs-tile-white, .hs-action-tile-landscape, .hsbody.hsteams .hs-teams-tile {
+.hs-tile, .hs-tile-sm, .hs-tile-lg, .hs-tile-landscape, .hs-tile-primary, .hs-tile-secondary, .hs-tile-tertiary, .hs-tile-info, .hs-tile-success, .hs-tile-warning, .hs-tile-error, .hs-tile-dark, .hs-tile-light, .hs-tile-inverse, .hs-tile-danger, .hs-tile-white, .hs-action-tile-landscape {
   overflow: hidden;
   width: 150px;
   height: 150px;
@@ -46035,11 +46099,11 @@ div.tester > div:hover {
   color: #edf2f2;
 }
 
-.hs-tile.hs-tile-square, .hs-tile-square.hs-tile-sm, .hs-tile-square.hs-tile-lg, .hs-tile-square.hs-tile-landscape, .hs-tile-square.hs-tile-primary, .hs-tile-square.hs-tile-secondary, .hs-tile-square.hs-tile-tertiary, .hs-tile-square.hs-tile-info, .hs-tile-square.hs-tile-success, .hs-tile-square.hs-tile-warning, .hs-tile-square.hs-tile-error, .hs-tile-square.hs-tile-dark, .hs-tile-square.hs-tile-light, .hs-tile-square.hs-tile-inverse, .hs-tile-square.hs-tile-danger, .hs-tile-square.hs-tile-white, .hs-tile-square.hs-action-tile-landscape, .hsbody.hsteams .hs-tile-square.hs-teams-tile {
+.hs-tile.hs-tile-square, .hs-tile-square.hs-tile-sm, .hs-tile-square.hs-tile-lg, .hs-tile-square.hs-tile-landscape, .hs-tile-square.hs-tile-primary, .hs-tile-square.hs-tile-secondary, .hs-tile-square.hs-tile-tertiary, .hs-tile-square.hs-tile-info, .hs-tile-square.hs-tile-success, .hs-tile-square.hs-tile-warning, .hs-tile-square.hs-tile-error, .hs-tile-square.hs-tile-dark, .hs-tile-square.hs-tile-light, .hs-tile-square.hs-tile-inverse, .hs-tile-square.hs-tile-danger, .hs-tile-square.hs-tile-white, .hs-tile-square.hs-action-tile-landscape {
   border-radius: 0px;
 }
 
-.hs-tile > .hs-action-metric, .hs-tile-sm > .hs-action-metric, .hs-tile-lg > .hs-action-metric, .hs-tile-landscape > .hs-action-metric, .hs-tile-primary > .hs-action-metric, .hs-tile-secondary > .hs-action-metric, .hs-tile-tertiary > .hs-action-metric, .hs-tile-info > .hs-action-metric, .hs-tile-success > .hs-action-metric, .hs-tile-warning > .hs-action-metric, .hs-tile-error > .hs-action-metric, .hs-tile-dark > .hs-action-metric, .hs-tile-light > .hs-action-metric, .hs-tile-inverse > .hs-action-metric, .hs-tile-danger > .hs-action-metric, .hs-tile-white > .hs-action-metric, .hs-action-tile-landscape > .hs-action-metric, .hsbody.hsteams .hs-teams-tile > .hs-action-metric,
+.hs-tile > .hs-action-metric, .hs-tile-sm > .hs-action-metric, .hs-tile-lg > .hs-action-metric, .hs-tile-landscape > .hs-action-metric, .hs-tile-primary > .hs-action-metric, .hs-tile-secondary > .hs-action-metric, .hs-tile-tertiary > .hs-action-metric, .hs-tile-info > .hs-action-metric, .hs-tile-success > .hs-action-metric, .hs-tile-warning > .hs-action-metric, .hs-tile-error > .hs-action-metric, .hs-tile-dark > .hs-action-metric, .hs-tile-light > .hs-action-metric, .hs-tile-inverse > .hs-action-metric, .hs-tile-danger > .hs-action-metric, .hs-tile-white > .hs-action-metric, .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile .hs-action-icon,
 .hs-tile-sm .hs-action-icon,
 .hs-tile-lg .hs-action-icon,
@@ -46057,7 +46121,6 @@ div.tester > div:hover {
 .hs-tile-danger .hs-action-icon,
 .hs-tile-white .hs-action-icon,
 .hs-action-tile-landscape .hs-action-icon,
-.hsbody.hsteams .hs-teams-tile .hs-action-icon,
 .hs-tile .hs-action-title,
 .hs-tile-sm .hs-action-title,
 .hs-tile-lg .hs-action-title,
@@ -46074,17 +46137,16 @@ div.tester > div:hover {
 .hs-tile-inverse .hs-action-title,
 .hs-tile-danger .hs-action-title,
 .hs-tile-white .hs-action-title,
-.hs-action-tile-landscape .hs-action-title,
-.hsbody.hsteams .hs-teams-tile .hs-action-title {
+.hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile a, .hs-tile-sm a, .hs-tile-lg a, .hs-tile-landscape a, .hs-tile-primary a, .hs-tile-secondary a, .hs-tile-tertiary a, .hs-tile-info a, .hs-tile-success a, .hs-tile-warning a, .hs-tile-error a, .hs-tile-dark a, .hs-tile-light a, .hs-tile-inverse a, .hs-tile-danger a, .hs-tile-white a, .hs-action-tile-landscape a, .hsbody.hsteams .hs-teams-tile a {
+.hs-tile a, .hs-tile-sm a, .hs-tile-lg a, .hs-tile-landscape a, .hs-tile-primary a, .hs-tile-secondary a, .hs-tile-tertiary a, .hs-tile-info a, .hs-tile-success a, .hs-tile-warning a, .hs-tile-error a, .hs-tile-dark a, .hs-tile-light a, .hs-tile-inverse a, .hs-tile-danger a, .hs-tile-white a, .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile:hover, .hs-tile-sm:hover, .hs-tile-lg:hover, .hs-tile-landscape:hover, .hs-tile-primary:hover, .hs-tile-secondary:hover, .hs-tile-tertiary:hover, .hs-tile-info:hover, .hs-tile-success:hover, .hs-tile-warning:hover, .hs-tile-error:hover, .hs-tile-dark:hover, .hs-tile-light:hover, .hs-tile-inverse:hover, .hs-tile-danger:hover, .hs-tile-white:hover, .hs-action-tile-landscape:hover, .hsbody.hsteams .hs-teams-tile:hover {
+.hs-tile:hover, .hs-tile-sm:hover, .hs-tile-lg:hover, .hs-tile-landscape:hover, .hs-tile-primary:hover, .hs-tile-secondary:hover, .hs-tile-tertiary:hover, .hs-tile-info:hover, .hs-tile-success:hover, .hs-tile-warning:hover, .hs-tile-error:hover, .hs-tile-dark:hover, .hs-tile-light:hover, .hs-tile-inverse:hover, .hs-tile-danger:hover, .hs-tile-white:hover, .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #505759;
 }
@@ -46125,12 +46187,12 @@ div.tester > div:hover {
   background-color: #1d2f3a;
 }
 
-.hs-tile-grid-primary .hs-tile, .hs-tile-grid-primary .hs-tile-sm, .hs-tile-grid-primary .hs-tile-lg, .hs-tile-grid-primary .hs-tile-landscape, .hs-tile-grid-primary .hs-tile-primary, .hs-tile-grid-primary .hs-tile-secondary, .hs-tile-grid-primary .hs-tile-tertiary, .hs-tile-grid-primary .hs-tile-info, .hs-tile-grid-primary .hs-tile-success, .hs-tile-grid-primary .hs-tile-warning, .hs-tile-grid-primary .hs-tile-error, .hs-tile-grid-primary .hs-tile-dark, .hs-tile-grid-primary .hs-tile-light, .hs-tile-grid-primary .hs-tile-inverse, .hs-tile-grid-primary .hs-tile-danger, .hs-tile-grid-primary .hs-tile-white, .hs-tile-grid-primary .hs-action-tile-landscape, .hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile {
+.hs-tile-grid-primary .hs-tile, .hs-tile-grid-primary .hs-tile-sm, .hs-tile-grid-primary .hs-tile-lg, .hs-tile-grid-primary .hs-tile-landscape, .hs-tile-grid-primary .hs-tile-primary, .hs-tile-grid-primary .hs-tile-secondary, .hs-tile-grid-primary .hs-tile-tertiary, .hs-tile-grid-primary .hs-tile-info, .hs-tile-grid-primary .hs-tile-success, .hs-tile-grid-primary .hs-tile-warning, .hs-tile-grid-primary .hs-tile-error, .hs-tile-grid-primary .hs-tile-dark, .hs-tile-grid-primary .hs-tile-light, .hs-tile-grid-primary .hs-tile-inverse, .hs-tile-grid-primary .hs-tile-danger, .hs-tile-grid-primary .hs-tile-white, .hs-tile-grid-primary .hs-action-tile-landscape {
   background-color: #263d4b;
   color: #edf2f2;
 }
 
-.hs-tile-grid-primary .hs-tile > .hs-action-metric, .hs-tile-grid-primary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-primary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-primary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-primary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-info > .hs-action-metric, .hs-tile-grid-primary .hs-tile-success > .hs-action-metric, .hs-tile-grid-primary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-primary .hs-tile-error > .hs-action-metric, .hs-tile-grid-primary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-primary .hs-tile-light > .hs-action-metric, .hs-tile-grid-primary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-primary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-primary .hs-tile-white > .hs-action-metric, .hs-tile-grid-primary .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-primary .hs-tile > .hs-action-metric, .hs-tile-grid-primary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-primary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-primary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-primary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-primary .hs-tile-info > .hs-action-metric, .hs-tile-grid-primary .hs-tile-success > .hs-action-metric, .hs-tile-grid-primary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-primary .hs-tile-error > .hs-action-metric, .hs-tile-grid-primary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-primary .hs-tile-light > .hs-action-metric, .hs-tile-grid-primary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-primary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-primary .hs-tile-white > .hs-action-metric, .hs-tile-grid-primary .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-primary .hs-tile .hs-action-icon,
 .hs-tile-grid-primary .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-primary .hs-tile-lg .hs-action-icon,
@@ -46148,8 +46210,6 @@ div.tester > div:hover {
 .hs-tile-grid-primary .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-primary .hs-tile-white .hs-action-icon,
 .hs-tile-grid-primary .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-primary .hs-tile .hs-action-title,
 .hs-tile-grid-primary .hs-tile-sm .hs-action-title,
 .hs-tile-grid-primary .hs-tile-lg .hs-action-title,
@@ -46166,18 +46226,16 @@ div.tester > div:hover {
 .hs-tile-grid-primary .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-primary .hs-tile-danger .hs-action-title,
 .hs-tile-grid-primary .hs-tile-white .hs-action-title,
-.hs-tile-grid-primary .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile .hs-action-title {
+.hs-tile-grid-primary .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-primary .hs-tile a, .hs-tile-grid-primary .hs-tile-sm a, .hs-tile-grid-primary .hs-tile-lg a, .hs-tile-grid-primary .hs-tile-landscape a, .hs-tile-grid-primary .hs-tile-primary a, .hs-tile-grid-primary .hs-tile-secondary a, .hs-tile-grid-primary .hs-tile-tertiary a, .hs-tile-grid-primary .hs-tile-info a, .hs-tile-grid-primary .hs-tile-success a, .hs-tile-grid-primary .hs-tile-warning a, .hs-tile-grid-primary .hs-tile-error a, .hs-tile-grid-primary .hs-tile-dark a, .hs-tile-grid-primary .hs-tile-light a, .hs-tile-grid-primary .hs-tile-inverse a, .hs-tile-grid-primary .hs-tile-danger a, .hs-tile-grid-primary .hs-tile-white a, .hs-tile-grid-primary .hs-action-tile-landscape a, .hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile a {
+.hs-tile-grid-primary .hs-tile a, .hs-tile-grid-primary .hs-tile-sm a, .hs-tile-grid-primary .hs-tile-lg a, .hs-tile-grid-primary .hs-tile-landscape a, .hs-tile-grid-primary .hs-tile-primary a, .hs-tile-grid-primary .hs-tile-secondary a, .hs-tile-grid-primary .hs-tile-tertiary a, .hs-tile-grid-primary .hs-tile-info a, .hs-tile-grid-primary .hs-tile-success a, .hs-tile-grid-primary .hs-tile-warning a, .hs-tile-grid-primary .hs-tile-error a, .hs-tile-grid-primary .hs-tile-dark a, .hs-tile-grid-primary .hs-tile-light a, .hs-tile-grid-primary .hs-tile-inverse a, .hs-tile-grid-primary .hs-tile-danger a, .hs-tile-grid-primary .hs-tile-white a, .hs-tile-grid-primary .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-primary .hs-tile:hover, .hs-tile-grid-primary .hs-tile-sm:hover, .hs-tile-grid-primary .hs-tile-lg:hover, .hs-tile-grid-primary .hs-tile-landscape:hover, .hs-tile-grid-primary .hs-tile-primary:hover, .hs-tile-grid-primary .hs-tile-secondary:hover, .hs-tile-grid-primary .hs-tile-tertiary:hover, .hs-tile-grid-primary .hs-tile-info:hover, .hs-tile-grid-primary .hs-tile-success:hover, .hs-tile-grid-primary .hs-tile-warning:hover, .hs-tile-grid-primary .hs-tile-error:hover, .hs-tile-grid-primary .hs-tile-dark:hover, .hs-tile-grid-primary .hs-tile-light:hover, .hs-tile-grid-primary .hs-tile-inverse:hover, .hs-tile-grid-primary .hs-tile-danger:hover, .hs-tile-grid-primary .hs-tile-white:hover, .hs-tile-grid-primary .hs-action-tile-landscape:hover, .hs-tile-grid-primary .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-primary .hs-teams-tile:hover {
+.hs-tile-grid-primary .hs-tile:hover, .hs-tile-grid-primary .hs-tile-sm:hover, .hs-tile-grid-primary .hs-tile-lg:hover, .hs-tile-grid-primary .hs-tile-landscape:hover, .hs-tile-grid-primary .hs-tile-primary:hover, .hs-tile-grid-primary .hs-tile-secondary:hover, .hs-tile-grid-primary .hs-tile-tertiary:hover, .hs-tile-grid-primary .hs-tile-info:hover, .hs-tile-grid-primary .hs-tile-success:hover, .hs-tile-grid-primary .hs-tile-warning:hover, .hs-tile-grid-primary .hs-tile-error:hover, .hs-tile-grid-primary .hs-tile-dark:hover, .hs-tile-grid-primary .hs-tile-light:hover, .hs-tile-grid-primary .hs-tile-inverse:hover, .hs-tile-grid-primary .hs-tile-danger:hover, .hs-tile-grid-primary .hs-tile-white:hover, .hs-tile-grid-primary .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #1d2f3a;
 }
@@ -46203,12 +46261,12 @@ div.tester > div:hover {
   background-color: #9b0730;
 }
 
-.hs-tile-grid-secondary .hs-tile, .hs-tile-grid-secondary .hs-tile-sm, .hs-tile-grid-secondary .hs-tile-lg, .hs-tile-grid-secondary .hs-tile-landscape, .hs-tile-grid-secondary .hs-tile-primary, .hs-tile-grid-secondary .hs-tile-secondary, .hs-tile-grid-secondary .hs-tile-tertiary, .hs-tile-grid-secondary .hs-tile-info, .hs-tile-grid-secondary .hs-tile-success, .hs-tile-grid-secondary .hs-tile-warning, .hs-tile-grid-secondary .hs-tile-error, .hs-tile-grid-secondary .hs-tile-dark, .hs-tile-grid-secondary .hs-tile-light, .hs-tile-grid-secondary .hs-tile-inverse, .hs-tile-grid-secondary .hs-tile-danger, .hs-tile-grid-secondary .hs-tile-white, .hs-tile-grid-secondary .hs-action-tile-landscape, .hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile {
+.hs-tile-grid-secondary .hs-tile, .hs-tile-grid-secondary .hs-tile-sm, .hs-tile-grid-secondary .hs-tile-lg, .hs-tile-grid-secondary .hs-tile-landscape, .hs-tile-grid-secondary .hs-tile-primary, .hs-tile-grid-secondary .hs-tile-secondary, .hs-tile-grid-secondary .hs-tile-tertiary, .hs-tile-grid-secondary .hs-tile-info, .hs-tile-grid-secondary .hs-tile-success, .hs-tile-grid-secondary .hs-tile-warning, .hs-tile-grid-secondary .hs-tile-error, .hs-tile-grid-secondary .hs-tile-dark, .hs-tile-grid-secondary .hs-tile-light, .hs-tile-grid-secondary .hs-tile-inverse, .hs-tile-grid-secondary .hs-tile-danger, .hs-tile-grid-secondary .hs-tile-white, .hs-tile-grid-secondary .hs-action-tile-landscape {
   background-color: #B30838;
   color: #edf2f2;
 }
 
-.hs-tile-grid-secondary .hs-tile > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-info > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-success > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-error > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-light > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-white > .hs-action-metric, .hs-tile-grid-secondary .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-secondary .hs-tile > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-info > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-success > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-error > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-light > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-secondary .hs-tile-white > .hs-action-metric, .hs-tile-grid-secondary .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-secondary .hs-tile .hs-action-icon,
 .hs-tile-grid-secondary .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-secondary .hs-tile-lg .hs-action-icon,
@@ -46226,8 +46284,6 @@ div.tester > div:hover {
 .hs-tile-grid-secondary .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-secondary .hs-tile-white .hs-action-icon,
 .hs-tile-grid-secondary .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-secondary .hs-tile .hs-action-title,
 .hs-tile-grid-secondary .hs-tile-sm .hs-action-title,
 .hs-tile-grid-secondary .hs-tile-lg .hs-action-title,
@@ -46244,18 +46300,16 @@ div.tester > div:hover {
 .hs-tile-grid-secondary .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-secondary .hs-tile-danger .hs-action-title,
 .hs-tile-grid-secondary .hs-tile-white .hs-action-title,
-.hs-tile-grid-secondary .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile .hs-action-title {
+.hs-tile-grid-secondary .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-secondary .hs-tile a, .hs-tile-grid-secondary .hs-tile-sm a, .hs-tile-grid-secondary .hs-tile-lg a, .hs-tile-grid-secondary .hs-tile-landscape a, .hs-tile-grid-secondary .hs-tile-primary a, .hs-tile-grid-secondary .hs-tile-secondary a, .hs-tile-grid-secondary .hs-tile-tertiary a, .hs-tile-grid-secondary .hs-tile-info a, .hs-tile-grid-secondary .hs-tile-success a, .hs-tile-grid-secondary .hs-tile-warning a, .hs-tile-grid-secondary .hs-tile-error a, .hs-tile-grid-secondary .hs-tile-dark a, .hs-tile-grid-secondary .hs-tile-light a, .hs-tile-grid-secondary .hs-tile-inverse a, .hs-tile-grid-secondary .hs-tile-danger a, .hs-tile-grid-secondary .hs-tile-white a, .hs-tile-grid-secondary .hs-action-tile-landscape a, .hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile a {
+.hs-tile-grid-secondary .hs-tile a, .hs-tile-grid-secondary .hs-tile-sm a, .hs-tile-grid-secondary .hs-tile-lg a, .hs-tile-grid-secondary .hs-tile-landscape a, .hs-tile-grid-secondary .hs-tile-primary a, .hs-tile-grid-secondary .hs-tile-secondary a, .hs-tile-grid-secondary .hs-tile-tertiary a, .hs-tile-grid-secondary .hs-tile-info a, .hs-tile-grid-secondary .hs-tile-success a, .hs-tile-grid-secondary .hs-tile-warning a, .hs-tile-grid-secondary .hs-tile-error a, .hs-tile-grid-secondary .hs-tile-dark a, .hs-tile-grid-secondary .hs-tile-light a, .hs-tile-grid-secondary .hs-tile-inverse a, .hs-tile-grid-secondary .hs-tile-danger a, .hs-tile-grid-secondary .hs-tile-white a, .hs-tile-grid-secondary .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-secondary .hs-tile:hover, .hs-tile-grid-secondary .hs-tile-sm:hover, .hs-tile-grid-secondary .hs-tile-lg:hover, .hs-tile-grid-secondary .hs-tile-landscape:hover, .hs-tile-grid-secondary .hs-tile-primary:hover, .hs-tile-grid-secondary .hs-tile-secondary:hover, .hs-tile-grid-secondary .hs-tile-tertiary:hover, .hs-tile-grid-secondary .hs-tile-info:hover, .hs-tile-grid-secondary .hs-tile-success:hover, .hs-tile-grid-secondary .hs-tile-warning:hover, .hs-tile-grid-secondary .hs-tile-error:hover, .hs-tile-grid-secondary .hs-tile-dark:hover, .hs-tile-grid-secondary .hs-tile-light:hover, .hs-tile-grid-secondary .hs-tile-inverse:hover, .hs-tile-grid-secondary .hs-tile-danger:hover, .hs-tile-grid-secondary .hs-tile-white:hover, .hs-tile-grid-secondary .hs-action-tile-landscape:hover, .hs-tile-grid-secondary .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-secondary .hs-teams-tile:hover {
+.hs-tile-grid-secondary .hs-tile:hover, .hs-tile-grid-secondary .hs-tile-sm:hover, .hs-tile-grid-secondary .hs-tile-lg:hover, .hs-tile-grid-secondary .hs-tile-landscape:hover, .hs-tile-grid-secondary .hs-tile-primary:hover, .hs-tile-grid-secondary .hs-tile-secondary:hover, .hs-tile-grid-secondary .hs-tile-tertiary:hover, .hs-tile-grid-secondary .hs-tile-info:hover, .hs-tile-grid-secondary .hs-tile-success:hover, .hs-tile-grid-secondary .hs-tile-warning:hover, .hs-tile-grid-secondary .hs-tile-error:hover, .hs-tile-grid-secondary .hs-tile-dark:hover, .hs-tile-grid-secondary .hs-tile-light:hover, .hs-tile-grid-secondary .hs-tile-inverse:hover, .hs-tile-grid-secondary .hs-tile-danger:hover, .hs-tile-grid-secondary .hs-tile-white:hover, .hs-tile-grid-secondary .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #9b0730;
 }
@@ -46281,12 +46335,12 @@ div.tester > div:hover {
   background-color: #643ab0;
 }
 
-.hs-tile-grid-tertiary .hs-tile, .hs-tile-grid-tertiary .hs-tile-sm, .hs-tile-grid-tertiary .hs-tile-lg, .hs-tile-grid-tertiary .hs-tile-landscape, .hs-tile-grid-tertiary .hs-tile-primary, .hs-tile-grid-tertiary .hs-tile-secondary, .hs-tile-grid-tertiary .hs-tile-tertiary, .hs-tile-grid-tertiary .hs-tile-info, .hs-tile-grid-tertiary .hs-tile-success, .hs-tile-grid-tertiary .hs-tile-warning, .hs-tile-grid-tertiary .hs-tile-error, .hs-tile-grid-tertiary .hs-tile-dark, .hs-tile-grid-tertiary .hs-tile-light, .hs-tile-grid-tertiary .hs-tile-inverse, .hs-tile-grid-tertiary .hs-tile-danger, .hs-tile-grid-tertiary .hs-tile-white, .hs-tile-grid-tertiary .hs-action-tile-landscape, .hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile {
+.hs-tile-grid-tertiary .hs-tile, .hs-tile-grid-tertiary .hs-tile-sm, .hs-tile-grid-tertiary .hs-tile-lg, .hs-tile-grid-tertiary .hs-tile-landscape, .hs-tile-grid-tertiary .hs-tile-primary, .hs-tile-grid-tertiary .hs-tile-secondary, .hs-tile-grid-tertiary .hs-tile-tertiary, .hs-tile-grid-tertiary .hs-tile-info, .hs-tile-grid-tertiary .hs-tile-success, .hs-tile-grid-tertiary .hs-tile-warning, .hs-tile-grid-tertiary .hs-tile-error, .hs-tile-grid-tertiary .hs-tile-dark, .hs-tile-grid-tertiary .hs-tile-light, .hs-tile-grid-tertiary .hs-tile-inverse, .hs-tile-grid-tertiary .hs-tile-danger, .hs-tile-grid-tertiary .hs-tile-white, .hs-tile-grid-tertiary .hs-action-tile-landscape {
   background-color: #6f42c1;
   color: #edf2f2;
 }
 
-.hs-tile-grid-tertiary .hs-tile > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-info > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-success > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-error > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-light > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-white > .hs-action-metric, .hs-tile-grid-tertiary .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-tertiary .hs-tile > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-sm > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-lg > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-primary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-info > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-success > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-warning > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-error > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-dark > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-light > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-danger > .hs-action-metric, .hs-tile-grid-tertiary .hs-tile-white > .hs-action-metric, .hs-tile-grid-tertiary .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-tertiary .hs-tile .hs-action-icon,
 .hs-tile-grid-tertiary .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-tertiary .hs-tile-lg .hs-action-icon,
@@ -46304,8 +46358,6 @@ div.tester > div:hover {
 .hs-tile-grid-tertiary .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-tertiary .hs-tile-white .hs-action-icon,
 .hs-tile-grid-tertiary .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-tertiary .hs-tile .hs-action-title,
 .hs-tile-grid-tertiary .hs-tile-sm .hs-action-title,
 .hs-tile-grid-tertiary .hs-tile-lg .hs-action-title,
@@ -46322,18 +46374,16 @@ div.tester > div:hover {
 .hs-tile-grid-tertiary .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-tertiary .hs-tile-danger .hs-action-title,
 .hs-tile-grid-tertiary .hs-tile-white .hs-action-title,
-.hs-tile-grid-tertiary .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile .hs-action-title {
+.hs-tile-grid-tertiary .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-tertiary .hs-tile a, .hs-tile-grid-tertiary .hs-tile-sm a, .hs-tile-grid-tertiary .hs-tile-lg a, .hs-tile-grid-tertiary .hs-tile-landscape a, .hs-tile-grid-tertiary .hs-tile-primary a, .hs-tile-grid-tertiary .hs-tile-secondary a, .hs-tile-grid-tertiary .hs-tile-tertiary a, .hs-tile-grid-tertiary .hs-tile-info a, .hs-tile-grid-tertiary .hs-tile-success a, .hs-tile-grid-tertiary .hs-tile-warning a, .hs-tile-grid-tertiary .hs-tile-error a, .hs-tile-grid-tertiary .hs-tile-dark a, .hs-tile-grid-tertiary .hs-tile-light a, .hs-tile-grid-tertiary .hs-tile-inverse a, .hs-tile-grid-tertiary .hs-tile-danger a, .hs-tile-grid-tertiary .hs-tile-white a, .hs-tile-grid-tertiary .hs-action-tile-landscape a, .hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile a {
+.hs-tile-grid-tertiary .hs-tile a, .hs-tile-grid-tertiary .hs-tile-sm a, .hs-tile-grid-tertiary .hs-tile-lg a, .hs-tile-grid-tertiary .hs-tile-landscape a, .hs-tile-grid-tertiary .hs-tile-primary a, .hs-tile-grid-tertiary .hs-tile-secondary a, .hs-tile-grid-tertiary .hs-tile-tertiary a, .hs-tile-grid-tertiary .hs-tile-info a, .hs-tile-grid-tertiary .hs-tile-success a, .hs-tile-grid-tertiary .hs-tile-warning a, .hs-tile-grid-tertiary .hs-tile-error a, .hs-tile-grid-tertiary .hs-tile-dark a, .hs-tile-grid-tertiary .hs-tile-light a, .hs-tile-grid-tertiary .hs-tile-inverse a, .hs-tile-grid-tertiary .hs-tile-danger a, .hs-tile-grid-tertiary .hs-tile-white a, .hs-tile-grid-tertiary .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-tertiary .hs-tile:hover, .hs-tile-grid-tertiary .hs-tile-sm:hover, .hs-tile-grid-tertiary .hs-tile-lg:hover, .hs-tile-grid-tertiary .hs-tile-landscape:hover, .hs-tile-grid-tertiary .hs-tile-primary:hover, .hs-tile-grid-tertiary .hs-tile-secondary:hover, .hs-tile-grid-tertiary .hs-tile-tertiary:hover, .hs-tile-grid-tertiary .hs-tile-info:hover, .hs-tile-grid-tertiary .hs-tile-success:hover, .hs-tile-grid-tertiary .hs-tile-warning:hover, .hs-tile-grid-tertiary .hs-tile-error:hover, .hs-tile-grid-tertiary .hs-tile-dark:hover, .hs-tile-grid-tertiary .hs-tile-light:hover, .hs-tile-grid-tertiary .hs-tile-inverse:hover, .hs-tile-grid-tertiary .hs-tile-danger:hover, .hs-tile-grid-tertiary .hs-tile-white:hover, .hs-tile-grid-tertiary .hs-action-tile-landscape:hover, .hs-tile-grid-tertiary .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-tertiary .hs-teams-tile:hover {
+.hs-tile-grid-tertiary .hs-tile:hover, .hs-tile-grid-tertiary .hs-tile-sm:hover, .hs-tile-grid-tertiary .hs-tile-lg:hover, .hs-tile-grid-tertiary .hs-tile-landscape:hover, .hs-tile-grid-tertiary .hs-tile-primary:hover, .hs-tile-grid-tertiary .hs-tile-secondary:hover, .hs-tile-grid-tertiary .hs-tile-tertiary:hover, .hs-tile-grid-tertiary .hs-tile-info:hover, .hs-tile-grid-tertiary .hs-tile-success:hover, .hs-tile-grid-tertiary .hs-tile-warning:hover, .hs-tile-grid-tertiary .hs-tile-error:hover, .hs-tile-grid-tertiary .hs-tile-dark:hover, .hs-tile-grid-tertiary .hs-tile-light:hover, .hs-tile-grid-tertiary .hs-tile-inverse:hover, .hs-tile-grid-tertiary .hs-tile-danger:hover, .hs-tile-grid-tertiary .hs-tile-white:hover, .hs-tile-grid-tertiary .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #643ab0;
 }
@@ -46359,12 +46409,12 @@ div.tester > div:hover {
   background-color: #505759;
 }
 
-.hs-tile-grid-info .hs-tile, .hs-tile-grid-info .hs-tile-sm, .hs-tile-grid-info .hs-tile-lg, .hs-tile-grid-info .hs-tile-landscape, .hs-tile-grid-info .hs-tile-primary, .hs-tile-grid-info .hs-tile-secondary, .hs-tile-grid-info .hs-tile-tertiary, .hs-tile-grid-info .hs-tile-info, .hs-tile-grid-info .hs-tile-success, .hs-tile-grid-info .hs-tile-warning, .hs-tile-grid-info .hs-tile-error, .hs-tile-grid-info .hs-tile-dark, .hs-tile-grid-info .hs-tile-light, .hs-tile-grid-info .hs-tile-inverse, .hs-tile-grid-info .hs-tile-danger, .hs-tile-grid-info .hs-tile-white, .hs-tile-grid-info .hs-action-tile-landscape, .hs-tile-grid-info .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-info .hs-teams-tile {
+.hs-tile-grid-info .hs-tile, .hs-tile-grid-info .hs-tile-sm, .hs-tile-grid-info .hs-tile-lg, .hs-tile-grid-info .hs-tile-landscape, .hs-tile-grid-info .hs-tile-primary, .hs-tile-grid-info .hs-tile-secondary, .hs-tile-grid-info .hs-tile-tertiary, .hs-tile-grid-info .hs-tile-info, .hs-tile-grid-info .hs-tile-success, .hs-tile-grid-info .hs-tile-warning, .hs-tile-grid-info .hs-tile-error, .hs-tile-grid-info .hs-tile-dark, .hs-tile-grid-info .hs-tile-light, .hs-tile-grid-info .hs-tile-inverse, .hs-tile-grid-info .hs-tile-danger, .hs-tile-grid-info .hs-tile-white, .hs-tile-grid-info .hs-action-tile-landscape {
   background-color: #5c6466;
   color: #edf2f2;
 }
 
-.hs-tile-grid-info .hs-tile > .hs-action-metric, .hs-tile-grid-info .hs-tile-sm > .hs-action-metric, .hs-tile-grid-info .hs-tile-lg > .hs-action-metric, .hs-tile-grid-info .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-info .hs-tile-primary > .hs-action-metric, .hs-tile-grid-info .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-info .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-info .hs-tile-info > .hs-action-metric, .hs-tile-grid-info .hs-tile-success > .hs-action-metric, .hs-tile-grid-info .hs-tile-warning > .hs-action-metric, .hs-tile-grid-info .hs-tile-error > .hs-action-metric, .hs-tile-grid-info .hs-tile-dark > .hs-action-metric, .hs-tile-grid-info .hs-tile-light > .hs-action-metric, .hs-tile-grid-info .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-info .hs-tile-danger > .hs-action-metric, .hs-tile-grid-info .hs-tile-white > .hs-action-metric, .hs-tile-grid-info .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-info .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-info .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-info .hs-tile > .hs-action-metric, .hs-tile-grid-info .hs-tile-sm > .hs-action-metric, .hs-tile-grid-info .hs-tile-lg > .hs-action-metric, .hs-tile-grid-info .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-info .hs-tile-primary > .hs-action-metric, .hs-tile-grid-info .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-info .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-info .hs-tile-info > .hs-action-metric, .hs-tile-grid-info .hs-tile-success > .hs-action-metric, .hs-tile-grid-info .hs-tile-warning > .hs-action-metric, .hs-tile-grid-info .hs-tile-error > .hs-action-metric, .hs-tile-grid-info .hs-tile-dark > .hs-action-metric, .hs-tile-grid-info .hs-tile-light > .hs-action-metric, .hs-tile-grid-info .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-info .hs-tile-danger > .hs-action-metric, .hs-tile-grid-info .hs-tile-white > .hs-action-metric, .hs-tile-grid-info .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-info .hs-tile .hs-action-icon,
 .hs-tile-grid-info .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-info .hs-tile-lg .hs-action-icon,
@@ -46382,8 +46432,6 @@ div.tester > div:hover {
 .hs-tile-grid-info .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-info .hs-tile-white .hs-action-icon,
 .hs-tile-grid-info .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-info .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-info .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-info .hs-tile .hs-action-title,
 .hs-tile-grid-info .hs-tile-sm .hs-action-title,
 .hs-tile-grid-info .hs-tile-lg .hs-action-title,
@@ -46400,18 +46448,16 @@ div.tester > div:hover {
 .hs-tile-grid-info .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-info .hs-tile-danger .hs-action-title,
 .hs-tile-grid-info .hs-tile-white .hs-action-title,
-.hs-tile-grid-info .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-info .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-info .hs-teams-tile .hs-action-title {
+.hs-tile-grid-info .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-info .hs-tile a, .hs-tile-grid-info .hs-tile-sm a, .hs-tile-grid-info .hs-tile-lg a, .hs-tile-grid-info .hs-tile-landscape a, .hs-tile-grid-info .hs-tile-primary a, .hs-tile-grid-info .hs-tile-secondary a, .hs-tile-grid-info .hs-tile-tertiary a, .hs-tile-grid-info .hs-tile-info a, .hs-tile-grid-info .hs-tile-success a, .hs-tile-grid-info .hs-tile-warning a, .hs-tile-grid-info .hs-tile-error a, .hs-tile-grid-info .hs-tile-dark a, .hs-tile-grid-info .hs-tile-light a, .hs-tile-grid-info .hs-tile-inverse a, .hs-tile-grid-info .hs-tile-danger a, .hs-tile-grid-info .hs-tile-white a, .hs-tile-grid-info .hs-action-tile-landscape a, .hs-tile-grid-info .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-info .hs-teams-tile a {
+.hs-tile-grid-info .hs-tile a, .hs-tile-grid-info .hs-tile-sm a, .hs-tile-grid-info .hs-tile-lg a, .hs-tile-grid-info .hs-tile-landscape a, .hs-tile-grid-info .hs-tile-primary a, .hs-tile-grid-info .hs-tile-secondary a, .hs-tile-grid-info .hs-tile-tertiary a, .hs-tile-grid-info .hs-tile-info a, .hs-tile-grid-info .hs-tile-success a, .hs-tile-grid-info .hs-tile-warning a, .hs-tile-grid-info .hs-tile-error a, .hs-tile-grid-info .hs-tile-dark a, .hs-tile-grid-info .hs-tile-light a, .hs-tile-grid-info .hs-tile-inverse a, .hs-tile-grid-info .hs-tile-danger a, .hs-tile-grid-info .hs-tile-white a, .hs-tile-grid-info .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-info .hs-tile:hover, .hs-tile-grid-info .hs-tile-sm:hover, .hs-tile-grid-info .hs-tile-lg:hover, .hs-tile-grid-info .hs-tile-landscape:hover, .hs-tile-grid-info .hs-tile-primary:hover, .hs-tile-grid-info .hs-tile-secondary:hover, .hs-tile-grid-info .hs-tile-tertiary:hover, .hs-tile-grid-info .hs-tile-info:hover, .hs-tile-grid-info .hs-tile-success:hover, .hs-tile-grid-info .hs-tile-warning:hover, .hs-tile-grid-info .hs-tile-error:hover, .hs-tile-grid-info .hs-tile-dark:hover, .hs-tile-grid-info .hs-tile-light:hover, .hs-tile-grid-info .hs-tile-inverse:hover, .hs-tile-grid-info .hs-tile-danger:hover, .hs-tile-grid-info .hs-tile-white:hover, .hs-tile-grid-info .hs-action-tile-landscape:hover, .hs-tile-grid-info .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-info .hs-teams-tile:hover {
+.hs-tile-grid-info .hs-tile:hover, .hs-tile-grid-info .hs-tile-sm:hover, .hs-tile-grid-info .hs-tile-lg:hover, .hs-tile-grid-info .hs-tile-landscape:hover, .hs-tile-grid-info .hs-tile-primary:hover, .hs-tile-grid-info .hs-tile-secondary:hover, .hs-tile-grid-info .hs-tile-tertiary:hover, .hs-tile-grid-info .hs-tile-info:hover, .hs-tile-grid-info .hs-tile-success:hover, .hs-tile-grid-info .hs-tile-warning:hover, .hs-tile-grid-info .hs-tile-error:hover, .hs-tile-grid-info .hs-tile-dark:hover, .hs-tile-grid-info .hs-tile-light:hover, .hs-tile-grid-info .hs-tile-inverse:hover, .hs-tile-grid-info .hs-tile-danger:hover, .hs-tile-grid-info .hs-tile-white:hover, .hs-tile-grid-info .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #505759;
 }
@@ -46437,12 +46483,12 @@ div.tester > div:hover {
   background-color: #00755b;
 }
 
-.hs-tile-grid-success .hs-tile, .hs-tile-grid-success .hs-tile-sm, .hs-tile-grid-success .hs-tile-lg, .hs-tile-grid-success .hs-tile-landscape, .hs-tile-grid-success .hs-tile-primary, .hs-tile-grid-success .hs-tile-secondary, .hs-tile-grid-success .hs-tile-tertiary, .hs-tile-grid-success .hs-tile-info, .hs-tile-grid-success .hs-tile-success, .hs-tile-grid-success .hs-tile-warning, .hs-tile-grid-success .hs-tile-error, .hs-tile-grid-success .hs-tile-dark, .hs-tile-grid-success .hs-tile-light, .hs-tile-grid-success .hs-tile-inverse, .hs-tile-grid-success .hs-tile-danger, .hs-tile-grid-success .hs-tile-white, .hs-tile-grid-success .hs-action-tile-landscape, .hs-tile-grid-success .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-success .hs-teams-tile {
+.hs-tile-grid-success .hs-tile, .hs-tile-grid-success .hs-tile-sm, .hs-tile-grid-success .hs-tile-lg, .hs-tile-grid-success .hs-tile-landscape, .hs-tile-grid-success .hs-tile-primary, .hs-tile-grid-success .hs-tile-secondary, .hs-tile-grid-success .hs-tile-tertiary, .hs-tile-grid-success .hs-tile-info, .hs-tile-grid-success .hs-tile-success, .hs-tile-grid-success .hs-tile-warning, .hs-tile-grid-success .hs-tile-error, .hs-tile-grid-success .hs-tile-dark, .hs-tile-grid-success .hs-tile-light, .hs-tile-grid-success .hs-tile-inverse, .hs-tile-grid-success .hs-tile-danger, .hs-tile-grid-success .hs-tile-white, .hs-tile-grid-success .hs-action-tile-landscape {
   background-color: #008e6f;
   color: #edf2f2;
 }
 
-.hs-tile-grid-success .hs-tile > .hs-action-metric, .hs-tile-grid-success .hs-tile-sm > .hs-action-metric, .hs-tile-grid-success .hs-tile-lg > .hs-action-metric, .hs-tile-grid-success .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-success .hs-tile-primary > .hs-action-metric, .hs-tile-grid-success .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-success .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-success .hs-tile-info > .hs-action-metric, .hs-tile-grid-success .hs-tile-success > .hs-action-metric, .hs-tile-grid-success .hs-tile-warning > .hs-action-metric, .hs-tile-grid-success .hs-tile-error > .hs-action-metric, .hs-tile-grid-success .hs-tile-dark > .hs-action-metric, .hs-tile-grid-success .hs-tile-light > .hs-action-metric, .hs-tile-grid-success .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-success .hs-tile-danger > .hs-action-metric, .hs-tile-grid-success .hs-tile-white > .hs-action-metric, .hs-tile-grid-success .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-success .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-success .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-success .hs-tile > .hs-action-metric, .hs-tile-grid-success .hs-tile-sm > .hs-action-metric, .hs-tile-grid-success .hs-tile-lg > .hs-action-metric, .hs-tile-grid-success .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-success .hs-tile-primary > .hs-action-metric, .hs-tile-grid-success .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-success .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-success .hs-tile-info > .hs-action-metric, .hs-tile-grid-success .hs-tile-success > .hs-action-metric, .hs-tile-grid-success .hs-tile-warning > .hs-action-metric, .hs-tile-grid-success .hs-tile-error > .hs-action-metric, .hs-tile-grid-success .hs-tile-dark > .hs-action-metric, .hs-tile-grid-success .hs-tile-light > .hs-action-metric, .hs-tile-grid-success .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-success .hs-tile-danger > .hs-action-metric, .hs-tile-grid-success .hs-tile-white > .hs-action-metric, .hs-tile-grid-success .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-success .hs-tile .hs-action-icon,
 .hs-tile-grid-success .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-success .hs-tile-lg .hs-action-icon,
@@ -46460,8 +46506,6 @@ div.tester > div:hover {
 .hs-tile-grid-success .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-success .hs-tile-white .hs-action-icon,
 .hs-tile-grid-success .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-success .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-success .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-success .hs-tile .hs-action-title,
 .hs-tile-grid-success .hs-tile-sm .hs-action-title,
 .hs-tile-grid-success .hs-tile-lg .hs-action-title,
@@ -46478,18 +46522,16 @@ div.tester > div:hover {
 .hs-tile-grid-success .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-success .hs-tile-danger .hs-action-title,
 .hs-tile-grid-success .hs-tile-white .hs-action-title,
-.hs-tile-grid-success .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-success .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-success .hs-teams-tile .hs-action-title {
+.hs-tile-grid-success .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-success .hs-tile a, .hs-tile-grid-success .hs-tile-sm a, .hs-tile-grid-success .hs-tile-lg a, .hs-tile-grid-success .hs-tile-landscape a, .hs-tile-grid-success .hs-tile-primary a, .hs-tile-grid-success .hs-tile-secondary a, .hs-tile-grid-success .hs-tile-tertiary a, .hs-tile-grid-success .hs-tile-info a, .hs-tile-grid-success .hs-tile-success a, .hs-tile-grid-success .hs-tile-warning a, .hs-tile-grid-success .hs-tile-error a, .hs-tile-grid-success .hs-tile-dark a, .hs-tile-grid-success .hs-tile-light a, .hs-tile-grid-success .hs-tile-inverse a, .hs-tile-grid-success .hs-tile-danger a, .hs-tile-grid-success .hs-tile-white a, .hs-tile-grid-success .hs-action-tile-landscape a, .hs-tile-grid-success .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-success .hs-teams-tile a {
+.hs-tile-grid-success .hs-tile a, .hs-tile-grid-success .hs-tile-sm a, .hs-tile-grid-success .hs-tile-lg a, .hs-tile-grid-success .hs-tile-landscape a, .hs-tile-grid-success .hs-tile-primary a, .hs-tile-grid-success .hs-tile-secondary a, .hs-tile-grid-success .hs-tile-tertiary a, .hs-tile-grid-success .hs-tile-info a, .hs-tile-grid-success .hs-tile-success a, .hs-tile-grid-success .hs-tile-warning a, .hs-tile-grid-success .hs-tile-error a, .hs-tile-grid-success .hs-tile-dark a, .hs-tile-grid-success .hs-tile-light a, .hs-tile-grid-success .hs-tile-inverse a, .hs-tile-grid-success .hs-tile-danger a, .hs-tile-grid-success .hs-tile-white a, .hs-tile-grid-success .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-success .hs-tile:hover, .hs-tile-grid-success .hs-tile-sm:hover, .hs-tile-grid-success .hs-tile-lg:hover, .hs-tile-grid-success .hs-tile-landscape:hover, .hs-tile-grid-success .hs-tile-primary:hover, .hs-tile-grid-success .hs-tile-secondary:hover, .hs-tile-grid-success .hs-tile-tertiary:hover, .hs-tile-grid-success .hs-tile-info:hover, .hs-tile-grid-success .hs-tile-success:hover, .hs-tile-grid-success .hs-tile-warning:hover, .hs-tile-grid-success .hs-tile-error:hover, .hs-tile-grid-success .hs-tile-dark:hover, .hs-tile-grid-success .hs-tile-light:hover, .hs-tile-grid-success .hs-tile-inverse:hover, .hs-tile-grid-success .hs-tile-danger:hover, .hs-tile-grid-success .hs-tile-white:hover, .hs-tile-grid-success .hs-action-tile-landscape:hover, .hs-tile-grid-success .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-success .hs-teams-tile:hover {
+.hs-tile-grid-success .hs-tile:hover, .hs-tile-grid-success .hs-tile-sm:hover, .hs-tile-grid-success .hs-tile-lg:hover, .hs-tile-grid-success .hs-tile-landscape:hover, .hs-tile-grid-success .hs-tile-primary:hover, .hs-tile-grid-success .hs-tile-secondary:hover, .hs-tile-grid-success .hs-tile-tertiary:hover, .hs-tile-grid-success .hs-tile-info:hover, .hs-tile-grid-success .hs-tile-success:hover, .hs-tile-grid-success .hs-tile-warning:hover, .hs-tile-grid-success .hs-tile-error:hover, .hs-tile-grid-success .hs-tile-dark:hover, .hs-tile-grid-success .hs-tile-light:hover, .hs-tile-grid-success .hs-tile-inverse:hover, .hs-tile-grid-success .hs-tile-danger:hover, .hs-tile-grid-success .hs-tile-white:hover, .hs-tile-grid-success .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #00755b;
 }
@@ -46515,12 +46557,12 @@ div.tester > div:hover {
   background-color: #e6b800;
 }
 
-.hs-tile-grid-warning .hs-tile, .hs-tile-grid-warning .hs-tile-sm, .hs-tile-grid-warning .hs-tile-lg, .hs-tile-grid-warning .hs-tile-landscape, .hs-tile-grid-warning .hs-tile-primary, .hs-tile-grid-warning .hs-tile-secondary, .hs-tile-grid-warning .hs-tile-tertiary, .hs-tile-grid-warning .hs-tile-info, .hs-tile-grid-warning .hs-tile-success, .hs-tile-grid-warning .hs-tile-warning, .hs-tile-grid-warning .hs-tile-error, .hs-tile-grid-warning .hs-tile-dark, .hs-tile-grid-warning .hs-tile-light, .hs-tile-grid-warning .hs-tile-inverse, .hs-tile-grid-warning .hs-tile-danger, .hs-tile-grid-warning .hs-tile-white, .hs-tile-grid-warning .hs-action-tile-landscape, .hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile {
+.hs-tile-grid-warning .hs-tile, .hs-tile-grid-warning .hs-tile-sm, .hs-tile-grid-warning .hs-tile-lg, .hs-tile-grid-warning .hs-tile-landscape, .hs-tile-grid-warning .hs-tile-primary, .hs-tile-grid-warning .hs-tile-secondary, .hs-tile-grid-warning .hs-tile-tertiary, .hs-tile-grid-warning .hs-tile-info, .hs-tile-grid-warning .hs-tile-success, .hs-tile-grid-warning .hs-tile-warning, .hs-tile-grid-warning .hs-tile-error, .hs-tile-grid-warning .hs-tile-dark, .hs-tile-grid-warning .hs-tile-light, .hs-tile-grid-warning .hs-tile-inverse, .hs-tile-grid-warning .hs-tile-danger, .hs-tile-grid-warning .hs-tile-white, .hs-tile-grid-warning .hs-action-tile-landscape {
   background-color: #FFCC00;
   color: #5c6466;
 }
 
-.hs-tile-grid-warning .hs-tile > .hs-action-metric, .hs-tile-grid-warning .hs-tile-sm > .hs-action-metric, .hs-tile-grid-warning .hs-tile-lg > .hs-action-metric, .hs-tile-grid-warning .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-warning .hs-tile-primary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-info > .hs-action-metric, .hs-tile-grid-warning .hs-tile-success > .hs-action-metric, .hs-tile-grid-warning .hs-tile-warning > .hs-action-metric, .hs-tile-grid-warning .hs-tile-error > .hs-action-metric, .hs-tile-grid-warning .hs-tile-dark > .hs-action-metric, .hs-tile-grid-warning .hs-tile-light > .hs-action-metric, .hs-tile-grid-warning .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-warning .hs-tile-danger > .hs-action-metric, .hs-tile-grid-warning .hs-tile-white > .hs-action-metric, .hs-tile-grid-warning .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-warning .hs-tile > .hs-action-metric, .hs-tile-grid-warning .hs-tile-sm > .hs-action-metric, .hs-tile-grid-warning .hs-tile-lg > .hs-action-metric, .hs-tile-grid-warning .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-warning .hs-tile-primary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-warning .hs-tile-info > .hs-action-metric, .hs-tile-grid-warning .hs-tile-success > .hs-action-metric, .hs-tile-grid-warning .hs-tile-warning > .hs-action-metric, .hs-tile-grid-warning .hs-tile-error > .hs-action-metric, .hs-tile-grid-warning .hs-tile-dark > .hs-action-metric, .hs-tile-grid-warning .hs-tile-light > .hs-action-metric, .hs-tile-grid-warning .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-warning .hs-tile-danger > .hs-action-metric, .hs-tile-grid-warning .hs-tile-white > .hs-action-metric, .hs-tile-grid-warning .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-warning .hs-tile .hs-action-icon,
 .hs-tile-grid-warning .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-warning .hs-tile-lg .hs-action-icon,
@@ -46538,8 +46580,6 @@ div.tester > div:hover {
 .hs-tile-grid-warning .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-warning .hs-tile-white .hs-action-icon,
 .hs-tile-grid-warning .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-warning .hs-tile .hs-action-title,
 .hs-tile-grid-warning .hs-tile-sm .hs-action-title,
 .hs-tile-grid-warning .hs-tile-lg .hs-action-title,
@@ -46556,18 +46596,16 @@ div.tester > div:hover {
 .hs-tile-grid-warning .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-warning .hs-tile-danger .hs-action-title,
 .hs-tile-grid-warning .hs-tile-white .hs-action-title,
-.hs-tile-grid-warning .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile .hs-action-title {
+.hs-tile-grid-warning .hs-action-tile-landscape .hs-action-title {
   color: #5c6466;
 }
 
-.hs-tile-grid-warning .hs-tile a, .hs-tile-grid-warning .hs-tile-sm a, .hs-tile-grid-warning .hs-tile-lg a, .hs-tile-grid-warning .hs-tile-landscape a, .hs-tile-grid-warning .hs-tile-primary a, .hs-tile-grid-warning .hs-tile-secondary a, .hs-tile-grid-warning .hs-tile-tertiary a, .hs-tile-grid-warning .hs-tile-info a, .hs-tile-grid-warning .hs-tile-success a, .hs-tile-grid-warning .hs-tile-warning a, .hs-tile-grid-warning .hs-tile-error a, .hs-tile-grid-warning .hs-tile-dark a, .hs-tile-grid-warning .hs-tile-light a, .hs-tile-grid-warning .hs-tile-inverse a, .hs-tile-grid-warning .hs-tile-danger a, .hs-tile-grid-warning .hs-tile-white a, .hs-tile-grid-warning .hs-action-tile-landscape a, .hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile a {
+.hs-tile-grid-warning .hs-tile a, .hs-tile-grid-warning .hs-tile-sm a, .hs-tile-grid-warning .hs-tile-lg a, .hs-tile-grid-warning .hs-tile-landscape a, .hs-tile-grid-warning .hs-tile-primary a, .hs-tile-grid-warning .hs-tile-secondary a, .hs-tile-grid-warning .hs-tile-tertiary a, .hs-tile-grid-warning .hs-tile-info a, .hs-tile-grid-warning .hs-tile-success a, .hs-tile-grid-warning .hs-tile-warning a, .hs-tile-grid-warning .hs-tile-error a, .hs-tile-grid-warning .hs-tile-dark a, .hs-tile-grid-warning .hs-tile-light a, .hs-tile-grid-warning .hs-tile-inverse a, .hs-tile-grid-warning .hs-tile-danger a, .hs-tile-grid-warning .hs-tile-white a, .hs-tile-grid-warning .hs-action-tile-landscape a {
   text-decoration: none;
   color: #5c6466;
 }
 
-.hs-tile-grid-warning .hs-tile:hover, .hs-tile-grid-warning .hs-tile-sm:hover, .hs-tile-grid-warning .hs-tile-lg:hover, .hs-tile-grid-warning .hs-tile-landscape:hover, .hs-tile-grid-warning .hs-tile-primary:hover, .hs-tile-grid-warning .hs-tile-secondary:hover, .hs-tile-grid-warning .hs-tile-tertiary:hover, .hs-tile-grid-warning .hs-tile-info:hover, .hs-tile-grid-warning .hs-tile-success:hover, .hs-tile-grid-warning .hs-tile-warning:hover, .hs-tile-grid-warning .hs-tile-error:hover, .hs-tile-grid-warning .hs-tile-dark:hover, .hs-tile-grid-warning .hs-tile-light:hover, .hs-tile-grid-warning .hs-tile-inverse:hover, .hs-tile-grid-warning .hs-tile-danger:hover, .hs-tile-grid-warning .hs-tile-white:hover, .hs-tile-grid-warning .hs-action-tile-landscape:hover, .hs-tile-grid-warning .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-warning .hs-teams-tile:hover {
+.hs-tile-grid-warning .hs-tile:hover, .hs-tile-grid-warning .hs-tile-sm:hover, .hs-tile-grid-warning .hs-tile-lg:hover, .hs-tile-grid-warning .hs-tile-landscape:hover, .hs-tile-grid-warning .hs-tile-primary:hover, .hs-tile-grid-warning .hs-tile-secondary:hover, .hs-tile-grid-warning .hs-tile-tertiary:hover, .hs-tile-grid-warning .hs-tile-info:hover, .hs-tile-grid-warning .hs-tile-success:hover, .hs-tile-grid-warning .hs-tile-warning:hover, .hs-tile-grid-warning .hs-tile-error:hover, .hs-tile-grid-warning .hs-tile-dark:hover, .hs-tile-grid-warning .hs-tile-light:hover, .hs-tile-grid-warning .hs-tile-inverse:hover, .hs-tile-grid-warning .hs-tile-danger:hover, .hs-tile-grid-warning .hs-tile-white:hover, .hs-tile-grid-warning .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #e6b800;
 }
@@ -46593,12 +46631,12 @@ div.tester > div:hover {
   background-color: #630802;
 }
 
-.hs-tile-grid-error .hs-tile, .hs-tile-grid-error .hs-tile-sm, .hs-tile-grid-error .hs-tile-lg, .hs-tile-grid-error .hs-tile-landscape, .hs-tile-grid-error .hs-tile-primary, .hs-tile-grid-error .hs-tile-secondary, .hs-tile-grid-error .hs-tile-tertiary, .hs-tile-grid-error .hs-tile-info, .hs-tile-grid-error .hs-tile-success, .hs-tile-grid-error .hs-tile-warning, .hs-tile-grid-error .hs-tile-error, .hs-tile-grid-error .hs-tile-dark, .hs-tile-grid-error .hs-tile-light, .hs-tile-grid-error .hs-tile-inverse, .hs-tile-grid-error .hs-tile-danger, .hs-tile-grid-error .hs-tile-white, .hs-tile-grid-error .hs-action-tile-landscape, .hs-tile-grid-error .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-error .hs-teams-tile {
+.hs-tile-grid-error .hs-tile, .hs-tile-grid-error .hs-tile-sm, .hs-tile-grid-error .hs-tile-lg, .hs-tile-grid-error .hs-tile-landscape, .hs-tile-grid-error .hs-tile-primary, .hs-tile-grid-error .hs-tile-secondary, .hs-tile-grid-error .hs-tile-tertiary, .hs-tile-grid-error .hs-tile-info, .hs-tile-grid-error .hs-tile-success, .hs-tile-grid-error .hs-tile-warning, .hs-tile-grid-error .hs-tile-error, .hs-tile-grid-error .hs-tile-dark, .hs-tile-grid-error .hs-tile-light, .hs-tile-grid-error .hs-tile-inverse, .hs-tile-grid-error .hs-tile-danger, .hs-tile-grid-error .hs-tile-white, .hs-tile-grid-error .hs-action-tile-landscape {
   background-color: #7C0A02;
   color: #edf2f2;
 }
 
-.hs-tile-grid-error .hs-tile > .hs-action-metric, .hs-tile-grid-error .hs-tile-sm > .hs-action-metric, .hs-tile-grid-error .hs-tile-lg > .hs-action-metric, .hs-tile-grid-error .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-error .hs-tile-primary > .hs-action-metric, .hs-tile-grid-error .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-error .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-error .hs-tile-info > .hs-action-metric, .hs-tile-grid-error .hs-tile-success > .hs-action-metric, .hs-tile-grid-error .hs-tile-warning > .hs-action-metric, .hs-tile-grid-error .hs-tile-error > .hs-action-metric, .hs-tile-grid-error .hs-tile-dark > .hs-action-metric, .hs-tile-grid-error .hs-tile-light > .hs-action-metric, .hs-tile-grid-error .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-error .hs-tile-danger > .hs-action-metric, .hs-tile-grid-error .hs-tile-white > .hs-action-metric, .hs-tile-grid-error .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-error .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-error .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-error .hs-tile > .hs-action-metric, .hs-tile-grid-error .hs-tile-sm > .hs-action-metric, .hs-tile-grid-error .hs-tile-lg > .hs-action-metric, .hs-tile-grid-error .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-error .hs-tile-primary > .hs-action-metric, .hs-tile-grid-error .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-error .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-error .hs-tile-info > .hs-action-metric, .hs-tile-grid-error .hs-tile-success > .hs-action-metric, .hs-tile-grid-error .hs-tile-warning > .hs-action-metric, .hs-tile-grid-error .hs-tile-error > .hs-action-metric, .hs-tile-grid-error .hs-tile-dark > .hs-action-metric, .hs-tile-grid-error .hs-tile-light > .hs-action-metric, .hs-tile-grid-error .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-error .hs-tile-danger > .hs-action-metric, .hs-tile-grid-error .hs-tile-white > .hs-action-metric, .hs-tile-grid-error .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-error .hs-tile .hs-action-icon,
 .hs-tile-grid-error .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-error .hs-tile-lg .hs-action-icon,
@@ -46616,8 +46654,6 @@ div.tester > div:hover {
 .hs-tile-grid-error .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-error .hs-tile-white .hs-action-icon,
 .hs-tile-grid-error .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-error .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-error .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-error .hs-tile .hs-action-title,
 .hs-tile-grid-error .hs-tile-sm .hs-action-title,
 .hs-tile-grid-error .hs-tile-lg .hs-action-title,
@@ -46634,18 +46670,16 @@ div.tester > div:hover {
 .hs-tile-grid-error .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-error .hs-tile-danger .hs-action-title,
 .hs-tile-grid-error .hs-tile-white .hs-action-title,
-.hs-tile-grid-error .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-error .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-error .hs-teams-tile .hs-action-title {
+.hs-tile-grid-error .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-error .hs-tile a, .hs-tile-grid-error .hs-tile-sm a, .hs-tile-grid-error .hs-tile-lg a, .hs-tile-grid-error .hs-tile-landscape a, .hs-tile-grid-error .hs-tile-primary a, .hs-tile-grid-error .hs-tile-secondary a, .hs-tile-grid-error .hs-tile-tertiary a, .hs-tile-grid-error .hs-tile-info a, .hs-tile-grid-error .hs-tile-success a, .hs-tile-grid-error .hs-tile-warning a, .hs-tile-grid-error .hs-tile-error a, .hs-tile-grid-error .hs-tile-dark a, .hs-tile-grid-error .hs-tile-light a, .hs-tile-grid-error .hs-tile-inverse a, .hs-tile-grid-error .hs-tile-danger a, .hs-tile-grid-error .hs-tile-white a, .hs-tile-grid-error .hs-action-tile-landscape a, .hs-tile-grid-error .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-error .hs-teams-tile a {
+.hs-tile-grid-error .hs-tile a, .hs-tile-grid-error .hs-tile-sm a, .hs-tile-grid-error .hs-tile-lg a, .hs-tile-grid-error .hs-tile-landscape a, .hs-tile-grid-error .hs-tile-primary a, .hs-tile-grid-error .hs-tile-secondary a, .hs-tile-grid-error .hs-tile-tertiary a, .hs-tile-grid-error .hs-tile-info a, .hs-tile-grid-error .hs-tile-success a, .hs-tile-grid-error .hs-tile-warning a, .hs-tile-grid-error .hs-tile-error a, .hs-tile-grid-error .hs-tile-dark a, .hs-tile-grid-error .hs-tile-light a, .hs-tile-grid-error .hs-tile-inverse a, .hs-tile-grid-error .hs-tile-danger a, .hs-tile-grid-error .hs-tile-white a, .hs-tile-grid-error .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-error .hs-tile:hover, .hs-tile-grid-error .hs-tile-sm:hover, .hs-tile-grid-error .hs-tile-lg:hover, .hs-tile-grid-error .hs-tile-landscape:hover, .hs-tile-grid-error .hs-tile-primary:hover, .hs-tile-grid-error .hs-tile-secondary:hover, .hs-tile-grid-error .hs-tile-tertiary:hover, .hs-tile-grid-error .hs-tile-info:hover, .hs-tile-grid-error .hs-tile-success:hover, .hs-tile-grid-error .hs-tile-warning:hover, .hs-tile-grid-error .hs-tile-error:hover, .hs-tile-grid-error .hs-tile-dark:hover, .hs-tile-grid-error .hs-tile-light:hover, .hs-tile-grid-error .hs-tile-inverse:hover, .hs-tile-grid-error .hs-tile-danger:hover, .hs-tile-grid-error .hs-tile-white:hover, .hs-tile-grid-error .hs-action-tile-landscape:hover, .hs-tile-grid-error .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-error .hs-teams-tile:hover {
+.hs-tile-grid-error .hs-tile:hover, .hs-tile-grid-error .hs-tile-sm:hover, .hs-tile-grid-error .hs-tile-lg:hover, .hs-tile-grid-error .hs-tile-landscape:hover, .hs-tile-grid-error .hs-tile-primary:hover, .hs-tile-grid-error .hs-tile-secondary:hover, .hs-tile-grid-error .hs-tile-tertiary:hover, .hs-tile-grid-error .hs-tile-info:hover, .hs-tile-grid-error .hs-tile-success:hover, .hs-tile-grid-error .hs-tile-warning:hover, .hs-tile-grid-error .hs-tile-error:hover, .hs-tile-grid-error .hs-tile-dark:hover, .hs-tile-grid-error .hs-tile-light:hover, .hs-tile-grid-error .hs-tile-inverse:hover, .hs-tile-grid-error .hs-tile-danger:hover, .hs-tile-grid-error .hs-tile-white:hover, .hs-tile-grid-error .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #630802;
 }
@@ -46671,12 +46705,12 @@ div.tester > div:hover {
   background-color: #505759;
 }
 
-.hs-tile-grid-dark .hs-tile, .hs-tile-grid-dark .hs-tile-sm, .hs-tile-grid-dark .hs-tile-lg, .hs-tile-grid-dark .hs-tile-landscape, .hs-tile-grid-dark .hs-tile-primary, .hs-tile-grid-dark .hs-tile-secondary, .hs-tile-grid-dark .hs-tile-tertiary, .hs-tile-grid-dark .hs-tile-info, .hs-tile-grid-dark .hs-tile-success, .hs-tile-grid-dark .hs-tile-warning, .hs-tile-grid-dark .hs-tile-error, .hs-tile-grid-dark .hs-tile-dark, .hs-tile-grid-dark .hs-tile-light, .hs-tile-grid-dark .hs-tile-inverse, .hs-tile-grid-dark .hs-tile-danger, .hs-tile-grid-dark .hs-tile-white, .hs-tile-grid-dark .hs-action-tile-landscape, .hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile {
+.hs-tile-grid-dark .hs-tile, .hs-tile-grid-dark .hs-tile-sm, .hs-tile-grid-dark .hs-tile-lg, .hs-tile-grid-dark .hs-tile-landscape, .hs-tile-grid-dark .hs-tile-primary, .hs-tile-grid-dark .hs-tile-secondary, .hs-tile-grid-dark .hs-tile-tertiary, .hs-tile-grid-dark .hs-tile-info, .hs-tile-grid-dark .hs-tile-success, .hs-tile-grid-dark .hs-tile-warning, .hs-tile-grid-dark .hs-tile-error, .hs-tile-grid-dark .hs-tile-dark, .hs-tile-grid-dark .hs-tile-light, .hs-tile-grid-dark .hs-tile-inverse, .hs-tile-grid-dark .hs-tile-danger, .hs-tile-grid-dark .hs-tile-white, .hs-tile-grid-dark .hs-action-tile-landscape {
   background-color: #5c6466;
   color: #edf2f2;
 }
 
-.hs-tile-grid-dark .hs-tile > .hs-action-metric, .hs-tile-grid-dark .hs-tile-sm > .hs-action-metric, .hs-tile-grid-dark .hs-tile-lg > .hs-action-metric, .hs-tile-grid-dark .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-dark .hs-tile-primary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-info > .hs-action-metric, .hs-tile-grid-dark .hs-tile-success > .hs-action-metric, .hs-tile-grid-dark .hs-tile-warning > .hs-action-metric, .hs-tile-grid-dark .hs-tile-error > .hs-action-metric, .hs-tile-grid-dark .hs-tile-dark > .hs-action-metric, .hs-tile-grid-dark .hs-tile-light > .hs-action-metric, .hs-tile-grid-dark .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-dark .hs-tile-danger > .hs-action-metric, .hs-tile-grid-dark .hs-tile-white > .hs-action-metric, .hs-tile-grid-dark .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-dark .hs-tile > .hs-action-metric, .hs-tile-grid-dark .hs-tile-sm > .hs-action-metric, .hs-tile-grid-dark .hs-tile-lg > .hs-action-metric, .hs-tile-grid-dark .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-dark .hs-tile-primary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-dark .hs-tile-info > .hs-action-metric, .hs-tile-grid-dark .hs-tile-success > .hs-action-metric, .hs-tile-grid-dark .hs-tile-warning > .hs-action-metric, .hs-tile-grid-dark .hs-tile-error > .hs-action-metric, .hs-tile-grid-dark .hs-tile-dark > .hs-action-metric, .hs-tile-grid-dark .hs-tile-light > .hs-action-metric, .hs-tile-grid-dark .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-dark .hs-tile-danger > .hs-action-metric, .hs-tile-grid-dark .hs-tile-white > .hs-action-metric, .hs-tile-grid-dark .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-dark .hs-tile .hs-action-icon,
 .hs-tile-grid-dark .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-dark .hs-tile-lg .hs-action-icon,
@@ -46694,8 +46728,6 @@ div.tester > div:hover {
 .hs-tile-grid-dark .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-dark .hs-tile-white .hs-action-icon,
 .hs-tile-grid-dark .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-dark .hs-tile .hs-action-title,
 .hs-tile-grid-dark .hs-tile-sm .hs-action-title,
 .hs-tile-grid-dark .hs-tile-lg .hs-action-title,
@@ -46712,18 +46744,16 @@ div.tester > div:hover {
 .hs-tile-grid-dark .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-dark .hs-tile-danger .hs-action-title,
 .hs-tile-grid-dark .hs-tile-white .hs-action-title,
-.hs-tile-grid-dark .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile .hs-action-title {
+.hs-tile-grid-dark .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-dark .hs-tile a, .hs-tile-grid-dark .hs-tile-sm a, .hs-tile-grid-dark .hs-tile-lg a, .hs-tile-grid-dark .hs-tile-landscape a, .hs-tile-grid-dark .hs-tile-primary a, .hs-tile-grid-dark .hs-tile-secondary a, .hs-tile-grid-dark .hs-tile-tertiary a, .hs-tile-grid-dark .hs-tile-info a, .hs-tile-grid-dark .hs-tile-success a, .hs-tile-grid-dark .hs-tile-warning a, .hs-tile-grid-dark .hs-tile-error a, .hs-tile-grid-dark .hs-tile-dark a, .hs-tile-grid-dark .hs-tile-light a, .hs-tile-grid-dark .hs-tile-inverse a, .hs-tile-grid-dark .hs-tile-danger a, .hs-tile-grid-dark .hs-tile-white a, .hs-tile-grid-dark .hs-action-tile-landscape a, .hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile a {
+.hs-tile-grid-dark .hs-tile a, .hs-tile-grid-dark .hs-tile-sm a, .hs-tile-grid-dark .hs-tile-lg a, .hs-tile-grid-dark .hs-tile-landscape a, .hs-tile-grid-dark .hs-tile-primary a, .hs-tile-grid-dark .hs-tile-secondary a, .hs-tile-grid-dark .hs-tile-tertiary a, .hs-tile-grid-dark .hs-tile-info a, .hs-tile-grid-dark .hs-tile-success a, .hs-tile-grid-dark .hs-tile-warning a, .hs-tile-grid-dark .hs-tile-error a, .hs-tile-grid-dark .hs-tile-dark a, .hs-tile-grid-dark .hs-tile-light a, .hs-tile-grid-dark .hs-tile-inverse a, .hs-tile-grid-dark .hs-tile-danger a, .hs-tile-grid-dark .hs-tile-white a, .hs-tile-grid-dark .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-dark .hs-tile:hover, .hs-tile-grid-dark .hs-tile-sm:hover, .hs-tile-grid-dark .hs-tile-lg:hover, .hs-tile-grid-dark .hs-tile-landscape:hover, .hs-tile-grid-dark .hs-tile-primary:hover, .hs-tile-grid-dark .hs-tile-secondary:hover, .hs-tile-grid-dark .hs-tile-tertiary:hover, .hs-tile-grid-dark .hs-tile-info:hover, .hs-tile-grid-dark .hs-tile-success:hover, .hs-tile-grid-dark .hs-tile-warning:hover, .hs-tile-grid-dark .hs-tile-error:hover, .hs-tile-grid-dark .hs-tile-dark:hover, .hs-tile-grid-dark .hs-tile-light:hover, .hs-tile-grid-dark .hs-tile-inverse:hover, .hs-tile-grid-dark .hs-tile-danger:hover, .hs-tile-grid-dark .hs-tile-white:hover, .hs-tile-grid-dark .hs-action-tile-landscape:hover, .hs-tile-grid-dark .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-dark .hs-teams-tile:hover {
+.hs-tile-grid-dark .hs-tile:hover, .hs-tile-grid-dark .hs-tile-sm:hover, .hs-tile-grid-dark .hs-tile-lg:hover, .hs-tile-grid-dark .hs-tile-landscape:hover, .hs-tile-grid-dark .hs-tile-primary:hover, .hs-tile-grid-dark .hs-tile-secondary:hover, .hs-tile-grid-dark .hs-tile-tertiary:hover, .hs-tile-grid-dark .hs-tile-info:hover, .hs-tile-grid-dark .hs-tile-success:hover, .hs-tile-grid-dark .hs-tile-warning:hover, .hs-tile-grid-dark .hs-tile-error:hover, .hs-tile-grid-dark .hs-tile-dark:hover, .hs-tile-grid-dark .hs-tile-light:hover, .hs-tile-grid-dark .hs-tile-inverse:hover, .hs-tile-grid-dark .hs-tile-danger:hover, .hs-tile-grid-dark .hs-tile-white:hover, .hs-tile-grid-dark .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #505759;
 }
@@ -46749,12 +46779,12 @@ div.tester > div:hover {
   background-color: #dee7e7;
 }
 
-.hs-tile-grid-light .hs-tile, .hs-tile-grid-light .hs-tile-sm, .hs-tile-grid-light .hs-tile-lg, .hs-tile-grid-light .hs-tile-landscape, .hs-tile-grid-light .hs-tile-primary, .hs-tile-grid-light .hs-tile-secondary, .hs-tile-grid-light .hs-tile-tertiary, .hs-tile-grid-light .hs-tile-info, .hs-tile-grid-light .hs-tile-success, .hs-tile-grid-light .hs-tile-warning, .hs-tile-grid-light .hs-tile-error, .hs-tile-grid-light .hs-tile-dark, .hs-tile-grid-light .hs-tile-light, .hs-tile-grid-light .hs-tile-inverse, .hs-tile-grid-light .hs-tile-danger, .hs-tile-grid-light .hs-tile-white, .hs-tile-grid-light .hs-action-tile-landscape, .hs-tile-grid-light .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-light .hs-teams-tile {
+.hs-tile-grid-light .hs-tile, .hs-tile-grid-light .hs-tile-sm, .hs-tile-grid-light .hs-tile-lg, .hs-tile-grid-light .hs-tile-landscape, .hs-tile-grid-light .hs-tile-primary, .hs-tile-grid-light .hs-tile-secondary, .hs-tile-grid-light .hs-tile-tertiary, .hs-tile-grid-light .hs-tile-info, .hs-tile-grid-light .hs-tile-success, .hs-tile-grid-light .hs-tile-warning, .hs-tile-grid-light .hs-tile-error, .hs-tile-grid-light .hs-tile-dark, .hs-tile-grid-light .hs-tile-light, .hs-tile-grid-light .hs-tile-inverse, .hs-tile-grid-light .hs-tile-danger, .hs-tile-grid-light .hs-tile-white, .hs-tile-grid-light .hs-action-tile-landscape {
   background-color: #edf2f2;
   color: #5c6466;
 }
 
-.hs-tile-grid-light .hs-tile > .hs-action-metric, .hs-tile-grid-light .hs-tile-sm > .hs-action-metric, .hs-tile-grid-light .hs-tile-lg > .hs-action-metric, .hs-tile-grid-light .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-light .hs-tile-primary > .hs-action-metric, .hs-tile-grid-light .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-light .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-light .hs-tile-info > .hs-action-metric, .hs-tile-grid-light .hs-tile-success > .hs-action-metric, .hs-tile-grid-light .hs-tile-warning > .hs-action-metric, .hs-tile-grid-light .hs-tile-error > .hs-action-metric, .hs-tile-grid-light .hs-tile-dark > .hs-action-metric, .hs-tile-grid-light .hs-tile-light > .hs-action-metric, .hs-tile-grid-light .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-light .hs-tile-danger > .hs-action-metric, .hs-tile-grid-light .hs-tile-white > .hs-action-metric, .hs-tile-grid-light .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-light .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-light .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-light .hs-tile > .hs-action-metric, .hs-tile-grid-light .hs-tile-sm > .hs-action-metric, .hs-tile-grid-light .hs-tile-lg > .hs-action-metric, .hs-tile-grid-light .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-light .hs-tile-primary > .hs-action-metric, .hs-tile-grid-light .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-light .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-light .hs-tile-info > .hs-action-metric, .hs-tile-grid-light .hs-tile-success > .hs-action-metric, .hs-tile-grid-light .hs-tile-warning > .hs-action-metric, .hs-tile-grid-light .hs-tile-error > .hs-action-metric, .hs-tile-grid-light .hs-tile-dark > .hs-action-metric, .hs-tile-grid-light .hs-tile-light > .hs-action-metric, .hs-tile-grid-light .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-light .hs-tile-danger > .hs-action-metric, .hs-tile-grid-light .hs-tile-white > .hs-action-metric, .hs-tile-grid-light .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-light .hs-tile .hs-action-icon,
 .hs-tile-grid-light .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-light .hs-tile-lg .hs-action-icon,
@@ -46772,8 +46802,6 @@ div.tester > div:hover {
 .hs-tile-grid-light .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-light .hs-tile-white .hs-action-icon,
 .hs-tile-grid-light .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-light .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-light .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-light .hs-tile .hs-action-title,
 .hs-tile-grid-light .hs-tile-sm .hs-action-title,
 .hs-tile-grid-light .hs-tile-lg .hs-action-title,
@@ -46790,18 +46818,16 @@ div.tester > div:hover {
 .hs-tile-grid-light .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-light .hs-tile-danger .hs-action-title,
 .hs-tile-grid-light .hs-tile-white .hs-action-title,
-.hs-tile-grid-light .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-light .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-light .hs-teams-tile .hs-action-title {
+.hs-tile-grid-light .hs-action-tile-landscape .hs-action-title {
   color: #5c6466;
 }
 
-.hs-tile-grid-light .hs-tile a, .hs-tile-grid-light .hs-tile-sm a, .hs-tile-grid-light .hs-tile-lg a, .hs-tile-grid-light .hs-tile-landscape a, .hs-tile-grid-light .hs-tile-primary a, .hs-tile-grid-light .hs-tile-secondary a, .hs-tile-grid-light .hs-tile-tertiary a, .hs-tile-grid-light .hs-tile-info a, .hs-tile-grid-light .hs-tile-success a, .hs-tile-grid-light .hs-tile-warning a, .hs-tile-grid-light .hs-tile-error a, .hs-tile-grid-light .hs-tile-dark a, .hs-tile-grid-light .hs-tile-light a, .hs-tile-grid-light .hs-tile-inverse a, .hs-tile-grid-light .hs-tile-danger a, .hs-tile-grid-light .hs-tile-white a, .hs-tile-grid-light .hs-action-tile-landscape a, .hs-tile-grid-light .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-light .hs-teams-tile a {
+.hs-tile-grid-light .hs-tile a, .hs-tile-grid-light .hs-tile-sm a, .hs-tile-grid-light .hs-tile-lg a, .hs-tile-grid-light .hs-tile-landscape a, .hs-tile-grid-light .hs-tile-primary a, .hs-tile-grid-light .hs-tile-secondary a, .hs-tile-grid-light .hs-tile-tertiary a, .hs-tile-grid-light .hs-tile-info a, .hs-tile-grid-light .hs-tile-success a, .hs-tile-grid-light .hs-tile-warning a, .hs-tile-grid-light .hs-tile-error a, .hs-tile-grid-light .hs-tile-dark a, .hs-tile-grid-light .hs-tile-light a, .hs-tile-grid-light .hs-tile-inverse a, .hs-tile-grid-light .hs-tile-danger a, .hs-tile-grid-light .hs-tile-white a, .hs-tile-grid-light .hs-action-tile-landscape a {
   text-decoration: none;
   color: #5c6466;
 }
 
-.hs-tile-grid-light .hs-tile:hover, .hs-tile-grid-light .hs-tile-sm:hover, .hs-tile-grid-light .hs-tile-lg:hover, .hs-tile-grid-light .hs-tile-landscape:hover, .hs-tile-grid-light .hs-tile-primary:hover, .hs-tile-grid-light .hs-tile-secondary:hover, .hs-tile-grid-light .hs-tile-tertiary:hover, .hs-tile-grid-light .hs-tile-info:hover, .hs-tile-grid-light .hs-tile-success:hover, .hs-tile-grid-light .hs-tile-warning:hover, .hs-tile-grid-light .hs-tile-error:hover, .hs-tile-grid-light .hs-tile-dark:hover, .hs-tile-grid-light .hs-tile-light:hover, .hs-tile-grid-light .hs-tile-inverse:hover, .hs-tile-grid-light .hs-tile-danger:hover, .hs-tile-grid-light .hs-tile-white:hover, .hs-tile-grid-light .hs-action-tile-landscape:hover, .hs-tile-grid-light .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-light .hs-teams-tile:hover {
+.hs-tile-grid-light .hs-tile:hover, .hs-tile-grid-light .hs-tile-sm:hover, .hs-tile-grid-light .hs-tile-lg:hover, .hs-tile-grid-light .hs-tile-landscape:hover, .hs-tile-grid-light .hs-tile-primary:hover, .hs-tile-grid-light .hs-tile-secondary:hover, .hs-tile-grid-light .hs-tile-tertiary:hover, .hs-tile-grid-light .hs-tile-info:hover, .hs-tile-grid-light .hs-tile-success:hover, .hs-tile-grid-light .hs-tile-warning:hover, .hs-tile-grid-light .hs-tile-error:hover, .hs-tile-grid-light .hs-tile-dark:hover, .hs-tile-grid-light .hs-tile-light:hover, .hs-tile-grid-light .hs-tile-inverse:hover, .hs-tile-grid-light .hs-tile-danger:hover, .hs-tile-grid-light .hs-tile-white:hover, .hs-tile-grid-light .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #dee7e7;
 }
@@ -46827,12 +46853,12 @@ div.tester > div:hover {
   background-color: #505759;
 }
 
-.hs-tile-grid-inverse .hs-tile, .hs-tile-grid-inverse .hs-tile-sm, .hs-tile-grid-inverse .hs-tile-lg, .hs-tile-grid-inverse .hs-tile-landscape, .hs-tile-grid-inverse .hs-tile-primary, .hs-tile-grid-inverse .hs-tile-secondary, .hs-tile-grid-inverse .hs-tile-tertiary, .hs-tile-grid-inverse .hs-tile-info, .hs-tile-grid-inverse .hs-tile-success, .hs-tile-grid-inverse .hs-tile-warning, .hs-tile-grid-inverse .hs-tile-error, .hs-tile-grid-inverse .hs-tile-dark, .hs-tile-grid-inverse .hs-tile-light, .hs-tile-grid-inverse .hs-tile-inverse, .hs-tile-grid-inverse .hs-tile-danger, .hs-tile-grid-inverse .hs-tile-white, .hs-tile-grid-inverse .hs-action-tile-landscape, .hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile {
+.hs-tile-grid-inverse .hs-tile, .hs-tile-grid-inverse .hs-tile-sm, .hs-tile-grid-inverse .hs-tile-lg, .hs-tile-grid-inverse .hs-tile-landscape, .hs-tile-grid-inverse .hs-tile-primary, .hs-tile-grid-inverse .hs-tile-secondary, .hs-tile-grid-inverse .hs-tile-tertiary, .hs-tile-grid-inverse .hs-tile-info, .hs-tile-grid-inverse .hs-tile-success, .hs-tile-grid-inverse .hs-tile-warning, .hs-tile-grid-inverse .hs-tile-error, .hs-tile-grid-inverse .hs-tile-dark, .hs-tile-grid-inverse .hs-tile-light, .hs-tile-grid-inverse .hs-tile-inverse, .hs-tile-grid-inverse .hs-tile-danger, .hs-tile-grid-inverse .hs-tile-white, .hs-tile-grid-inverse .hs-action-tile-landscape {
   background-color: #5c6466;
   color: #edf2f2;
 }
 
-.hs-tile-grid-inverse .hs-tile > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-sm > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-lg > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-primary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-info > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-success > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-warning > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-error > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-dark > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-light > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-danger > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-white > .hs-action-metric, .hs-tile-grid-inverse .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-inverse .hs-tile > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-sm > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-lg > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-primary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-info > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-success > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-warning > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-error > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-dark > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-light > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-danger > .hs-action-metric, .hs-tile-grid-inverse .hs-tile-white > .hs-action-metric, .hs-tile-grid-inverse .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-inverse .hs-tile .hs-action-icon,
 .hs-tile-grid-inverse .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-inverse .hs-tile-lg .hs-action-icon,
@@ -46850,8 +46876,6 @@ div.tester > div:hover {
 .hs-tile-grid-inverse .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-inverse .hs-tile-white .hs-action-icon,
 .hs-tile-grid-inverse .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-inverse .hs-tile .hs-action-title,
 .hs-tile-grid-inverse .hs-tile-sm .hs-action-title,
 .hs-tile-grid-inverse .hs-tile-lg .hs-action-title,
@@ -46868,18 +46892,16 @@ div.tester > div:hover {
 .hs-tile-grid-inverse .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-inverse .hs-tile-danger .hs-action-title,
 .hs-tile-grid-inverse .hs-tile-white .hs-action-title,
-.hs-tile-grid-inverse .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile .hs-action-title {
+.hs-tile-grid-inverse .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-inverse .hs-tile a, .hs-tile-grid-inverse .hs-tile-sm a, .hs-tile-grid-inverse .hs-tile-lg a, .hs-tile-grid-inverse .hs-tile-landscape a, .hs-tile-grid-inverse .hs-tile-primary a, .hs-tile-grid-inverse .hs-tile-secondary a, .hs-tile-grid-inverse .hs-tile-tertiary a, .hs-tile-grid-inverse .hs-tile-info a, .hs-tile-grid-inverse .hs-tile-success a, .hs-tile-grid-inverse .hs-tile-warning a, .hs-tile-grid-inverse .hs-tile-error a, .hs-tile-grid-inverse .hs-tile-dark a, .hs-tile-grid-inverse .hs-tile-light a, .hs-tile-grid-inverse .hs-tile-inverse a, .hs-tile-grid-inverse .hs-tile-danger a, .hs-tile-grid-inverse .hs-tile-white a, .hs-tile-grid-inverse .hs-action-tile-landscape a, .hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile a {
+.hs-tile-grid-inverse .hs-tile a, .hs-tile-grid-inverse .hs-tile-sm a, .hs-tile-grid-inverse .hs-tile-lg a, .hs-tile-grid-inverse .hs-tile-landscape a, .hs-tile-grid-inverse .hs-tile-primary a, .hs-tile-grid-inverse .hs-tile-secondary a, .hs-tile-grid-inverse .hs-tile-tertiary a, .hs-tile-grid-inverse .hs-tile-info a, .hs-tile-grid-inverse .hs-tile-success a, .hs-tile-grid-inverse .hs-tile-warning a, .hs-tile-grid-inverse .hs-tile-error a, .hs-tile-grid-inverse .hs-tile-dark a, .hs-tile-grid-inverse .hs-tile-light a, .hs-tile-grid-inverse .hs-tile-inverse a, .hs-tile-grid-inverse .hs-tile-danger a, .hs-tile-grid-inverse .hs-tile-white a, .hs-tile-grid-inverse .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-inverse .hs-tile:hover, .hs-tile-grid-inverse .hs-tile-sm:hover, .hs-tile-grid-inverse .hs-tile-lg:hover, .hs-tile-grid-inverse .hs-tile-landscape:hover, .hs-tile-grid-inverse .hs-tile-primary:hover, .hs-tile-grid-inverse .hs-tile-secondary:hover, .hs-tile-grid-inverse .hs-tile-tertiary:hover, .hs-tile-grid-inverse .hs-tile-info:hover, .hs-tile-grid-inverse .hs-tile-success:hover, .hs-tile-grid-inverse .hs-tile-warning:hover, .hs-tile-grid-inverse .hs-tile-error:hover, .hs-tile-grid-inverse .hs-tile-dark:hover, .hs-tile-grid-inverse .hs-tile-light:hover, .hs-tile-grid-inverse .hs-tile-inverse:hover, .hs-tile-grid-inverse .hs-tile-danger:hover, .hs-tile-grid-inverse .hs-tile-white:hover, .hs-tile-grid-inverse .hs-action-tile-landscape:hover, .hs-tile-grid-inverse .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-inverse .hs-teams-tile:hover {
+.hs-tile-grid-inverse .hs-tile:hover, .hs-tile-grid-inverse .hs-tile-sm:hover, .hs-tile-grid-inverse .hs-tile-lg:hover, .hs-tile-grid-inverse .hs-tile-landscape:hover, .hs-tile-grid-inverse .hs-tile-primary:hover, .hs-tile-grid-inverse .hs-tile-secondary:hover, .hs-tile-grid-inverse .hs-tile-tertiary:hover, .hs-tile-grid-inverse .hs-tile-info:hover, .hs-tile-grid-inverse .hs-tile-success:hover, .hs-tile-grid-inverse .hs-tile-warning:hover, .hs-tile-grid-inverse .hs-tile-error:hover, .hs-tile-grid-inverse .hs-tile-dark:hover, .hs-tile-grid-inverse .hs-tile-light:hover, .hs-tile-grid-inverse .hs-tile-inverse:hover, .hs-tile-grid-inverse .hs-tile-danger:hover, .hs-tile-grid-inverse .hs-tile-white:hover, .hs-tile-grid-inverse .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #505759;
 }
@@ -46905,12 +46927,12 @@ div.tester > div:hover {
   background-color: #630802;
 }
 
-.hs-tile-grid-danger .hs-tile, .hs-tile-grid-danger .hs-tile-sm, .hs-tile-grid-danger .hs-tile-lg, .hs-tile-grid-danger .hs-tile-landscape, .hs-tile-grid-danger .hs-tile-primary, .hs-tile-grid-danger .hs-tile-secondary, .hs-tile-grid-danger .hs-tile-tertiary, .hs-tile-grid-danger .hs-tile-info, .hs-tile-grid-danger .hs-tile-success, .hs-tile-grid-danger .hs-tile-warning, .hs-tile-grid-danger .hs-tile-error, .hs-tile-grid-danger .hs-tile-dark, .hs-tile-grid-danger .hs-tile-light, .hs-tile-grid-danger .hs-tile-inverse, .hs-tile-grid-danger .hs-tile-danger, .hs-tile-grid-danger .hs-tile-white, .hs-tile-grid-danger .hs-action-tile-landscape, .hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile {
+.hs-tile-grid-danger .hs-tile, .hs-tile-grid-danger .hs-tile-sm, .hs-tile-grid-danger .hs-tile-lg, .hs-tile-grid-danger .hs-tile-landscape, .hs-tile-grid-danger .hs-tile-primary, .hs-tile-grid-danger .hs-tile-secondary, .hs-tile-grid-danger .hs-tile-tertiary, .hs-tile-grid-danger .hs-tile-info, .hs-tile-grid-danger .hs-tile-success, .hs-tile-grid-danger .hs-tile-warning, .hs-tile-grid-danger .hs-tile-error, .hs-tile-grid-danger .hs-tile-dark, .hs-tile-grid-danger .hs-tile-light, .hs-tile-grid-danger .hs-tile-inverse, .hs-tile-grid-danger .hs-tile-danger, .hs-tile-grid-danger .hs-tile-white, .hs-tile-grid-danger .hs-action-tile-landscape {
   background-color: #7C0A02;
   color: #edf2f2;
 }
 
-.hs-tile-grid-danger .hs-tile > .hs-action-metric, .hs-tile-grid-danger .hs-tile-sm > .hs-action-metric, .hs-tile-grid-danger .hs-tile-lg > .hs-action-metric, .hs-tile-grid-danger .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-danger .hs-tile-primary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-info > .hs-action-metric, .hs-tile-grid-danger .hs-tile-success > .hs-action-metric, .hs-tile-grid-danger .hs-tile-warning > .hs-action-metric, .hs-tile-grid-danger .hs-tile-error > .hs-action-metric, .hs-tile-grid-danger .hs-tile-dark > .hs-action-metric, .hs-tile-grid-danger .hs-tile-light > .hs-action-metric, .hs-tile-grid-danger .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-danger .hs-tile-danger > .hs-action-metric, .hs-tile-grid-danger .hs-tile-white > .hs-action-metric, .hs-tile-grid-danger .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-danger .hs-tile > .hs-action-metric, .hs-tile-grid-danger .hs-tile-sm > .hs-action-metric, .hs-tile-grid-danger .hs-tile-lg > .hs-action-metric, .hs-tile-grid-danger .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-danger .hs-tile-primary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-danger .hs-tile-info > .hs-action-metric, .hs-tile-grid-danger .hs-tile-success > .hs-action-metric, .hs-tile-grid-danger .hs-tile-warning > .hs-action-metric, .hs-tile-grid-danger .hs-tile-error > .hs-action-metric, .hs-tile-grid-danger .hs-tile-dark > .hs-action-metric, .hs-tile-grid-danger .hs-tile-light > .hs-action-metric, .hs-tile-grid-danger .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-danger .hs-tile-danger > .hs-action-metric, .hs-tile-grid-danger .hs-tile-white > .hs-action-metric, .hs-tile-grid-danger .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-danger .hs-tile .hs-action-icon,
 .hs-tile-grid-danger .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-danger .hs-tile-lg .hs-action-icon,
@@ -46928,8 +46950,6 @@ div.tester > div:hover {
 .hs-tile-grid-danger .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-danger .hs-tile-white .hs-action-icon,
 .hs-tile-grid-danger .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-danger .hs-tile .hs-action-title,
 .hs-tile-grid-danger .hs-tile-sm .hs-action-title,
 .hs-tile-grid-danger .hs-tile-lg .hs-action-title,
@@ -46946,18 +46966,16 @@ div.tester > div:hover {
 .hs-tile-grid-danger .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-danger .hs-tile-danger .hs-action-title,
 .hs-tile-grid-danger .hs-tile-white .hs-action-title,
-.hs-tile-grid-danger .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile .hs-action-title {
+.hs-tile-grid-danger .hs-action-tile-landscape .hs-action-title {
   color: #edf2f2;
 }
 
-.hs-tile-grid-danger .hs-tile a, .hs-tile-grid-danger .hs-tile-sm a, .hs-tile-grid-danger .hs-tile-lg a, .hs-tile-grid-danger .hs-tile-landscape a, .hs-tile-grid-danger .hs-tile-primary a, .hs-tile-grid-danger .hs-tile-secondary a, .hs-tile-grid-danger .hs-tile-tertiary a, .hs-tile-grid-danger .hs-tile-info a, .hs-tile-grid-danger .hs-tile-success a, .hs-tile-grid-danger .hs-tile-warning a, .hs-tile-grid-danger .hs-tile-error a, .hs-tile-grid-danger .hs-tile-dark a, .hs-tile-grid-danger .hs-tile-light a, .hs-tile-grid-danger .hs-tile-inverse a, .hs-tile-grid-danger .hs-tile-danger a, .hs-tile-grid-danger .hs-tile-white a, .hs-tile-grid-danger .hs-action-tile-landscape a, .hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile a {
+.hs-tile-grid-danger .hs-tile a, .hs-tile-grid-danger .hs-tile-sm a, .hs-tile-grid-danger .hs-tile-lg a, .hs-tile-grid-danger .hs-tile-landscape a, .hs-tile-grid-danger .hs-tile-primary a, .hs-tile-grid-danger .hs-tile-secondary a, .hs-tile-grid-danger .hs-tile-tertiary a, .hs-tile-grid-danger .hs-tile-info a, .hs-tile-grid-danger .hs-tile-success a, .hs-tile-grid-danger .hs-tile-warning a, .hs-tile-grid-danger .hs-tile-error a, .hs-tile-grid-danger .hs-tile-dark a, .hs-tile-grid-danger .hs-tile-light a, .hs-tile-grid-danger .hs-tile-inverse a, .hs-tile-grid-danger .hs-tile-danger a, .hs-tile-grid-danger .hs-tile-white a, .hs-tile-grid-danger .hs-action-tile-landscape a {
   text-decoration: none;
   color: #edf2f2;
 }
 
-.hs-tile-grid-danger .hs-tile:hover, .hs-tile-grid-danger .hs-tile-sm:hover, .hs-tile-grid-danger .hs-tile-lg:hover, .hs-tile-grid-danger .hs-tile-landscape:hover, .hs-tile-grid-danger .hs-tile-primary:hover, .hs-tile-grid-danger .hs-tile-secondary:hover, .hs-tile-grid-danger .hs-tile-tertiary:hover, .hs-tile-grid-danger .hs-tile-info:hover, .hs-tile-grid-danger .hs-tile-success:hover, .hs-tile-grid-danger .hs-tile-warning:hover, .hs-tile-grid-danger .hs-tile-error:hover, .hs-tile-grid-danger .hs-tile-dark:hover, .hs-tile-grid-danger .hs-tile-light:hover, .hs-tile-grid-danger .hs-tile-inverse:hover, .hs-tile-grid-danger .hs-tile-danger:hover, .hs-tile-grid-danger .hs-tile-white:hover, .hs-tile-grid-danger .hs-action-tile-landscape:hover, .hs-tile-grid-danger .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-danger .hs-teams-tile:hover {
+.hs-tile-grid-danger .hs-tile:hover, .hs-tile-grid-danger .hs-tile-sm:hover, .hs-tile-grid-danger .hs-tile-lg:hover, .hs-tile-grid-danger .hs-tile-landscape:hover, .hs-tile-grid-danger .hs-tile-primary:hover, .hs-tile-grid-danger .hs-tile-secondary:hover, .hs-tile-grid-danger .hs-tile-tertiary:hover, .hs-tile-grid-danger .hs-tile-info:hover, .hs-tile-grid-danger .hs-tile-success:hover, .hs-tile-grid-danger .hs-tile-warning:hover, .hs-tile-grid-danger .hs-tile-error:hover, .hs-tile-grid-danger .hs-tile-dark:hover, .hs-tile-grid-danger .hs-tile-light:hover, .hs-tile-grid-danger .hs-tile-inverse:hover, .hs-tile-grid-danger .hs-tile-danger:hover, .hs-tile-grid-danger .hs-tile-white:hover, .hs-tile-grid-danger .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #630802;
 }
@@ -46983,12 +47001,12 @@ div.tester > div:hover {
   background-color: #f2f2f2;
 }
 
-.hs-tile-grid-white .hs-tile, .hs-tile-grid-white .hs-tile-sm, .hs-tile-grid-white .hs-tile-lg, .hs-tile-grid-white .hs-tile-landscape, .hs-tile-grid-white .hs-tile-primary, .hs-tile-grid-white .hs-tile-secondary, .hs-tile-grid-white .hs-tile-tertiary, .hs-tile-grid-white .hs-tile-info, .hs-tile-grid-white .hs-tile-success, .hs-tile-grid-white .hs-tile-warning, .hs-tile-grid-white .hs-tile-error, .hs-tile-grid-white .hs-tile-dark, .hs-tile-grid-white .hs-tile-light, .hs-tile-grid-white .hs-tile-inverse, .hs-tile-grid-white .hs-tile-danger, .hs-tile-grid-white .hs-tile-white, .hs-tile-grid-white .hs-action-tile-landscape, .hs-tile-grid-white .hsbody.hsteams .hs-teams-tile, .hsbody.hsteams .hs-tile-grid-white .hs-teams-tile {
+.hs-tile-grid-white .hs-tile, .hs-tile-grid-white .hs-tile-sm, .hs-tile-grid-white .hs-tile-lg, .hs-tile-grid-white .hs-tile-landscape, .hs-tile-grid-white .hs-tile-primary, .hs-tile-grid-white .hs-tile-secondary, .hs-tile-grid-white .hs-tile-tertiary, .hs-tile-grid-white .hs-tile-info, .hs-tile-grid-white .hs-tile-success, .hs-tile-grid-white .hs-tile-warning, .hs-tile-grid-white .hs-tile-error, .hs-tile-grid-white .hs-tile-dark, .hs-tile-grid-white .hs-tile-light, .hs-tile-grid-white .hs-tile-inverse, .hs-tile-grid-white .hs-tile-danger, .hs-tile-grid-white .hs-tile-white, .hs-tile-grid-white .hs-action-tile-landscape {
   background-color: #fff;
   color: #5c6466;
 }
 
-.hs-tile-grid-white .hs-tile > .hs-action-metric, .hs-tile-grid-white .hs-tile-sm > .hs-action-metric, .hs-tile-grid-white .hs-tile-lg > .hs-action-metric, .hs-tile-grid-white .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-white .hs-tile-primary > .hs-action-metric, .hs-tile-grid-white .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-white .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-white .hs-tile-info > .hs-action-metric, .hs-tile-grid-white .hs-tile-success > .hs-action-metric, .hs-tile-grid-white .hs-tile-warning > .hs-action-metric, .hs-tile-grid-white .hs-tile-error > .hs-action-metric, .hs-tile-grid-white .hs-tile-dark > .hs-action-metric, .hs-tile-grid-white .hs-tile-light > .hs-action-metric, .hs-tile-grid-white .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-white .hs-tile-danger > .hs-action-metric, .hs-tile-grid-white .hs-tile-white > .hs-action-metric, .hs-tile-grid-white .hs-action-tile-landscape > .hs-action-metric, .hs-tile-grid-white .hsbody.hsteams .hs-teams-tile > .hs-action-metric, .hsbody.hsteams .hs-tile-grid-white .hs-teams-tile > .hs-action-metric,
+.hs-tile-grid-white .hs-tile > .hs-action-metric, .hs-tile-grid-white .hs-tile-sm > .hs-action-metric, .hs-tile-grid-white .hs-tile-lg > .hs-action-metric, .hs-tile-grid-white .hs-tile-landscape > .hs-action-metric, .hs-tile-grid-white .hs-tile-primary > .hs-action-metric, .hs-tile-grid-white .hs-tile-secondary > .hs-action-metric, .hs-tile-grid-white .hs-tile-tertiary > .hs-action-metric, .hs-tile-grid-white .hs-tile-info > .hs-action-metric, .hs-tile-grid-white .hs-tile-success > .hs-action-metric, .hs-tile-grid-white .hs-tile-warning > .hs-action-metric, .hs-tile-grid-white .hs-tile-error > .hs-action-metric, .hs-tile-grid-white .hs-tile-dark > .hs-action-metric, .hs-tile-grid-white .hs-tile-light > .hs-action-metric, .hs-tile-grid-white .hs-tile-inverse > .hs-action-metric, .hs-tile-grid-white .hs-tile-danger > .hs-action-metric, .hs-tile-grid-white .hs-tile-white > .hs-action-metric, .hs-tile-grid-white .hs-action-tile-landscape > .hs-action-metric,
 .hs-tile-grid-white .hs-tile .hs-action-icon,
 .hs-tile-grid-white .hs-tile-sm .hs-action-icon,
 .hs-tile-grid-white .hs-tile-lg .hs-action-icon,
@@ -47006,8 +47024,6 @@ div.tester > div:hover {
 .hs-tile-grid-white .hs-tile-danger .hs-action-icon,
 .hs-tile-grid-white .hs-tile-white .hs-action-icon,
 .hs-tile-grid-white .hs-action-tile-landscape .hs-action-icon,
-.hs-tile-grid-white .hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-tile-grid-white .hs-teams-tile .hs-action-icon,
 .hs-tile-grid-white .hs-tile .hs-action-title,
 .hs-tile-grid-white .hs-tile-sm .hs-action-title,
 .hs-tile-grid-white .hs-tile-lg .hs-action-title,
@@ -47024,18 +47040,16 @@ div.tester > div:hover {
 .hs-tile-grid-white .hs-tile-inverse .hs-action-title,
 .hs-tile-grid-white .hs-tile-danger .hs-action-title,
 .hs-tile-grid-white .hs-tile-white .hs-action-title,
-.hs-tile-grid-white .hs-action-tile-landscape .hs-action-title,
-.hs-tile-grid-white .hsbody.hsteams .hs-teams-tile .hs-action-title,
-.hsbody.hsteams .hs-tile-grid-white .hs-teams-tile .hs-action-title {
+.hs-tile-grid-white .hs-action-tile-landscape .hs-action-title {
   color: #5c6466;
 }
 
-.hs-tile-grid-white .hs-tile a, .hs-tile-grid-white .hs-tile-sm a, .hs-tile-grid-white .hs-tile-lg a, .hs-tile-grid-white .hs-tile-landscape a, .hs-tile-grid-white .hs-tile-primary a, .hs-tile-grid-white .hs-tile-secondary a, .hs-tile-grid-white .hs-tile-tertiary a, .hs-tile-grid-white .hs-tile-info a, .hs-tile-grid-white .hs-tile-success a, .hs-tile-grid-white .hs-tile-warning a, .hs-tile-grid-white .hs-tile-error a, .hs-tile-grid-white .hs-tile-dark a, .hs-tile-grid-white .hs-tile-light a, .hs-tile-grid-white .hs-tile-inverse a, .hs-tile-grid-white .hs-tile-danger a, .hs-tile-grid-white .hs-tile-white a, .hs-tile-grid-white .hs-action-tile-landscape a, .hs-tile-grid-white .hsbody.hsteams .hs-teams-tile a, .hsbody.hsteams .hs-tile-grid-white .hs-teams-tile a {
+.hs-tile-grid-white .hs-tile a, .hs-tile-grid-white .hs-tile-sm a, .hs-tile-grid-white .hs-tile-lg a, .hs-tile-grid-white .hs-tile-landscape a, .hs-tile-grid-white .hs-tile-primary a, .hs-tile-grid-white .hs-tile-secondary a, .hs-tile-grid-white .hs-tile-tertiary a, .hs-tile-grid-white .hs-tile-info a, .hs-tile-grid-white .hs-tile-success a, .hs-tile-grid-white .hs-tile-warning a, .hs-tile-grid-white .hs-tile-error a, .hs-tile-grid-white .hs-tile-dark a, .hs-tile-grid-white .hs-tile-light a, .hs-tile-grid-white .hs-tile-inverse a, .hs-tile-grid-white .hs-tile-danger a, .hs-tile-grid-white .hs-tile-white a, .hs-tile-grid-white .hs-action-tile-landscape a {
   text-decoration: none;
   color: #5c6466;
 }
 
-.hs-tile-grid-white .hs-tile:hover, .hs-tile-grid-white .hs-tile-sm:hover, .hs-tile-grid-white .hs-tile-lg:hover, .hs-tile-grid-white .hs-tile-landscape:hover, .hs-tile-grid-white .hs-tile-primary:hover, .hs-tile-grid-white .hs-tile-secondary:hover, .hs-tile-grid-white .hs-tile-tertiary:hover, .hs-tile-grid-white .hs-tile-info:hover, .hs-tile-grid-white .hs-tile-success:hover, .hs-tile-grid-white .hs-tile-warning:hover, .hs-tile-grid-white .hs-tile-error:hover, .hs-tile-grid-white .hs-tile-dark:hover, .hs-tile-grid-white .hs-tile-light:hover, .hs-tile-grid-white .hs-tile-inverse:hover, .hs-tile-grid-white .hs-tile-danger:hover, .hs-tile-grid-white .hs-tile-white:hover, .hs-tile-grid-white .hs-action-tile-landscape:hover, .hs-tile-grid-white .hsbody.hsteams .hs-teams-tile:hover, .hsbody.hsteams .hs-tile-grid-white .hs-teams-tile:hover {
+.hs-tile-grid-white .hs-tile:hover, .hs-tile-grid-white .hs-tile-sm:hover, .hs-tile-grid-white .hs-tile-lg:hover, .hs-tile-grid-white .hs-tile-landscape:hover, .hs-tile-grid-white .hs-tile-primary:hover, .hs-tile-grid-white .hs-tile-secondary:hover, .hs-tile-grid-white .hs-tile-tertiary:hover, .hs-tile-grid-white .hs-tile-info:hover, .hs-tile-grid-white .hs-tile-success:hover, .hs-tile-grid-white .hs-tile-warning:hover, .hs-tile-grid-white .hs-tile-error:hover, .hs-tile-grid-white .hs-tile-dark:hover, .hs-tile-grid-white .hs-tile-light:hover, .hs-tile-grid-white .hs-tile-inverse:hover, .hs-tile-grid-white .hs-tile-danger:hover, .hs-tile-grid-white .hs-tile-white:hover, .hs-tile-grid-white .hs-action-tile-landscape:hover {
   cursor: pointer;
   background-color: #f2f2f2;
 }
@@ -47292,9 +47306,27 @@ div.tester > div:hover {
   border-color: #dee2e6 #fff;
 }
 
+.list-group.hs-upc-directory-tiles {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+.list-group.hs-upc-directory-tiles .list-group-item {
+  border-width: 1px;
+}
+
 .hs-upc-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-gap: .75em;
+  grid-template-columns: 7em minmax(0, 1fr);
+}
+
+.hs-upc-item div.hs-upc-userphoto {
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  margin: .5rem .25rem;
 }
 
 .hs-upc-item .item-image {
@@ -47591,156 +47623,115 @@ input[hsrole="refiner"] {
   outline-width: 0;
 }
 
-/* create some rules for ms teams dark mode, this is a first pass, will likely need several dozen more lines of code 
-for different kendo widgets  */
+:root {
+  --hst-font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --hst-brand: #464775;
+  --hst-text-primary: #242424;
+  --hst-text-secondary: #424242;
+  --hst-text-tertiary: #616161;
+  --hst-background-primary: #f5f5f5;
+  --hst-background-component: #ffffff;
+  --hst-background-component-alt: #ebebeb;
+  --hst-background-hover: #f5f5f5;
+  --hst-grid-row-color: #242424;
+  --hst-grid-header-color: #242424;
+  --hst-background-header: #FFF;
+  --hst-border-color: #f5f5f5;
+  --hst-tab-default: #616161;
+  --hst-tab-active: #242424;
+  --hst-tab-border: var(--hst-border-color);
+  --hst-tab-border-active: var(--hst-brand);
+}
+
+body.hsbody.hsteams.v-dark,
+body.hsbody.hsteams.v-contrast {
+  --hst-brand: #9EA2FF;
+  --hst-background-primary: #1f1f1f;
+  --hst-text-primary: #ffffff;
+  --hst-text-secondary: #f5f5f5;
+  --hst-text-tertiary: #bdbdbd;
+  --hst-background-component: #3B3A39;
+  --hst-background-component-alt: #424242;
+  --hst-background-hover: #1f1f1f;
+  --hst-grid-row-color: #D6D6D6;
+  --hst-grid-header-color: #ffffff;
+  --hst-background-header: #3B3A39;
+  --hst-border-color: #1f1f1f;
+  --hst-tab-active: #242424;
+  --hst-tab-border: var(--hst-border-color);
+  --hst-tab-border-active: var(--hst-brand);
+}
+
 .hsbody.hsteams {
-  font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-family: var(--hst-font-family);
+  background-color: var(--hst-background-primary);
+  color: var(--hst-text-primary);
 }
 
-.hsbody.hsteams.v-contrast .k-grid,
-.hsbody.hsteams.v-dark .k-grid {
-  background-color: #3B3A39;
-  color: #D6D6D6;
+.hsbody.hsteams .text-primary {
+  color: var(--hst-text-primary) !important;
 }
 
-.hsbody.hsteams.v-contrast .k-grid .k-grid-header,
-.hsbody.hsteams.v-dark .k-grid .k-grid-header {
-  background-color: #373644;
-  border-color: #49494D;
-  color: #fff;
+.hsbody.hsteams .text-secondary {
+  color: var(--hst-text-secondary) !important;
 }
 
-.hsbody.hsteams.v-contrast .k-grid .k-grid-header tr th,
-.hsbody.hsteams.v-dark .k-grid .k-grid-header tr th {
-  border-bottom: 2px solid #49494D;
+.hsbody.hsteams .text-tertiary {
+  color: var(--hst-text-tertiary) !important;
 }
 
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr,
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr.k-alt,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr.k-alt {
-  background-color: #292828;
-  color: #D6D6D6;
-}
-
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr td,
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr.k-alt td,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr td,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr.k-alt td {
-  border-bottom: 1px solid #49494D;
-}
-
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr.k-state-selected,
-.hsbody.hsteams.v-contrast .k-grid .k-grid-content tr:hover,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr.k-state-selected,
-.hsbody.hsteams.v-dark .k-grid .k-grid-content tr:hover {
-  background-color: #333333;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-default .k-button,
-.hsbody.hsteams .k-button {
-  background-color: #464775;
-  border-color: #e2e2f6;
-  color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-default .k-button:hover,
-.hsbody.hsteams .k-button:hover {
-  background-color: #9EA2FF;
-  color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-contrast .k-button,
-.hsbody.hsteams.v-dark .k-button {
-  border-color: #49494D;
-}
-
-.hsbody.hsteams .hs-teams-tile {
-  background-color: #464775 !important;
-  color: #f5f5f5 !important;
-}
-
-.hsbody.hsteams .hs-teams-tile > .hs-action-metric,
-.hsbody.hsteams .hs-teams-tile .hs-action-icon,
-.hsbody.hsteams .hs-teams-tile .hs-action-title {
-  color: #f5f5f5 !important;
-}
-
-.hsbody.hsteams .hs-teams-tile:hover {
-  background-color: #505185 !important;
-}
-
-.hsbody.hsteams .hs-teams-tile a {
-  color: #f5f5f5 !important;
-}
-
-.hsbody.hsteams.v-default,
-.hsbody.hsteams {
-  background-color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-default .hs-teams-text,
-.hsbody.hsteams .hs-teams-text {
-  color: #323131;
-}
-
-.hsbody.hsteams.v-default .hs-teams-bg-color,
-.hsbody.hsteams .hs-teams-bg-color {
-  background-color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-default .hs-teams-bg-color .k-content,
-.hsbody.hsteams .hs-teams-bg-color .k-content {
-  background-color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-default .k-card,
 .hsbody.hsteams .k-card {
-  background-color: #fff;
-  color: #323131;
-  border-color: #e2e2f6;
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
 }
 
-.hsbody.hsteams.v-default .k-card .k-card-header,
 .hsbody.hsteams .k-card .k-card-header {
-  border-color: #e2e2f6;
-  background-color: #fff;
-  border-bottom-width: 0;
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
 }
 
-.hsbody.hsteams.v-default .k-card .k-card-title,
-.hsbody.hsteams .k-card .k-card-title {
-  color: #323131;
-  font-size: 0.875rem;
-  font-weight: 700;
+.hsbody.hsteams .k-card .k-card-header .k-card-subtitle {
+  color: var(--hst-text-secondary);
 }
 
-.hsbody.hsteams.v-default .k-card .k-card-subtitle,
-.hsbody.hsteams .k-card .k-card-subtitle {
-  font-size: 0.75rem;
-  color: #292828;
+.hsbody.hsteams .k-listview,
+.hsbody.hsteams .k-listview .k-listview-content {
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper,
+.hsbody.hsteams .list-group .list-group-item {
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
+  border-color: var(--hst-border-color);
+}
+
+.hsbody.hsteams .list-group .list-group-item:hover {
+  background-color: var(--hst-background-hover);
+}
+
+.hsbody.hsteams table.table,
+.hsbody.hsteams table.table td {
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
+  border-color: var(--hst-border-color);
+}
+
 .hsbody.hsteams .k-tabstrip-wrapper {
   min-height: 1.8rem;
-  background-color: #f5f5f5;
+  background-color: var(--hst-background-primary);
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-content.k-state-active,
 .hsbody.hsteams .k-tabstrip-wrapper .k-content.k-state-active {
-  background-color: #f5f5f5;
+  background-color: var(--hst-background-primary);
+  border: none;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items {
-  font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   border: none;
   margin-bottom: 0;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item {
   font-weight: 400;
   font-size: 14px;
@@ -47755,330 +47746,38 @@ for different kendo widgets  */
   max-width: 20rem;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-first,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-first {
   margin-left: 0;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-last,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-last {
   margin-right: 0;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item .k-link,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item .k-link {
-  color: #616161;
+  color: var(--hst-text-primary);
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active {
-  background-color: #f5f5f5;
-  border-bottom: 3px solid #464775;
+  background-color: var(--hst-background-primary);
+  border-bottom: 3px solid var(--hst-tab-border-active);
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active .k-link,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active .k-link {
-  color: #242424;
+  color: var(--hst-text-secondary);
   font-weight: 600;
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active:hover,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active:hover {
-  border-bottom: 3px solid #464775;
+  border-bottom: 3px solid var(--hst-tab-border-active);
 }
 
-.hsbody.hsteams.v-default .k-tabstrip-wrapper .k-tabstrip-items .k-item:hover,
 .hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item:hover {
-  border-bottom: 3px solid #bdbdbd;
+  border-bottom: 3px solid var(--hst-tab-border);
 }
 
-.hsbody.hsteams.v-contrast,
-.hsbody.hsteams.v-dark {
-  background-color: #1f1f1f;
-}
-
-.hsbody.hsteams.v-contrast .hs-teams-text,
-.hsbody.hsteams.v-dark .hs-teams-text {
-  color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-contrast .hs-teams-bg-color,
-.hsbody.hsteams.v-dark .hs-teams-bg-color {
-  background-color: #1f1f1f;
-}
-
-.hsbody.hsteams.v-contrast .hs-teams-bg-color .k-content,
-.hsbody.hsteams.v-dark .hs-teams-bg-color .k-content {
-  background-color: #1f1f1f;
-}
-
-.hsbody.hsteams.v-contrast .k-card,
-.hsbody.hsteams.v-dark .k-card {
-  background-color: #33344a;
-  color: #fff;
-  border-color: #49494D;
-}
-
-.hsbody.hsteams.v-contrast .k-card .k-card-header,
-.hsbody.hsteams.v-dark .k-card .k-card-header {
-  background-color: #33344a;
-  border-color: #49494D;
-}
-
-.hsbody.hsteams.v-contrast .k-card .k-card-title,
-.hsbody.hsteams.v-dark .k-card .k-card-title {
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .k-card .k-card-subtitle,
-.hsbody.hsteams.v-dark .k-card .k-card-subtitle {
-  color: #f3f2f1;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper {
-  background-color: #1f1f1f;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-content.k-state-active,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-content.k-state-active {
-  background-color: #1f1f1f;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-tabstrip-items .k-item .k-link,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-tabstrip-items .k-item .k-link {
-  color: #adadad;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active {
-  background-color: #1f1f1f;
-  border-bottom: 3px solid #9EA2FF;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active .k-link,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active .k-link {
-  color: #FFF;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active:hover,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active:hover {
-  border-bottom: 3px solid #9EA2FF;
-}
-
-.hsbody.hsteams.v-contrast .k-tabstrip-wrapper .k-content,
-.hsbody.hsteams.v-dark .k-tabstrip-wrapper .k-content {
-  background-color: #33344a;
-  border-color: #49494D;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .text-primary,
-.hsbody.hsteams.v-dark .text-primary {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-secondary,
-.hsbody.hsteams.v-dark .text-secondary {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-tertiary,
-.hsbody.hsteams.v-dark .text-tertiary {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-info,
-.hsbody.hsteams.v-dark .text-info {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-success,
-.hsbody.hsteams.v-dark .text-success {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-warning,
-.hsbody.hsteams.v-dark .text-warning {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-error,
-.hsbody.hsteams.v-dark .text-error {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-dark,
-.hsbody.hsteams.v-dark .text-dark {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-light,
-.hsbody.hsteams.v-dark .text-light {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-inverse,
-.hsbody.hsteams.v-dark .text-inverse {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-danger,
-.hsbody.hsteams.v-dark .text-danger {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .text-white,
-.hsbody.hsteams.v-dark .text-white {
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-dark .k-card .k-card-title {
-  color: #fff;
-}
-
-.hsbody.hsteams .k-widget.k-listview,
-.hsbody-hsteams-v-default .k-widget.k-listview {
-  background-color: #fff;
-}
-
-.hsbody.hsteams .k-widget.k-listview .k-listview-content,
-.hsbody-hsteams-v-default .k-widget.k-listview .k-listview-content {
-  background-color: #fff;
-  color: #323131;
-}
-
-.hsbody.hsteams .k-widget.k-listview .k-listview-content.list-group .list-group-item,
-.hsbody-hsteams-v-default .k-widget.k-listview .k-listview-content.list-group .list-group-item {
-  background-color: #f5f5f5;
-}
-
-.hsbody.hsteams .k-widget.k-listview .k-listview-content.list-group .list-group-item:hover,
-.hsbody-hsteams-v-default .k-widget.k-listview .k-listview-content.list-group .list-group-item:hover {
-  background-color: #e8e8e8;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview,
-.hsbody.hsteams.v-dark .k-widget.k-listview {
-  background-color: #33344a;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content {
-  background-color: #33344a;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item {
-  background-color: #3B3A39;
-  color: #f3f2f1;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item.list-group-item-danger, .hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item.hs-danger,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item.list-group-item-danger,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item.hs-danger {
-  background-color: #7C0A02;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item.list-group-item-danger:hover, .hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item.hs-danger:hover,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item.list-group-item-danger:hover,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item.hs-danger:hover {
-  background-color: #ae0e03;
-}
-
-.hsbody.hsteams.v-contrast .k-widget.k-listview .k-listview-content.list-group .list-group-item:hover,
-.hsbody.hsteams.v-dark .k-widget.k-listview .k-listview-content.list-group .list-group-item:hover {
-  background-color: #373644;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler,
-.hsbody.hsteams.v-dark .k-scheduler {
-  background-color: #3B3A39;
-  color: #D6D6D6;
-  border-color: #49494D;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-toolbar.k-toolbar,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-toolbar.k-toolbar {
-  background-color: #373644;
-  border-color: #49494D;
-  color: #fff;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout *,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content * {
-  background-color: #3B3A39;
-  color: #D6D6D6;
-  border-color: #49494D;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout .k-other-month,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout .k-other-month *,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content .k-other-month,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content .k-other-month *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout .k-other-month,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout .k-other-month *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content .k-other-month,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content .k-other-month * {
-  background-color: #555452 !important;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout .k-scheduler-table ~ [role=gridcell].k-event,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-layout .k-scheduler-table ~ [role=gridcell].k-event *,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content .k-scheduler-table ~ [role=gridcell].k-event,
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content .k-scheduler-table ~ [role=gridcell].k-event *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout .k-scheduler-table ~ [role=gridcell].k-event,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-layout .k-scheduler-table ~ [role=gridcell].k-event *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content .k-scheduler-table ~ [role=gridcell].k-event,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content .k-scheduler-table ~ [role=gridcell].k-event * {
-  background-color: transparent !important;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content tr.k-state-hover td:not(.k-scheduler-datecolumn),
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-content tr.k-state-hover td:not(.k-scheduler-datecolumn) *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content tr.k-state-hover td:not(.k-scheduler-datecolumn),
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-content tr.k-state-hover td:not(.k-scheduler-datecolumn) * {
-  background-color: #333333 !important;
-  color: #fff !important;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-more-events.k-button,
-.hsbody.hsteams.v-contrast .k-scheduler .k-more-events.k-button *,
-.hsbody.hsteams.v-dark .k-scheduler .k-more-events.k-button,
-.hsbody.hsteams.v-dark .k-scheduler .k-more-events.k-button * {
-  background-color: #464775;
-  border-color: #49494D;
-  color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-more-events.k-button:hover,
-.hsbody.hsteams.v-dark .k-scheduler .k-more-events.k-button:hover {
-  background-color: #9EA2FF;
-  color: #f5f5f5;
-}
-
-.hsbody.hsteams.v-contrast .k-scheduler .k-scheduler-table.k-scheduler-header-all-day ~ .k-event *,
-.hsbody.hsteams.v-dark .k-scheduler .k-scheduler-table.k-scheduler-header-all-day ~ .k-event * {
-  background-color: #373644 !important;
-  margin: 0.75rem 0.75rem;
-}
-
-/*
-    This file may be used to add client specific SASS you want in your build.  
-    You are responsible for insuring the file is not over-written when you download 
-    an update to the framework code. This file added to .gitignore 
-*/
 :root {
   --component-color: #5c6466;
   --component-bg: #fff;
@@ -48109,7 +47808,7 @@ for different kendo widgets  */
   --hsteam-dark-bg3: #373644;
   --hsteam-dark-bg-hover: #a6a7dc;
   --hsteam-dark-card-bg: #33344a;
-  --hsteam-dark-border: #49494D;
+  --hsteam-dark-border: #a6a7dc;
   --hsteam-dark-text1: #fff;
   --hsteam-dark-text2: #f3f2f1;
 }
