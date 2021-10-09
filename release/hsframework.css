@@ -1,9 +1,8 @@
 /*! 
 =================================================================================
     Handshake Framework 
-    Jan 27, 2021 Version 2.1.0
-    Note : This build does not include Bootstrap or a specific Kendo Theme. 
-    See Readme.md for deatils on the usage of this Framework 
+    Sept 29, 2021 Version 2.2.1
+    See Readme.md for details on the usage of this Framework 
 =================================================================================
 */
 /*
@@ -44653,7 +44652,7 @@ div[__hsrootnode] div[onclick] {
   background-repeat: no-repeat;
 }
 
-.hs-k-icon-2x {
+.hs-icons-2x {
   font-size: 2em;
 }
 
@@ -44668,7 +44667,7 @@ div[__hsrootnode] div[onclick] {
 }
 
 .hs-icons-stack.hs-icons-stack-2 {
-  font-size: 2.275em;
+  font-size: 2em;
 }
 
 .hs-icons-stack > .k-icon {
@@ -44724,8 +44723,19 @@ div[__hsrootnode] div[onclick] {
   grid-gap: 1.25em !important;
 }
 
+.hs-grid-autofill {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.hs-grid-autofit {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
 .hs-grid, .hs-listgroup-grid {
-  max-width: 2400px;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: minmax(270px, 1fr);
@@ -44773,7 +44783,6 @@ div[__hsrootnode] div[onclick] {
 
 .hs-grid-84split,
 .hs-grid-48split {
-  max-width: 2400px;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: minmax(270px, 1fr);
@@ -44830,7 +44839,6 @@ div[__hsrootnode] div[onclick] {
 }
 
 .hs-grid-magazine {
-  max-width: 2400px;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: minmax(270px, 1fr);
@@ -44888,7 +44896,6 @@ div[__hsrootnode] div[onclick] {
 }
 
 .hs-grid-resp2col {
-  max-width: 2400px;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: minmax(270px, 1fr);
@@ -47741,6 +47748,42 @@ input[hsrole="refiner"] {
   -webkit-box-orient: vertical;
 }
 
+/* some text animations */
+.hs-text-fade-in {
+  animation: hs-fadeIn linear 1s;
+  -webkit-animation: hs-fadeIn linear 1s;
+  -moz-animation: hs-fadeIn linear 1s;
+  -o-animation: hs-fadeIn linear 1s;
+  -ms-animation: hs-fadeIn linear 1s;
+}
+
+@keyframes hs-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes hs-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes hs-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :root {
   --hst-font-family: "Segoe UI", system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   --hst-brand: #464775;
@@ -47759,6 +47802,17 @@ input[hsrole="refiner"] {
   --hst-tab-active: #242424;
   --hst-tab-border: var(--hst-border-color);
   --hst-tab-border-active: var(--hst-brand);
+  --hst-tab-border-hover: #bdbdbd;
+}
+
+.hsbody.hsteams.v-dark .hs-textinput-refiner {
+  background-color: var(--hst-background-component);
+  color: var(--hst-text-primary);
+  border-color: transparent;
+}
+
+.hsbody.hsteams.v-dark .hs-textinput-refiner ::placeholder {
+  color: var(--light);
 }
 
 body.hsbody.hsteams.v-dark,
@@ -47799,22 +47853,27 @@ body.hsbody.hsteams.v-contrast {
 }
 
 .hsbody.hsteams .k-card {
-  background-color: var(--hst-background-component);
-  color: var(--hst-text-primary);
+  background-color: var(--hst-background-component) !important;
+  color: var(--hst-text-primary) !important;
 }
 
 .hsbody.hsteams .k-card .k-card-header {
-  background-color: var(--hst-background-component);
-  color: var(--hst-text-primary);
+  background-color: var(--hst-background-component) !important;
+  color: var(--hst-text-primary) !important;
 }
 
 .hsbody.hsteams .k-card .k-card-header .k-card-subtitle {
-  color: var(--hst-text-secondary);
+  color: var(--hst-text-secondary) !important;
+}
+
+.hsbody.hsteams .k-card .k-listview,
+.hsbody.hsteams .k-card .k-listview .k-listview-content {
+  background-color: var(--hst-background-component);
 }
 
 .hsbody.hsteams .k-listview,
 .hsbody.hsteams .k-listview .k-listview-content {
-  background-color: var(--hst-background-component);
+  background-color: var(--hst-background-primary);
   color: var(--hst-text-primary);
 }
 
@@ -47845,12 +47904,13 @@ body.hsbody.hsteams.v-contrast {
   border: none;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items {
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items {
   border: none;
   margin-bottom: 0;
+  justify-content: inherit;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item {
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item {
   font-weight: 400;
   font-size: 14px;
   height: 2.6rem;
@@ -47862,38 +47922,41 @@ body.hsbody.hsteams.v-contrast {
   border: 0;
   border-radius: 0;
   max-width: 20rem;
+  flex: inherit;
+  background-color: var(--hst-background-primary) !important;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-first {
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item.k-first {
   margin-left: 0;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-last {
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item.k-last {
   margin-right: 0;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item .k-link {
-  color: var(--hst-text-primary);
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item .k-link {
+  color: var(--hst-text-primary) !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active {
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item.k-state-active {
+  box-shadow: none;
   background-color: var(--hst-background-primary);
-  border-bottom: 3px solid var(--hst-tab-border-active);
+  border-bottom: 3px solid var(--hst-tab-border-active) !important;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active .k-link {
-  color: var(--hst-text-secondary);
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item.k-state-active .k-link {
+  color: var(--hst-text-secondary) !important;
   font-weight: 600;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item.k-state-active:hover {
-  border-bottom: 3px solid var(--hst-tab-border-active);
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item.k-state-active:hover {
+  border-bottom: 3px solid var(--hst-tab-border-active) !important;
 }
 
-.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip-items .k-item:hover {
-  border-bottom: 3px solid var(--hst-tab-border);
+.hsbody.hsteams .k-tabstrip-wrapper .k-tabstrip ul.k-tabstrip-items li.k-item:hover {
+  border-bottom: 3px solid var(--hst-tab-border-hover) !important;
 }
 
 :root {

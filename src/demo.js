@@ -529,6 +529,8 @@ jQuery(function () {
                 '</div>',
             dataSource: testDS9
         });
+        //$("#listviewcard0 .k-listview-content").addClass('hs-grid-autofill')
+
         $("#listviewcard1, #listviewcard2").kendoListView({
             template: '<div class="k-card p-2 text-center bg-light">' +
                 '  <div>${ContactName}</div>' +
@@ -540,6 +542,10 @@ jQuery(function () {
                 '</div>',
             dataSource: testDS9
         });
+        $("#listviewcard1 .k-listview-content").addClass('hs-grid-autofill')
+        $("#listviewcard2 .k-listview-content").addClass('d-flex flex-wrap hs-grid-gap-md')
+
+        
 
         $('#book-list-1, #book-list-2, #book-list-3').kendoListView({
             dataSource: {
