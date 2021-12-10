@@ -437,6 +437,12 @@ jQuery(function () {
                 {
                     type: "button",
                     togglable: true,
+                    text: "gray",
+                    selected: false
+                },
+                {
+                    type: "button",
+                    togglable: true,
                     text: "fullcolor",
                     selected: false
                 },

@@ -18,38 +18,45 @@ Besides this document, your best references for this framework are:
 * [Kendo UI for jQuery Styles and Appearance](https://docs.telerik.com/kendo-ui/styles-and-layout/sass-themes)
 
 # Table of Contents <!-- omit in toc -->
-- [Usage](#usage)
-  - [Clone this repository](#clone-this-repository)
-  - [Setup your build environment](#setup-your-build-environment)
-- [Modules](#modules)
-  - [User Profile Cards](#user-profile-cards)
-  - [Kendo Tab Styles](#kendo-tab-styles)
-  - [Kendo Listview](#kendo-listview)
-    - [ListView Border](#listview-border)
-    - [Minimal Pager Style](#minimal-pager-style)
-  - [Handshake Layouts](#handshake-layouts)
-  - [HS Action Items and Tiles](#hs-action-items-and-tiles)
-    - [Tiles](#tiles)
-    - [Action Tiles](#action-tiles)
-    - [Action Metric Colors](#action-metric-colors)
-    - [Action Groupings](#action-groupings)
-    - [HTML Markup](#html-markup)
-  - [SeeMore](#seemore)
-  - [Helpers](#helpers)
-    - [Font Icon Helpers](#font-icon-helpers)
-- [Bootstrap](#bootstrap)
-- [Weekly Build Notes](#weekly-build-notes)
-  - [Aug 16 - 20](#aug-16---20)
-  - [Aug 1 - 6](#aug-1---6)
-  - [July 26 - July 30](#july-26---july-30)
-  - [June 28-July 2](#june-28-july-2)
-  - [June 21-25](#june-21-25)
-  - [June 14-18](#june-14-18)
-    - [Tiles](#tiles-1)
-    - [MS Teams](#ms-teams)
-    - [Colors](#colors)
-    - [Tabs](#tabs)
-    - [Build](#build)
+- [Clone this repository](#clone-this-repository)
+- [Setup your build environment](#setup-your-build-environment)
+  - [Watch.ps1](#watchps1)
+    - [watch.ps1 parameters](#watchps1-parameters)
+    - [Usage](#usage)
+- [User Profile Cards](#user-profile-cards)
+    - [Helper Classes for hs-upc](#helper-classes-for-hs-upc)
+    - [User Profile Sample Cards](#user-profile-sample-cards)
+- [Kendo Tab Styles](#kendo-tab-styles)
+- [Kendo Listview](#kendo-listview)
+    - [Work around](#work-around)
+  - [ListView Border](#listview-border)
+  - [Minimal Pager Style](#minimal-pager-style)
+    - [Classes to produce a minimal page style](#classes-to-produce-a-minimal-page-style)
+    - [Samples](#samples)
+- [Handshake Layouts](#handshake-layouts)
+- [HS Action Items and Tiles](#hs-action-items-and-tiles)
+  - [Tiles](#tiles)
+    - [Basic Markup for Container Tiles](#basic-markup-for-container-tiles)
+  - [Action Tiles](#action-tiles)
+  - [Action Metric Colors](#action-metric-colors)
+  - [Action Groupings](#action-groupings)
+  - [HTML Markup](#html-markup)
+- [SeeMore](#seemore)
+- [Helpers](#helpers)
+  - [Font Icon Helpers](#font-icon-helpers)
+    - [Included modules are](#included-modules-are)
+    - [Excluded modules are](#excluded-modules-are)
+- [Aug 16 - 20](#aug-16---20)
+- [Aug 1 - 6](#aug-1---6)
+- [July 26 - July 30](#july-26---july-30)
+- [June 28-July 2](#june-28-july-2)
+- [June 21-25](#june-21-25)
+- [June 14-18](#june-14-18)
+  - [Tiles](#tiles-1)
+  - [MS Teams](#ms-teams)
+  - [Colors](#colors)
+  - [Tabs](#tabs)
+  - [Build](#build)
 
 
 # Usage
@@ -61,25 +68,66 @@ All you need is the GitHub project folders and files.  You are not required to d
 If you do plan on updating this repository, make sure that you understand how to fork the project and create a pull request for the updates. 
 
 ## Setup your build environment  
-Use node.js/gulp for the build workflow.  Install and configure node.js/gulp if you don't already have it on your build machine:
+This version of the build process has dropped node.js, npm, gulp and node.sass;  The build process has been simplified to just what is required
+to support the compilation of the sass files into both framework and standalone css files. 
 
-* Install [node.js](https://nodejs.org/en)
-* Launch node.js command prompt, go to local work folder (the local drive/folder where you cloned this repository)
-* Run **npm install**:  this will read the packgage.json file and get all the dependencies, including current bootstrap 4 and kendo packages.  These files will be downloaded to node_modules in the working directory.  You never need to upload or transfer this folder. Which is good - while not large it contains almost 10,000 files.
-* Run **npm install --global gulp**:  this enables gulp to run directly from the cmd line as a process
-* Make your required changes, the run **gulp build** to build the css package, which will create/update 2 files in ./release folder 
+All necessary files are included in the repository.  This includes node_modules, and dart_sass.  These should not be updated without testing.
 
-```
-npm install
-npm install --global gulp
+To simply build the framework use the dart-sass\sass.bat command file. You provide the source file and the target file, and you are done. 
 
-gulp build | watch
+Some Examples include:
+```bat
+REM Compile the framework to the HS Themes folder.
+dart-sass\sass scss\hsframework.scss "C:\Program Files\Handshake\HandshakeThemes\Themes\HSFramework\hsframework.min.css" --style compressed --quiet
+
+REM Compile a custom verison of megamenu to the themes folder 
+dart-sass\sass scss\megamenu.scss "C:\Program Files\Handshake\HandshakeThemes\Themes\HSFramework\css\megamenu.min.css" --style compressed --quiet
 ```
-> If you get this error when running npm install  `npm ERR! errono SELF_SIGNED_CERT_IN_CHAIN` then try the command below
+### Watch.ps1 
+Also included is a powershell script to watch for changes in the source and compile those changes to the target.  The script will monitor for changes
+to the framework files, or standalone scss file. 
+
+Framework files are 
+- scss/hsframework.scss (or the file identified in the  $framework parameter)
+- any files that start with an underscore character, like (scss/_tiles.scss).
+
+If a change is detected in a framework file, the hsframework.scss file will be compiled to the target directory. This includes
+deletions/rename of "_" files. Note that deleting or renaming the main framework file is not supported, and results can be unpredictable.
+
+If a change is detected on any non-framework file, then that file will be compiled to the target/css directory. 
+
+If a non-framework file is deleted, then the target/css files will be removed, if it is rename, then the old files in target/css
+will be removed and the file will be re-compiled with the new name. 
+
+All activity will be logged to the ../dart-sass/sass-watch.log file. 
+
+#### watch.ps1 parameters
+- source : the folder to watch, by default this will be ../scss 
+- target : the folder to write .css files to.  default is ../release;  this can be set to the HSFramework Themes folder; The framework will be built in the targer folder; non-framework files will go into target/css 
+- dartsass : the location of the dart compiler, defaults to ../dart-sass 
+- framework : the name of the master framework file, defaults to hsframework.scss 
+- hsupdate : For security reasons this process cannot write files directly to the Handshake Themes folder, use -hsupdate to copy the release folder to the 
+themes folder after the compile. the value  "default" will copy the release files to "C:\program files\handshake\handshakeThemes\Themes\HSFramework"
+
+#### Usage
+```powershell
+<# use all defaults #>
+.\watch.ps1 
+``` 
+
+```powershell 
+<# after compliation, publish changes to the custom handshake themes folder on the d: drive #>
+.\watch.ps1 -hsupdate "D:\Program Files\Handshake\HandshakeThemes\Themes\MyLawFirmTheme" 
 ```
-npm config set strict-ssl false
-npm install
+
+```powershell 
+<# after compliation, publish changes to the handshake themes folder on the c: drive #>
+.\watch.ps1 -hsupdate default  
 ```
+
+The watch process will run as long as the powershell terminal window is open.  
+
+> Note: this is not tested in the PowerShell IDE. You should open a powershell command window. 
 
 # Modules 
 The framework is broken down into the following modules.
