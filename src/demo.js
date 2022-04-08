@@ -137,15 +137,10 @@ jQuery(function () {
                     url: "classnames.html"
                 },
                 {
-                    text: "Readme Docs",
-                    url: "https://github.com/smchargue/HSFramework"
-                },
-                // A test sub-item collection.            
-                {
-                    text: "Teams Drop Down ",
+                    text: "Other Helpers",
                     items: [{
-                        text: "No Teams view",
-                        tclass: 'hsbody'
+                        text: "Border Radius",
+                        url: 'border-radius.html'
                     }, {
                         text: "Teams Default View",
                         tclass: 'hsbody hsteams v-default'
@@ -153,7 +148,13 @@ jQuery(function () {
                         text: "Teams Dark View",
                         tclass: 'hsbody hsteams v-dark'
                     }]
-                }
+                },
+                {
+                    text: "Readme Docs",
+                    url: "https://github.com/smchargue/HSFramework"
+                },
+                // A test sub-item collection.            
+                
             ],
         });
         var pageparts = location.pathname.split('/');
@@ -488,7 +489,7 @@ jQuery(function () {
         });
     });
 
-    // user profiel card demo
+    // user profile card demo
     jQuery(function () {
         $('#usercardtoolbar').kendoToolBar({
             items: [{

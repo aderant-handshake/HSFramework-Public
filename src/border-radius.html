@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>General Helpers</title>
+    <link rel="stylesheet" href="../release/hsframework.min.css">
+    <link rel="stylesheet" href="_local.css">
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="demo.js"></script>
+
+    <style>
+        .border-test {
+            font-family: Arial;
+            font-size: clamp(.9rem, 1.5vw, 1.1rem);
+        }
+
+        .border-test-container {
+            display: grid;
+            margin-bottom: 20px;
+            grid-gap: 2em;
+            grid-template-columns: repeat(9, 100px);
+        }
+
+        .border-test-container>div {
+            width:100px;
+            height: 100px;
+            background-color: #666;
+            border: 3px solid darkred;
+            display: flex;
+            color: #fff;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+    <div id="kendomenu"></div>
+    <div class="h4 p-3 mb-3 text-center bg-info">Border Radius Helpers </div>
+    <div class="w-75 mx-auto">
+        <div class="border-test">
+            <div class="border-test-container">
+                <div class="hs-br-10">hs-br-10</div>
+                <div class="hs-brt-10">hs-brt-10</div>
+                <div class="hs-brb-10">hs-brb-10</div>
+                <div class="hs-brl-10">hs-brl-10</div>
+                <div class="hs-brr-10">hs-brr-10</div>
+                <div class="hs-brtl-10">hs-brtl-10</div>
+                <div class="hs-brtr-10">hs-brtr-10</div>
+                <div class="hs-brbl-10">hs-brbl-10</div>
+                <div class="hs-brbr-10">hs-brbr-10</div>
+            </div>
+            <div class="border-test-container">
+                <div class="hs-br-25">hs-br-25</div>
+                <div class="hs-brt-25">hs-brt-25</div>
+                <div class="hs-brb-25">hs-brb-25</div>
+                <div class="hs-brl-25">hs-brl-25</div>
+                <div class="hs-brr-25">hs-brr-25</div>
+                <div class="hs-brtl-25">hs-brtl-25</div>
+                <div class="hs-brtr-25">hs-brtr-25</div>
+                <div class="hs-brbl-25">hs-brbl-25</div>
+                <div class="hs-brbr-25">hs-brbr-25</div>
+            </div>
+
+            <div class="border-test-container">
+                <div class="hs-br-50">hs-br-50</div>
+                <div class="hs-brt-50">hs-brt-50</div>
+                <div class="hs-brb-50">hs-brb-50</div>
+                <div class="hs-brl-50">hs-brl-50</div>
+                <div class="hs-brr-50">hs-brr-50</div>
+                <div class="hs-brtl-50">hs-brtl-50</div>
+                <div class="hs-brtr-50">hs-brtr-50</div>
+                <div class="hs-brbl-50">hs-brbl-50</div>
+                <div class="hs-brbr-50">hs-brbr-50</div>
+            </div>
+
+
+
+            <div class="h5">class name nomenclature</div>
+            <div>default sizes = 0%, 10%, 20%, 25%, 30%, 40%, 50%; </div>
+            <ul>
+                <li>hs-br-{size} : border radius </li>
+                <li>hs-brt-{size} : border radius top</li>
+                <li>hs-brb-{size} : border radius bottom</li>
+                <li>hs-brl-{size} : border radius left</li>
+                <li>hs-brr-{size} : border radius right</li>
+                <li>hs-brtl-{size} : border radius top left</li>
+                <li>hs-brtr-{size} : border radius top right</li>
+                <li>hs-brbl-{size} : border radius bottom left</li>
+                <li>hs-brbr-{size} : border radius bottom right </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
