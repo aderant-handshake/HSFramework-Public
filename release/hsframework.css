@@ -36529,7 +36529,7 @@ div[__hsrootnode] div[onclick] {
     grid-template-areas: "header header" "sidebar1 sidebar2" "main main" "footer footer";
   }
 }
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 960px) {
   .hs-grid-magazine {
     grid-gap: 1em;
     grid-template-columns: minmax(270px, 1fr) minmax(270px, 2fr) minmax(270px, 1fr);
